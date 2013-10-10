@@ -1,0 +1,40 @@
+.section-fotos-separator {
+    .pl-section-pad {
+        background:@pl-base;
+        padding-left:15px;
+        padding-right:15px;
+        .box-sizing(border-box);
+    }
+}
+
+.fotos-break {
+    min-height:3px;
+    margin:0;
+    background:@pl-base;
+
+    &.fotos-break-solid {
+        border-top:none;
+        border-bottom:1px solid @baseContrast;
+    }
+    &.fotos-break-double {
+        border-top:none;
+        border-bottom: double @baseContrast;
+    }
+    &.fotos-break-dashed {
+        border-top:none;
+        border-bottom:1px dashed @baseContrast;
+    }
+    &.fotos-break-dotted {
+        border-top:none;
+        border-bottom:1px dotted @baseContrast;
+    }
+}
+
+.fotos-full-width.section-fotos-separator {
+    .fotos-break();
+}
+.fotos-content-width.section-fotos-separator {
+    .pl-content {
+        .fotos-break();
+    }
+}

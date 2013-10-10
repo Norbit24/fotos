@@ -1,0 +1,96 @@
+.fotos-full-width.section-fotos-slider {
+    .fotos-blog-slider-inner-wrap {
+        max-width:@plContentWidth;
+        margin:0 auto;
+        bottom:0;
+        left:0;
+    }
+}
+.fotos-content-width.section-fotos-slider {
+    .fotos-blog-slider-inner {
+        left:15px;
+    }
+}
+
+.fotos-blog-slider {
+    position: relative;
+    min-height:300px;
+
+    .fotos-blog-slider-item {
+        display:none;
+        right:0;
+        width:100%;
+        .background-size(cover);
+        background-position: 0 50%;
+        min-height:300px;
+
+        &.first {
+            display: block;
+        }
+    }
+
+    .fotos-blog-slider-inner {
+        max-width:50%;
+        position: absolute;
+        bottom: 15px;
+
+        .fotos-blog-slider-title,
+        .fotos-blog-slider-subtitle {
+            .box-sizing(border-box);
+            color:@pl-base;
+            background:@pl-link;
+            padding:0 6px;
+        }
+
+        .fotos-blog-slider-title {
+            margin:0 0 2px;
+            display: inline-block;
+        }
+        .fotos-blog-slider-subtitle {
+            margin:0;
+            padding-top:4px;
+            padding-bottom:4px;
+
+            .fotos-blog-slider-link {
+                color:@pl-base;
+                margin-left:15px;
+
+                &:hover {
+                    color:lighten(@pl-base,15);
+                }
+            }
+        }
+
+        @media(max-width:@resPortraitTablet){
+            max-width:100%;
+        }
+
+    }
+    #fotos-blog-slider-pager {
+        z-index:110;
+        position: absolute;
+        bottom:2px;
+        right:5px;
+
+        a {
+            color:@pl-link;
+            font-size:14px;
+            margin:0 2px;
+
+            &:hover i,
+            &.cycle-pager-active {
+                color:darken(@pl-link,15);
+            }
+        }
+    }
+}
+
+@media(max-width:@resPortraitTablet){
+    .fotos-blog-slider,
+    .fotos-blog-slider .fotos-blog-slider-item {
+        min-height:200px;
+    }
+    #fotos-blog-slider-pager {
+        top:2px;
+    }
+}

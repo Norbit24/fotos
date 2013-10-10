@@ -1,0 +1,72 @@
+.section-fotos-boxes {
+    .pl-section-pad {
+        padding:20px;
+        .box-sizing(border-box);
+    }
+}
+
+.ba-fotos-box-wrap {
+    margin-left:-1%;
+    margin-top:-1%;
+
+    &.ba-fotos-box-2col {
+        .ba-fotos-box-item {
+            width:48.5%;
+        }
+    }
+    &.ba-fotos-box-3col {
+        .ba-fotos-box-item {
+            width:31.666%;
+        }
+    }
+    &.ba-fotos-box-4col {
+        .ba-fotos-box-item {
+            width:23.25%;
+        }
+    }
+    &.ba-fotos-box-5col {
+        .ba-fotos-box-item {
+            width:18.2%;
+        }
+    }
+    .ba-fotos-box-item {
+        float: left;
+        vertical-align: top;
+        margin:1%;
+        .box-sizing(border-box);
+        position:relative;
+
+        &.last {
+            margin-right:0;
+        }
+
+    }
+    .ba-fotos-box-text {
+        line-height: @plFontSize + 4;
+    }
+
+    @media(max-width:@resPortraitTablet){
+        &.ba-fotos-box-2col .ba-fotos-box-item,
+        &.ba-fotos-box-3col .ba-fotos-box-item,
+        &.ba-fotos-box-4col .ba-fotos-box-item,
+        &.ba-fotos-box-5col .ba-fotos-box-item {
+            width:48%;
+        }
+
+    }
+
+    @media(max-width:480px){
+        &.ba-fotos-box-2col .ba-fotos-box-item,
+        &.ba-fotos-box-3col .ba-fotos-box-item,
+        &.ba-fotos-box-4col .ba-fotos-box-item,
+        &.ba-fotos-box-5col .ba-fotos-box-item {
+            width:100%;
+            display:block;
+
+            img {
+                width:100%;
+            }
+        }
+
+    }
+}

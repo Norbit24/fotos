@@ -1,0 +1,55 @@
+.section-fotos-bio-box {
+    .pl-section-pad {
+        background:@baseContrastSlight;
+        padding:20px;
+        .box-sizing(border-box);
+    }
+
+}
+
+.fotos-bio-box {
+    &.fotos-bio-box-image-left {
+        .fotos-bio-txt-wrap {
+            float: right;
+            margin-right:0;
+        }
+        .fotos-bio-img-wrap {
+            float: left;
+            margin-left:0;
+            margin-right:2.127659574%;
+        }
+    }
+    &.fotos-bio-box-image-right {
+
+    }
+
+    .fotos-bio-txt-wrap p:first-child {
+        margin-top:0;
+    }
+}
+
+.icon-fotos-default {
+    .icon-fotos-mixin(@pl-base);
+}
+
+.icon-fotos{
+    .border-radius(50em);
+    padding:6px;
+    font-size:@plFontSize - 3;
+    width:@plFontSize - 3;
+    text-align: center;
+    margin-right:4px;
+}
+
+.icon-fotos-facebook    { .icon-fotos-mixin(#3b5998); }
+.icon-fotos-twitter     { .icon-fotos-mixin(#00aced); }
+.icon-fotos-pinterest   { .icon-fotos-mixin(#cb2027); }
+.icon-fotos-google-plus { .icon-fotos-mixin(#dd4b39); }
+.icon-fotos-linkedin    { .icon-fotos-mixin(#007bb6); }
+
+.icon-fotos-instagram   { .icon-fotos-mixin(#517fa4); }
+.icon-fotos-github      { .icon-fotos-mixin(#111111); }
+
+.icon-tumblr            { .icon-fotos-mixin(#00225f); }
+.icon-tumblr-sign       { .icon-fotos-mixin(#00225f); }
+.icon-youtube           { .icon-fotos-mixin(@red); }
