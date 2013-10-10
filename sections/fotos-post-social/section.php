@@ -27,8 +27,8 @@ class fotosPostSocial extends PageLinesSection {
 		$twitter 	= self::twitter(array('permalink' => $perm, 'title' => $title));
 		$fb 		= self::facebook(array('permalink' => $perm));
 		$pinterest 	= self::pinterest(array('permalink' => $perm, 'image' => $thumb, 'desc' => $desc));
-		$mode 		= pl_setting('ba_fotos_social_mode') ? pl_setting('ba_fotos_social_mode') : 'icon';
-		$layout 	= pl_setting('ba_fotos_social_align') ? pl_setting('ba_fotos_social_align') : 'tal';
+		$mode 		= $this->opt('ba_fotos_social_mode') ? $this->opt('ba_fotos_social_mode') : 'icon';
+		$layout 	= $this->opt('ba_fotos_social_align') ? $this->opt('ba_fotos_social_align') : 'tal';
 
 		?>
 		<div class="fotos-social-share-wrap <?php echo $layout;?>">
@@ -68,10 +68,10 @@ class fotosPostSocial extends PageLinesSection {
 		$thumb 		= (has_post_thumbnail($post->ID)) ? pl_the_thumbnail_url( $post->ID ) : '';
 		$handle		= pl_setting('twittername');
 
-		$twitimg 	= pl_setting('ba_fotos_twitter_img');
-		$fbimg  	= pl_setting('ba_fotos_fb_img');
- 		$pinimg 	= pl_setting('ba_fotos_pinterest_img');
- 		$getsep 	= pl_setting('ba_fotos_social_separator');
+		$twitimg 	= $this->opt('ba_fotos_twitter_img');
+		$fbimg  	= $this->opt('ba_fotos_fb_img');
+ 		$pinimg 	= $this->opt('ba_fotos_pinterest_img');
+ 		$getsep 	= $this->opt('ba_fotos_social_separator');
  		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
 
 		$out 		= '';
@@ -91,7 +91,7 @@ class fotosPostSocial extends PageLinesSection {
 		$title 		= wp_strip_all_tags( get_the_title( $post->ID ) );
 		$thumb 		= (has_post_thumbnail($post->ID)) ? pl_the_thumbnail_url( $post->ID ) : '';
 		$handle		= pl_setting('twittername');
-		$getsep 	= pl_setting('ba_fotos_social_separator');
+		$getsep 	= $this->opt('ba_fotos_social_separator');
  		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
 
 		$out 		= '';
@@ -193,4 +193,21 @@ class fotosPostSocial extends PageLinesSection {
 
 	}
 
+	function section_opts( ){
+
+		$options = array();
+
+		$options[] = array(
+			'col'		 	=> 4,
+			'title'			=> __('Instructions', 'fotos'),
+			'type'			=> 'template',
+			'template'		=> 'Options for this section are global, and can be found under Theme-->Fotos - Blog Options'
+		);
+
+		return $options;
+
+	}
+
 }
+
+
