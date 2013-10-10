@@ -1,8 +1,31 @@
 .section-fotos-post-social {
     .pl-section-pad {
-        background:@pl-base;
-        padding-left:15px;
-        padding-right:15px;
+        padding:15px;
         .box-sizing(border-box);
+    }
+}
+
+.fotos-social-share-wrap {
+
+    &.center {
+        text-align: center;
+    }
+    &.tar {
+        text-align: right;
+    }
+    &.tal {
+        text-align: left;
+    }
+
+    a {
+        display: inline-block;
+        margin:0 10px;
+
+        &:first-child {
+            margin-left:0;
+        }
+        &:last-child {
+            margin-right:0;
+        }
     }
 }
