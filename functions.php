@@ -21,6 +21,9 @@ class baFotosTheme {
 	// Initialize
 	function init() {
 
+		// bypass posix check
+		add_filter( 'render_css_posix_', '__return_true' );
+
 		require_once( 'libs/custom-meta-boxes/custom-meta-boxes.php' );
 		include('inc/unset.php');
 		include('inc/meta.php');
@@ -32,6 +35,8 @@ class baFotosTheme {
 
 		// Run Theme Options
 		$this->theme_options();
+
+
 	}
 
 	function scripts(){
