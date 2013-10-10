@@ -74,32 +74,66 @@ class baFotosTheme {
 
 
         $options[] = array(
-			'pos'            => 21,
-		   	'name'           => __('Fotos Websites Tab 2','fotos'),
-		   	'icon'           => 'icon-rocket',
-			'type' 		=> 'multi',
-			'opts' => array(
+			'pos'            					=> 21,
+		   	'name'           					=> __('Fotos - Blog Options','fotos'),
+		   	'icon'           					=> 'icon-rocket',
+			'type' 								=> 'multi',
+			'opts' 								=> array(
 				array(
-					'key' => 'fw_twitter_username',
-					'type' => 'check',
-					'label' => 'Twitter Username'
+					'col'						=> 8,
+					'title'   					=> __('Social Links Mode', 'fotos'),
+				    'type'    					=> 'select',
+				    'key'						=> 'ba_fotos_social_mode',
+				    'default'					=> 'icon',
+				    'opts'						=> array(
+				    	'icon' 					=> array('name' => __('Icons','fotos')),
+				    	'image' 				=> array('name' => __('Custom Image','fotos')),
+				    	'plain' 				=> array('name' => __('Plain Button','fotos')),
+				    ),
+					'help' 						=> __('' , 'fotos'),
 				),
 				array(
-					'key' => 'fw_facebook_username',
-					'type' => 'check',
-					'label' => 'Facebook Username'
+					'col'						=> 8,
+					'title'   					=> __('Social Links Alignment', 'fotos'),
+				    'type'    					=> 'select',
+				    'key'						=> 'ba_fotos_social_align',
+				    'opts'						=> array(
+				    	'tal' 					=> array('name' => __('Align Left','fotos')),
+				    	'center' 				=> array('name' => __('Centered','fotos')),
+				    	'tar' 					=> array('name' => __('Align Right','fotos')),
+				    ),
+					'help' 						=> __('' , 'fotos'),
 				),
 				array(
-					'key' => 'fw_gplus_username',
-					'type' => 'check',
-					'label' => 'Google Plus Username'
-				),
-				array(
-					'key' => 'fw_pinterest_username',
-					'type' => 'check',
-					'label' => 'Pinterest Username'
-				),
+					'col'		 	=> 4,
+					'title'			=> __('Custom Social Images', 'fotos'),
+					'type'			=> 'multi',
+					'opts'			=> array(
+						array(
+							'type' => 'image_upload',
+							'key'	=> 'ba_fotos_twitter_img',
+							'title'	=> 'Custom Twitter Button'
+						),
+						array(
+							'type' => 'image_upload',
+							'key'	=> 'ba_fotos_fb_img',
+							'title'	=> 'Custom Facebook Button'
+						),
+						array(
+							'type' => 'image_upload',
+							'key'	=> 'ba_fotos_pinterest_img',
+							'title'	=> 'Custom Pinterest Button'
+						),
+					)
 
+				),
+				array(
+					'col'		 	=> 8,
+					'title'			=> __('Separator Images (optional)', 'fotos'),
+					'type'			=> 'image_upload',
+					'key'			=> 'ba_fotos_social_separator'
+
+				)
 			),
 			'help' => ''
 		);

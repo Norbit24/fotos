@@ -27,8 +27,8 @@ class fotosPostSocial extends PageLinesSection {
 		$twitter 	= self::twitter(array('permalink' => $perm, 'title' => $title));
 		$fb 		= self::facebook(array('permalink' => $perm));
 		$pinterest 	= self::pinterest(array('permalink' => $perm, 'image' => $thumb, 'desc' => $desc));
-		$mode 		= $this->opt('ba_fotos_social_mode') ? $this->opt('ba_fotos_social_mode') : 'icon';
-		$layout 	= $this->opt('ba_fotos_social_align') ? $this->opt('ba_fotos_social_align') : 'tal';
+		$mode 		= pl_setting('ba_fotos_social_mode') ? pl_setting('ba_fotos_social_mode') : 'icon';
+		$layout 	= pl_setting('ba_fotos_social_align') ? pl_setting('ba_fotos_social_align') : 'tal';
 
 		?>
 		<div class="fotos-social-share-wrap <?php echo $layout;?>">
@@ -68,10 +68,10 @@ class fotosPostSocial extends PageLinesSection {
 		$thumb 		= (has_post_thumbnail($post->ID)) ? pl_the_thumbnail_url( $post->ID ) : '';
 		$handle		= pl_setting('twittername');
 
-		$twitimg 	= $this->opt('ba_fotos_twitter_img');
-		$fbimg  	= $this->opt('ba_fotos_fb_img');
- 		$pinimg 	= $this->opt('ba_fotos_pinterest_img');
- 		$getsep 	= $this->opt('ba_fotos_social_separator');
+		$twitimg 	= pl_setting('ba_fotos_twitter_img');
+		$fbimg  	= pl_setting('ba_fotos_fb_img');
+ 		$pinimg 	= pl_setting('ba_fotos_pinterest_img');
+ 		$getsep 	= pl_setting('ba_fotos_social_separator');
  		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
 
 		$out 		= '';
@@ -91,7 +91,7 @@ class fotosPostSocial extends PageLinesSection {
 		$title 		= wp_strip_all_tags( get_the_title( $post->ID ) );
 		$thumb 		= (has_post_thumbnail($post->ID)) ? pl_the_thumbnail_url( $post->ID ) : '';
 		$handle		= pl_setting('twittername');
-		$getsep 	= $this->opt('ba_fotos_social_separator');
+		$getsep 	= pl_setting('ba_fotos_social_separator');
  		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
 
 		$out 		= '';
@@ -190,73 +190,6 @@ class fotosPostSocial extends PageLinesSection {
 				$a['width']);
 
 		return ob_get_clean();
-
-	}
-
-	function section_opts( ){
-
-		$options = array();
-
-		$options[] = array(
-			'col'						=> 8,
-			'title'   					=> __('Social Links Mode', 'fotos'),
-		    'type'    					=> 'select',
-		    'key'						=> 'ba_fotos_social_mode',
-		    'default'					=> 'icon',
-		    'opts'						=> array(
-		    	'icon' 					=> array('name' => __('Icons','fotos')),
-		    	'image' 				=> array('name' => __('Custom Image','fotos')),
-		    	'plain' 				=> array('name' => __('Plain Button','fotos')),
-		    ),
-			'help' 						=> __('' , 'fotos'),
-		);
-
-		$options[] = array(
-			'col'						=> 8,
-			'title'   					=> __('Social Links Alignment', 'fotos'),
-		    'type'    					=> 'select',
-		    'key'						=> 'ba_fotos_social_align',
-		    'opts'						=> array(
-		    	'tal' 					=> array('name' => __('Align Left','fotos')),
-		    	'center' 				=> array('name' => __('Centered','fotos')),
-		    	'tar' 					=> array('name' => __('Align Right','fotos')),
-		    ),
-			'help' 						=> __('' , 'fotos'),
-		);
-
-		$options[] = array(
-			'col'		 	=> 4,
-			'title'			=> __('Custom Social Images', 'fotos'),
-			'type'			=> 'multi',
-			'opts'			=> array(
-				array(
-					'type' => 'image_upload',
-					'key'	=> 'ba_fotos_twitter_img',
-					'title'	=> 'Custom Twitter Button'
-				),
-				array(
-					'type' => 'image_upload',
-					'key'	=> 'ba_fotos_fb_img',
-					'title'	=> 'Custom Facebook Button'
-				),
-				array(
-					'type' => 'image_upload',
-					'key'	=> 'ba_fotos_pinterest_img',
-					'title'	=> 'Custom Pinterest Button'
-				),
-			)
-
-		);
-
-		$options[] = array(
-			'col'		 	=> 8,
-			'title'			=> __('Separator Images (optional)', 'fotos'),
-			'type'			=> 'image_upload',
-			'key'			=> 'ba_fotos_social_separator'
-
-		);
-
-		return $options;
 
 	}
 
