@@ -16,12 +16,17 @@ class fotosBlogLoop extends PageLinesSection {
  		$content = new fotosPostContent();
  		$title = new fotosPostTitle();
  		$break = new baFotosSeparator();
+ 		$social = new fotosPostSocial();
 
  		if(have_posts()): while(have_posts()) : the_post();
 
- 			$title->section_template();
- 			$break->section_template();
- 			$content->section_template();
+	 		?><article <?php post_class('fotos-article'); ?> id="post-<?php the_ID();?>"><?php
+	 		 	$title->section_template();
+ 				$break->section_template();
+	 			echo apply_filters('the_content',the_content());
+	 			$social->section_template();
+	 		?></article><?php
+
 
  		endwhile; else:
  			echo 'Sorry no posts found';
