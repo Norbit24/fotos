@@ -69,7 +69,7 @@ class baFotosBlogSlider extends PageLinesSection{
 
 			foreach( $slide_array as $slide ){
 				$postimg 	=  pl_array_get('img', $slide);
-				$output 	.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:cover"><div class="fotos-blog-slider-inner-wrap">=</div></div>',$postimg);
+				$output 	.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:cover"><div class="fotos-blog-slider-inner-wrap"></div></div>',$postimg);
 			
 				$count++;
 			}
