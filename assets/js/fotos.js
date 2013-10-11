@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 	jQuery('.tab-panel-inner .alert').remove();
 	jQuery('a,.area-clone').removeClass('pro-only-disabled');
+	jQuery('.pl-credit').remove();
 });
 jQuery(window).load(function(){
 	jQuery('a.section-clone[data-original-title="Clone (Pro Edition Only)"]').attr('data-original-title','Clone');
