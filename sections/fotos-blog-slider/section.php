@@ -41,10 +41,11 @@ class baFotosBlogSlider extends PageLinesSection{
 		$tran = $this->opt('ba_featured_transition') ? $this->opt('ba_featured_transition') : 'fade';
 		$speed = $this->opt('ba_featured_speed') ? $this->opt('ba_featured_speed') : '6000';
 		$showargs = sprintf('data-cycle="fx" data-cycle-timeout="%s" data-cycle-slides="> div" data-cycle-pause-on-hover="true" ',$speed);
+		$height = $this->opt('ba_fotos_blog_slider_height') ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
 
 		$output = '';
 
-		printf('<section class="fotos-blog-slider %s"><div class="fotos-blog-slider-show fotos-blog-slider-show-%s" %s>',$contentwidth,$id,$showargs);
+		printf('<section class="fotos-blog-slider %s"><div class="fotos-blog-slider-show fotos-blog-slider-show-%s" %s %s>',$contentwidth,$id,$showargs,$height);
 
 			$slide_array = $this->opt('fotos_blog_slider_array');
 
@@ -90,7 +91,7 @@ class baFotosBlogSlider extends PageLinesSection{
 	function recc_width(){
 
 		$width = (pl_setting( 'content_width_px' ));
-		$height = $this->opt('ba_fotos_blog_slider_height') ? $this->opt('ba_fotos_blog_slider_height') : '420px';
+		$height = $this->opt('ba_fotos_blog_slider_height') ? $this->opt('ba_fotos_blog_slider_height') : '300px';
 
 		$widthclean = str_replace('px', '', $width);
 		$heightclean = str_replace('px', '', $height);
