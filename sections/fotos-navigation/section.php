@@ -15,13 +15,13 @@ class fotosNav extends PageLinesSection {
 	function section_persistent(){
 
         add_filter( 'pless_vars', array($this,'fotos_nav_less_vars'));
-        add_filter('pl_settings_array', array($this,'fotos_nav_global_opts'));
 	}
 
 	function fotos_nav_less_vars($less){
 
 		$less['fotos-nav-height'] 	= pl_setting('ba_fotos_nav_height')  ? pl_setting('ba_fotos_nav_height') : '64px';
-		$less['fotos-nav-font-color'] = pl_setting('ba_fotos_nav_font_color')  ? pl_hashify(pl_setting('ba_fotos_nav_font_color')) : '#eaeaea';
+		$less['fotos-nav-base-color'] = pl_setting('ba_fotos_nav_base_color')  ? pl_hashify(pl_setting('ba_fotos_nav_base_color')) : '#333';
+		$less['fotos-nav-font-color'] = pl_setting('ba_fotos_nav_font_color')  ? pl_hashify(pl_setting('ba_fotos_nav_font_color')) : '#f8f8f8';
 		$less['fotos-nav-font-size'] 	= pl_setting('ba_fotos_nav_font_size' )  ? pl_setting('ba_fotos_nav_font_size') : '14px';
 
 		return $less;
@@ -46,10 +46,10 @@ class fotosNav extends PageLinesSection {
 
 				<?php if('fotos-nav-fixed-top' == $fixpos) { ?>
 					adminbar = jQuery('#wpadminbar').height();
-					jQuery('#fotos-nav<?php echo $id;?>').css({'top':adminbar});
+					jQuery('#fotos-navigation<?php echo $id;?>').css({'top':adminbar});
 				<?php } elseif('fotos-nav-fixed-bott' == $fixpos) { ?>
 					toolbar = jQuery('#PageLinesToolbox').height();
-					jQuery('#fotos-nav<?php echo $id;?>').css({'bottom':toolbar});
+					jQuery('#fotos-navigation<?php echo $id;?>').css({'bottom':toolbar});
 				<?php } else { ?>
 					return false;
 				<?php  } ?>
@@ -75,7 +75,7 @@ class fotosNav extends PageLinesSection {
  		$id 	= $this->get_the_id();
  		$align  = ($this->opt('ba_fotos_nav_align_right')) ? 'pull-right' : false;
 
-		echo '<nav class="fotos-nav" role="navigation">';
+		echo '<nav class="fotos-nav fix" role="navigation">';
 
 			$args = array(
 				'menu_class'  	=> 'sm '.$mode.' fotos-nav-menu '.$align.' fotos-nav-menu-'.$id,
@@ -104,57 +104,6 @@ class fotosNav extends PageLinesSection {
         return ob_get_clean();
 	}
 
-	// Global Options
- 	function fotos_nav_global_opts($settings){
-
-       	$settings[ $this->id ] = array(
-            'name'  					=> $this->name,
-            'icon'  					=> 'icon-asterisk',
-            'pos'   					=> 5,
-            'opts'  					=> array(
-            	array(
-		            'key'               => 'ba_fotos_nav_welcome_global',
-		            'type'              => 'template',
-		            'title'             => __('Basiq Nav Global Options','fotos'),
-		            'template'          => $this->welcome_global()
-		        ),
-            	array(
-	            	'title' 			=> __('Design Options', 'fotos'),
-	            	'type'				=> 'multi',
-	            	'opts'				=> array(
-	            		array(
-	            			'key'		=> 'ba_fotos_nav_font_color',
-	            			'title'		=> __('Font Color', 'fotos'),
-	            			'type'		=> 'color',
-	            			'default'	=> '#333',
-	            			'help'		=> __('Set a font color.', 'fotos')
-	            		),
-	            	),
-	            ),
-            	array(
-	            	'title' 			=> __('Font Options', 'fotos'),
-	            	'type'				=> 'multi',
-	            	'opts'				=> array(
-	            		array(
-	            			'key'		=> 'ba_fotos_nav_font_size',
-	            			'title'		=> __('Font Size', 'fotos'),
-	            			'type'		=> 'text',
-	            			'help'		=> __('Set a font size.', 'fotos')
-	            		),
-	            		array(
-	            			'key'		=> 'ba_fotos_nav_font_family',
-	            			'title'		=> __('Font Family', 'fotos'),
-	            			'default'	=> 'open_sans',
-	            			'type'		=> 'type',
-	            			'help'		=> __('Set a base color.', 'fotos')
-	            		),
-	            	),
-	            ),
-            )
-        );
-
-        return $settings;
- 	}
 
 	function section_opts( ){
 

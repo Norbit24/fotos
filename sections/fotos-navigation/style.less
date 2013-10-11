@@ -25,31 +25,35 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
     z-index: 999;
 }
 
+.fotos-nav {
+    background:@fotos-nav-base-color;
+}
+
 .fotos-nav-menu,
 .fotos-nav-menu ul {
-    background:#333;
+
     li {
         &.current-menu-item a,
         &.current_page_item a{
-            background:@baseContrastSlight;
+            background:darken(@fotos-nav-base-color,7);
 
             &:hover,
             &:focus {
-                background:@baseContrast;
+                background:@fotos-nav-base-color;
             }
 
             &:active {
-                background:@baseContrastSlight;
+                background:darken(@fotos-nav-base-color,7);
             }
 
         }
     }
 
     .sub-menu li a{
-        background:@baseContrastSlight;
+        background:darken(@fotos-nav-base-color,7);
 
         &:hover {
-            background: @baseContrast;
+            background: @fotos-nav-base-color;
         }
     }
 
@@ -66,7 +70,7 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         &:focus,
         &:active,
         &.highlighted {
-            background:@baseContrastSlight;
+            background:darken(@fotos-nav-base-color,7);
         }
 
         &.has-submenu {
@@ -108,7 +112,7 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         border-left:0;
 
         @media(min-width:@portraitResTablet) {
-            border-bottom:1px solid @baseContrast;
+            border-bottom:1px solid @fotos-nav-base-color;
         }
     }
     ul li:first-child{
@@ -123,7 +127,7 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         overflow:hidden;
         border:solid #bbb;
         border-width:1px 0;
-        background:@baseContrastSlight;
+        background:darken(@fotos-nav-base-color,7);
         height:20px;
         /* width and position will be automatically set by the script */
     }
@@ -158,7 +162,7 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
     }
     li {
         border-left:0;
-        border-top:1px solid @baseContrast;
+        border-top:1px solid @fotos-nav-base-color;
 
         &:first-child {
             border-top: 0;
@@ -189,7 +193,7 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         display:none !important;
     }*/
 
-    .fotos-nav-fixed .section-yams {
+    .fotos-nav-fixed .section-fotos-navigation {
         position: static !important; // overriding js
         padding-left:15px;
         padding-right:15px;

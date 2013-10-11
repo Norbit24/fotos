@@ -140,47 +140,53 @@ class baFotosTheme {
 
 
 		$options[] = array(
-			'pos'            => 22,
-		   	'name'           => __('Fotos Websites Tab 4','fotos'),
-		   	'icon'           => 'icon-rocket',
-			'type'    => 'multi',
-			'opts' => array(
-				array(
-					'key' => 'fw_creds_show_social',
-					'type'    => 'check_multi',
-					'label' => 'Choose which social icons to display',
-					'selectvalues' => array(
-						'fw_creds_twitter'   => array(
-							'type' => 'check',
-							'label' => 'Show Twitter'
-						),
-						'fw_creds_fb'   => array(
-							'type' => 'check',
-							'label' => 'Show Facebook'
-						),
-						'fw_creds_pinterest'   => array(
-							'type' => 'check',
-							'label' => 'Show Pinterest'
-						),
-					),
-				),
-				array(
-					'key' => 'fw_creds_layout',
-					'type'    => 'select',
-					'label' => 'Credit Alignment',
-					'selectvalues' => array(
-						'copy-left' => array('name' => 'Copyright Left'),
-						'copy-right' => array('name' => 'Copyright Right'),
-						'copy-center' => array('name' => 'Copyright Center')
-					),
-				),
-				array(
-					'key' => 'fw_creds_copy',
-					'type' => 'textarea',
-					'label' => __('Copyright Text', 'foliowebsites')
-				),
-			),
-			'help' => '',
+		   	'name'           					=> __('Fotos - Nav Options','fotos'),
+		   	'icon'           					=> 'icon-rocket',
+			'type' 								=> 'multi',
+            'pos'   					=> 22,
+            'opts'  					=> array(
+            	array(
+	            	'title' 			=> __('Navigation Options', 'fotos'),
+	            	'type'				=> 'multi',
+	            	'col'				=> 4,
+	            	'opts'				=> array(
+	            		array(
+	            			'key'		=> 'ba_fotos_nav_font_color',
+	            			'title'		=> __('Font Color', 'fotos'),
+	            			'type'		=> 'color',
+	            			'default'	=> '#F8F8F8',
+	            			'help'		=> __('Set a font color.', 'fotos')
+	            		),
+	            		array(
+	            			'key'		=> 'ba_fotos_nav_base_color',
+	            			'title'		=> __('Base Color', 'fotos'),
+	            			'type'		=> 'color',
+	            			'default'	=> '#333',
+	            			'help'		=> __('Set a base color.', 'fotos')
+	            		),
+	            	),
+	            ),
+            	array(
+	            	'title' 			=> __('Nav Font Options', 'fotos'),
+	            	'type'				=> 'multi',
+	            	'col'				=> 4,
+	            	'opts'				=> array(
+	            		array(
+	            			'key'		=> 'ba_fotos_nav_font_size',
+	            			'title'		=> __('Font Size', 'fotos'),
+	            			'type'		=> 'text',
+	            			'help'		=> __('Set a font size.', 'fotos')
+	            		),
+	            		array(
+	            			'key'		=> 'ba_fotos_nav_font_family',
+	            			'title'		=> __('Font Family', 'fotos'),
+	            			'default'	=> 'open_sans',
+	            			'type'		=> 'type',
+	            			'help'		=> __('Set a base color.', 'fotos')
+	            		),
+	            	),
+	            ),
+            )
 		);
 
 		pl_add_theme_tab($options);
