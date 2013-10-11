@@ -14,15 +14,17 @@ class fotosPostTitle extends PageLinesSection {
 
  	function section_template() {
 
- 		$ltwidth 	= $this->opt('ba_fotos_post_title_col') ? $this->opt('ba_fotos_post_title_col') : 8;
- 		$rtwidth 	= $this->opt('ba_fotos_post_date_col') ? $this->opt('ba_fotos_post_date_col') : 4;
+ 		$date = new baFotosPartials;
+
+ 		$ltwidth 	= $this->opt('ba_fotos_post_title_col') ? $this->opt('ba_fotos_post_title_col') : 9;
+ 		$rtwidth 	= $this->opt('ba_fotos_post_date_col') ? $this->opt('ba_fotos_post_date_col') : 3;
  		$align 		= $this->opt('ba_fotos_post_header_layout') ? $this->opt('ba_fotos_post_header_layout') : 'title-left';
  		$title      = (is_home()) ? sprintf('<h2 class="fotos-entry-title"><a href="%s">%s</a></h2>',get_permalink(),get_the_title()) : sprintf('<h2 class="fotos-entry-title">%s</h2>',get_the_title());
 
- 		$meta		= sprintf('<span class="fotos-entry-cats">%s</span>',do_shortcode('[post_categories]'));
+ 		$meta		= sprintf('<p class="fotos-entry-cats">Filed under %s</p>',do_shortcode('[post_categories]'));
 
- 		$left 		= sprintf('<div class="span%s fotos-entry-title-wrap">%s</div>',$ltwidth,$title);
- 		$right 		= sprintf('<div class="span%s fotos-entry-meta-wrap"><span class="fotos-entry-date">%s</span>%s</div>',$rtwidth,get_the_date(),$meta);
+ 		$left 		= sprintf('<div class="span%s fotos-entry-title-wrap">%s%s</div>',$ltwidth,$title,$meta);
+ 		$right 		= sprintf('<div class="span%s fotos-entry-date-wrap">%s</div>',$rtwidth,$date->date_markup());
 
  		printf('<div class="row fotos-post-header fotos-post-%s">%s%s</div>',$align,$left,$right);
 
@@ -69,7 +71,7 @@ class fotosPostTitle extends PageLinesSection {
 					),
 				)
 
-			),
+			)
 		);
 
 		return $options;

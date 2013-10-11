@@ -8,14 +8,14 @@
             float: right;
             margin-right:0;
         }
-        .fotos-entry-meta-wrap {
+        .fotos-entry-date-wrap {
             float: left;
             margin-left:0;
         }
     }
     &.fotos-post-header-title-center {
         .fotos-entry-title-wrap,
-        .fotos-entry-meta-wrap {
+        .fotos-entry-date-wrap {
             margin-left:0;
             margin-right:0;
             text-align: center;
@@ -23,31 +23,70 @@
     }
 }
 
+.fotos-post-header {
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid @baseContrast;
+}
+
 .fotos {
     .fotos-entry-title-wrap,
-    .fotos-entry-meta-wrap {
+    .fotos-entry-date-wrap {
         margin-bottom:0;
     }
 }
 
 .fotos-entry-title {
-    margin:10px 0 0;
+    margin:0;
+    line-height: @plHeaderSize + 18;
 }
 
-.fotos-entry-meta-wrap {
+.fotos-entry-date-wrap {
     text-align: right;
-    font-size:14px;
 
-    .fotos-entry-date,
-    .fotos-entry-cats {
+    .fotos-entry-date{
         margin:30px 0 0;
         display: inline-block;
     }
+}
 
-    .fotos-entry-date {
+.fotos-entry-cats {
+    margin:0;
+    font-size:13px;
+    line-height: 15px;
+    color:fadeout(@pl-text,15);
+}
+
+.fotos-entry-date-block-style {
+    width:92px;
+    float: right;
+    margin-top:20px;
+
+    .fotos-date-block-day {
+        float: left;
+        font-weight: bold;
+        font-size: 2em;
+        margin-top:4px;
+        letter-spacing: -0.1em;
+    }
+    .fotos-date-block-year {
 
     }
-    .fotos-entry-cats {
-
+    .fotos-date-block-monthyear {
+        text-align: center;
+        border-right: none;
+        padding:4px 0 0 4px;
+        overflow: hidden;
+    }
+    .fotos-date-block-month,
+    .fotos-date-block-year {
+        line-height:0.75em;
+        font-size:0.83em;
+        text-align: left;
+        overflow: hidden;
+    }
+    .fotos-date-block-month {
+        text-transform: uppercase;
+        margin-bottom:4px;
     }
 }

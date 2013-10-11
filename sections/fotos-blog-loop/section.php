@@ -32,7 +32,6 @@ class fotosBlogLoop extends PageLinesSection {
  	function section_template() {
  		$content = new fotosPostContent;
  		$title = new fotosPostTitle;
- 		$break = new baFotosSeparator;
  		$social = new fotosPostSocial;
  		$comm = new fotosPostComments;
 
@@ -40,7 +39,6 @@ class fotosBlogLoop extends PageLinesSection {
 
 	 		?><article <?php post_class('fotos-article'); ?> id="post-<?php the_ID();?>"><?php
 	 		 	$title->section_template();
- 				$break->section_template();
 	 			echo apply_filters('the_content',the_content());
 	 			$social->section_template();
 	 			$comm->section_template();

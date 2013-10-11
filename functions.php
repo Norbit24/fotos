@@ -27,6 +27,7 @@ class baFotosTheme {
 		require_once( 'libs/custom-meta-boxes/custom-meta-boxes.php' );
 		include('inc/unset.php');
 		include('inc/meta.php');
+		include('inc/partials.php');
 		include('inc/gallery.php');
 		include('inc/fotos-shortcodes.php');
 
@@ -133,6 +134,18 @@ class baFotosTheme {
 					'type'			=> 'image_upload',
 					'key'			=> 'ba_fotos_social_separator'
 
+				),
+				array(
+					'title'                   	=> __( 'Date Format', 'fotos' ),
+					'type'	                  	=> 'select',
+					'key' 						=> 'ba_fotos_post_date_style',
+					'default'					=> 'fotos-date-default',
+					'col'						=> 4,
+					'opts'						=> array(
+						'fotos-date-default' 	=> array('name' => __( 'Full Date', 'fotos' ) ),
+						'fotos-date-block'		=> array('name' => __( 'Block Style Date', 'fotos' ) ),
+						'fotos-date-minimal'	=> array('name' => __( 'Minimal Style Date', 'fotos' ) ),
+					),
 				)
 			),
 			'help' => ''
