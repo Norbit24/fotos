@@ -32,7 +32,9 @@ function fotos_mask_mode($toolbar){
 	unset($toolbar['theme']['panel']['more_themes']);
 	unset($toolbar['theme']['panel']['export_themes']);
 
-	//plprint($toolbar);
+	unset($toolbar['settings']['panel']['navbar']);
+
+	plprint($toolbar);
 	return $toolbar;
 }
 
