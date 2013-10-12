@@ -22,6 +22,7 @@ class fotosGlobalOptions {
 
 	function fotos_less($less){
 
+		$less['fotos-post-title'] 		= pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
 		$less['fotos-post-meta'] 		= pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
 		$less['fotos-post-date'] 		= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
 		$less['fotos-post-comm-bg'] 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
@@ -309,6 +310,13 @@ class fotosGlobalOptions {
 		   	'icon'           					=> 'icon-circle',
 			'type' 								=> 'multi',
 			'opts' 								=> array(
+				array(
+					'title'   					=> __('Post Title', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#333',
+				    'key'						=> 'ba_fotos_post_title_color',
+					'help' 						=> __('This controls the color for the post title. By default, it uses the same color you have set under Global Options-->Color & Style' , 'fotos'),
+				),
 				array(
 					'title'   					=> __('Post Meta', 'fotos'),
 				    'type'    					=> 'color',
