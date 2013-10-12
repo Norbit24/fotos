@@ -208,8 +208,14 @@ class fotosGlobalOptions {
 			'type' 								=> 'multi',
 	        'pos'   							=> 24,
 	        'opts'  							=> array(
+	        	array(
+					'title'                   	=> __( 'Comments Text', 'fotos' ),
+					'type'	                  	=> 'text',
+					'key' 						=> 'ba_fotos_post_comm_custom_txt',
+					'help'						=> __('By default this reads "Comment" but you can change this here. Fotos will automatically apply the plural version for you.','fotos'),
+				),
 				array(
-					'title'                   	=> __( 'Post Comments Text', 'fotos' ),
+					'title'                   	=> __( 'Show Comments Text', 'fotos' ),
 					'type'	                  	=> 'text',
 					'key' 						=> 'ba_fotos_post_comment_text',
 					'help'						=> __('By default this reads "Show Comments" but you can change this here.','fotos'),
