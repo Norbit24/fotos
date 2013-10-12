@@ -164,6 +164,43 @@ class fotosGlobalOptions {
 	        )
 		);
 
+		$options[] = array(
+		   	'name'           					=> __('Fotos - Post Top','fotos'),
+		   	'icon'           					=> 'icon-circle',
+			'type' 								=> 'multi',
+	        'pos'   							=> 23,
+	        'opts'  							=> array(
+				array(
+					'title'                   	=> __( 'Post Header Layout', 'fotos' ),
+					'type'	                  	=> 'select',
+					'key' 						=> 'ba_fotos_post_header_layout',
+					'default'					=> 'title-left',
+					'opts'						=> array(
+						'title-left' 			=> array('name' => __( 'Title Left - Date Right', 'fotos' ) ),
+						'title-right'			=> array('name' => __( 'Date Left - Title Right', 'fotos' ) ),
+						'title-center'			=> array('name' => __( 'Title & Date Centered', 'fotos' ) ),
+					),
+				),
+				array(
+					'key'			  => 'ba_fotos_post_title_col',
+					'type' 			  => 'count_select',
+					'count_start'	  => 1,
+					'count_number'	  => 11,
+					'default'		  => 9,
+					'label' 	      => __( 'Title Column Span', 'fotos' ),
+					'help'			  => __('How wide the title column shoudl be based on a 12-column grid.', 'fotos')
+				),
+				array(
+					'key'			  => 'ba_fotos_post_date_col',
+					'type' 			  => 'count_select',
+					'count_start'	  => 1,
+					'count_number'	  => 11,
+					'default'		  => 3,
+					'label' 	      => __( 'Date Column Span', 'fotos' ),
+					'help'			  => __('How wide the date column should be based on a 12-column grid.', 'fotos')
+				),
+	        )
+		);
 		pl_add_theme_tab($options);
 	}
 }

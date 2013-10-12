@@ -30,20 +30,17 @@ class fotosBlogLoop extends PageLinesSection {
 
 
  	function section_template() {
- 		$content = new fotosPostContent;
- 		$title = new fotosPostTitle;
- 		$social = new fotosPostSocial;
- 		$comm = new fotosPostComments;
+
+ 		$loop = new fotosPostLoop;
 
  		if(have_posts()): while(have_posts()) : the_post();
 
 	 		?><article <?php post_class('fotos-article'); ?> id="post-<?php the_ID();?>"><?php
-	 		 	$title->section_template();
-	 			echo apply_filters('the_content',the_content());
-	 			$social->section_template();
-	 			$comm->section_template();
+	 		 	$loop->post_header();
+	 			$loop->post_content();
+	 			$loop->post_social();
+	 			$loop->post_comments();
 	 		?></article><?php
-
 
  		endwhile; else:
  			echo 'Sorry no posts found';
@@ -52,6 +49,16 @@ class fotosBlogLoop extends PageLinesSection {
 	}
 
 
-	function section_opts( ){}
+	function section_opts( ){
+		$options = array(
+			array(
+				'key' 		=> 'ba_fotos_blogloop_note',
+				'title'		=> __('Blog Loop Options', 'fotos'),
+				'type'		=> 'template',
+				'template'	=> __('Options for the blog can be adjusted globally under the Theme tab.', 'fotos')
+			)
+		);
+		return $options;
+	}
 
 }

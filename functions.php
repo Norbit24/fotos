@@ -24,6 +24,7 @@ class baFotosTheme {
 		include('inc/unset.php');
 		include('inc/meta.php');
 		include('inc/options.php');
+		include('inc/post.php');
 		include('inc/partials.php');
 		include('inc/gallery.php');
 		include('inc/fotos-shortcodes.php');
