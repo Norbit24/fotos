@@ -17,7 +17,7 @@ class baFotosPartials {
 
 		$datestyle  = pl_setting('ba_fotos_post_date_style') ? pl_setting('ba_fotos_post_date_style') : 'fotos-date-default';
 		$month 		= get_the_time('M');
-        $day  		= get_the_time('j');
+        $day  		= ('fotos-date-stacked' == $datestyle) ? get_the_time('d') : get_the_time('j');
         $year 		= get_the_time('Y');
 
  		switch($datestyle):
@@ -26,7 +26,19 @@ class baFotosPartials {
  				$out = sprintf('<span class="fotos-entry-date">%s</span>',get_the_date());
  				break;
  			case 'fotos-date-block':
- 				$out = sprintf('<div class="fotos-entry-date-block-style"><div class="fotos-date-block-day">%s</div><div class="fotos-date-block-monthyear"><div class="fotos-date-block-month">%s</div><div class="fotos-date-block-year">%s</div></div></div>',$day,$month,$year);
+ 				$out = sprintf('<div class="fotos-entry-date-block-style">
+ 								<div class="fotos-date-block-day">%s</div>
+ 								<div class="fotos-date-block-monthyear">
+ 									<div class="fotos-date-block-month">%s</div>
+ 									<div class="fotos-date-block-year">%s</div>
+ 								</div></div>',$day,$month,$year);
+ 				break;
+ 			case 'fotos-date-stacked':
+ 				$out = sprintf('<div class="fotos-entry-date-stack-style">
+ 									<div class="fotos-date-block-month">%s</div>
+ 									<div class="fotos-date-block-day">%s</div>
+ 									<div class="fotos-date-block-year">%s</div>
+ 									</div>',$month,$day,$year);
  				break;
  			case 'fotos-date-minimal':
  				$out = sprintf('<span class="fotos-entry-date">%s%s%s</span>',$month,$day,$year);

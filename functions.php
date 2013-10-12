@@ -54,34 +54,30 @@ class baFotosTheme {
 
 
 		$options[] = array(
-			'pos'            => 20,
-		   	'name'           => __('Fotos Setup','fotos'),
-		   	'icon'           => 'icon-rocket',
-            'type'      	=> 'select',
-            'opts'          => array(
+			'pos'            	=> 20,
+			'key'				=> 'fotos_skins_setup',
+		   	'name'           	=> __('Fotos - Skins','fotos'),
+		   	'icon'           	=> 'icon-circle',
+            'type'      		=> 'multi',
+            'opts'          	=> array(
             	array(
-            		'key' => 'fw_theme_layout',
-            		'type' => 'select',
-            		'label' => 'Theme Layout',
-            		'opts' => array(
-		            	'fw-theme-default'    => array('name' => 'Default'),
-		                'fw-theme-menuleft'   => array('name' => 'Side Menu'),
-		                'fw-theme-fullwidth'  => array('name' => 'Full Width'),
-		            ),
+            		'key' 		=> 'fotos_theme_skins',
+            		'type' 		=> 'template',
+            		'template'	=> 'coming soon!',
+            		'title' 	=> 'Available Skins',
 		        ),
             ),
-           'help'         => ''
+           	'help'         		=> 'Choose a skin for your site.'
         );
 
 
         $options[] = array(
 			'pos'            					=> 21,
 		   	'name'           					=> __('Fotos - Blog Options','fotos'),
-		   	'icon'           					=> 'icon-rocket',
+		   	'icon'           					=> 'icon-circle',
 			'type' 								=> 'multi',
 			'opts' 								=> array(
 				array(
-					'col'						=> 8,
 					'title'   					=> __('Social Links Mode', 'fotos'),
 				    'type'    					=> 'select',
 				    'key'						=> 'ba_fotos_social_mode',
@@ -94,7 +90,6 @@ class baFotosTheme {
 					'help' 						=> __('' , 'fotos'),
 				),
 				array(
-					'col'						=> 8,
 					'title'   					=> __('Social Links Alignment', 'fotos'),
 				    'type'    					=> 'select',
 				    'key'						=> 'ba_fotos_social_align',
@@ -106,9 +101,9 @@ class baFotosTheme {
 					'help' 						=> __('' , 'fotos'),
 				),
 				array(
-					'col'		 	=> 4,
 					'title'			=> __('Custom Social Images', 'fotos'),
 					'type'			=> 'multi',
+					'key'			=> 'ba_fotos_custom_social',
 					'opts'			=> array(
 						array(
 							'type' => 'image_upload',
@@ -129,21 +124,19 @@ class baFotosTheme {
 
 				),
 				array(
-					'col'		 	=> 8,
 					'title'			=> __('Separator Images (optional)', 'fotos'),
 					'type'			=> 'image_upload',
-					'key'			=> 'ba_fotos_social_separator'
-
+					'key'			=> 'ba_fotos_social_separator',
 				),
 				array(
 					'title'                   	=> __( 'Date Format', 'fotos' ),
 					'type'	                  	=> 'select',
 					'key' 						=> 'ba_fotos_post_date_style',
 					'default'					=> 'fotos-date-default',
-					'col'						=> 4,
 					'opts'						=> array(
 						'fotos-date-default' 	=> array('name' => __( 'Full Date', 'fotos' ) ),
 						'fotos-date-block'		=> array('name' => __( 'Block Style Date', 'fotos' ) ),
+						'fotos-date-stacked'	=> array('name' => __( 'Stacked', 'fotos' ) ),
 						'fotos-date-minimal'	=> array('name' => __( 'Minimal Style Date', 'fotos' ) ),
 					),
 				)
@@ -154,14 +147,14 @@ class baFotosTheme {
 
 		$options[] = array(
 		   	'name'           					=> __('Fotos - Nav Options','fotos'),
-		   	'icon'           					=> 'icon-rocket',
+		   	'icon'           					=> 'icon-circle',
 			'type' 								=> 'multi',
             'pos'   					=> 22,
             'opts'  					=> array(
             	array(
 	            	'title' 			=> __('Navigation Options', 'fotos'),
+	            	'key'				=> 'ba_fotos_nav_colors',
 	            	'type'				=> 'multi',
-	            	'col'				=> 4,
 	            	'opts'				=> array(
 	            		array(
 	            			'key'		=> 'ba_fotos_nav_font_color',
@@ -181,8 +174,8 @@ class baFotosTheme {
 	            ),
             	array(
 	            	'title' 			=> __('Nav Font Options', 'fotos'),
+	            	'key'				=> 'ba_fotos_nav_options',
 	            	'type'				=> 'multi',
-	            	'col'				=> 4,
 	            	'opts'				=> array(
 	            		array(
 	            			'key'		=> 'ba_fotos_nav_font_size',
