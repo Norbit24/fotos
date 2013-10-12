@@ -172,7 +172,7 @@ class fotosGlobalOptions {
 				array(
 					'title'                   	=> __( 'Post Content Columns', 'fotos' ),
 					'type'	                  	=> 'check',
-					'key' 						=> 'ba_fotos_post_content_cols',
+					'key' 						=> 'ba_fotos_',
 					'help'						=> __('Toggling this will split your post content into magazine style columns.','fotos'),
 				),
 	        )
