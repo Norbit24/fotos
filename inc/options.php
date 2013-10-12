@@ -182,23 +182,47 @@ class fotosGlobalOptions {
 					),
 				),
 				array(
-					'key'			  => 'ba_fotos_post_title_col',
-					'type' 			  => 'count_select',
-					'count_start'	  => 1,
-					'count_number'	  => 11,
-					'default'		  => 9,
-					'label' 	      => __( 'Title Column Span', 'fotos' ),
-					'help'			  => __('How wide the title column shoudl be based on a 12-column grid.', 'fotos')
+					'key'			  			=> 'ba_fotos_post_title_col',
+					'type' 			  			=> 'count_select',
+					'count_start'	  			=> 1,
+					'count_number'	  			=> 99,
+					'default'		  			=> 85,
+					'suffix'					=> '%',
+					'label' 	      			=> __( 'Post Title Width', 'fotos' ),
+					'help'			  			=> __('How wide should the title column be?', 'fotos')
 				),
 				array(
-					'key'			  => 'ba_fotos_post_date_col',
-					'type' 			  => 'count_select',
-					'count_start'	  => 1,
-					'count_number'	  => 11,
-					'default'		  => 3,
-					'label' 	      => __( 'Date Column Span', 'fotos' ),
-					'help'			  => __('How wide the date column should be based on a 12-column grid.', 'fotos')
+					'key'						=> 'ba_fotos_post_title_align',
+					'type'						=> 'select',
+					'default'					=> 'align-left',
+					'title'						=> 'Post Title Alignment',
+					'opts'						=> array(
+						'align-left' 			=> array('name' => __( 'Align Left', 'fotos' ) ),
+						'align-right'			=> array('name' => __( 'Align Right', 'fotos' ) ),
+						'center'				=> array('name' => __( 'Centered', 'fotos' ) ),
+					),
 				),
+				array(
+					'key'			  			=> 'ba_fotos_post_date_col',
+					'type' 			  			=> 'count_select',
+					'count_start'	  			=> 1,
+					'count_number'	  			=> 99,
+					'default'		  			=> 15,
+					'suffix'					=> '%',
+					'label' 	      			=> __( 'Post Date Width', 'fotos' ),
+					'help'			  			=> __('How wide should the date column be?', 'fotos')
+				),
+				array(
+					'key'						=> 'ba_fotos_post_date_align',
+					'type'						=> 'select',
+					'default'					=> '',
+					'title'						=> 'Post Date Alignment',
+					'opts'						=> array(
+						'pull-left' 			=> array('name' => __( 'Align Left', 'fotos' ) ),
+						'pull-right'			=> array('name' => __( 'Align Right', 'fotos' ) ),
+						'center'				=> array('name' => __( 'Centered', 'fotos' ) ),
+					),
+				)
 	        )
 		);
 		pl_add_theme_tab($options);

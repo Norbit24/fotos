@@ -37,12 +37,17 @@
 ////////////////////////
 ////////////////////////
 
-.section-fotos-post-header {
+.fotos-post-header {
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid @baseContrast;
 
-    &.fotos-post-header-title-left {
-
+    &.fotos-post-title-left {
+        .fotos-entry-date-stack-style {
+            float: right;
+        }
     }
-    &.fotos-post-header-title-right {
+    &.fotos-post-title-right {
         .fotos-entry-title-wrap {
             float: right;
             margin-right:0;
@@ -52,7 +57,7 @@
             margin-left:0;
         }
     }
-    &.fotos-post-header-title-center {
+    &.fotos-post-title-center {
         .fotos-entry-title-wrap,
         .fotos-entry-date-wrap {
             margin-left:0;
@@ -62,16 +67,12 @@
     }
 }
 
-.fotos-post-header {
-    margin-bottom:20px;
-    padding-bottom:10px;
-    border-bottom:1px solid @baseContrast;
-}
 
 .fotos {
     .fotos-entry-title-wrap,
     .fotos-entry-date-wrap {
         margin-bottom:0;
+        float: left;
     }
 }
 
@@ -101,8 +102,6 @@
     width:92px;
     float: right;
     margin-top:20px;
-
-    @size = 1.7em;
 
     .fotos-date-block-day {
         float: left;
@@ -136,8 +135,6 @@
 // Date Stacked
 .fotos-entry-date-stack-style {
     text-align: center;
-    float: right;
-    width:68px;
 
     .fotos-date-block-month {
         letter-spacing: 0.1em;

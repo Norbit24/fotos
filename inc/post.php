@@ -15,24 +15,27 @@ class fotosPostLoop {
 
 	function __construct(){
 
-
 	}
 
 	function post_header(){
 
  		$date 		= new baFotosPartials;
 
- 		$ltwidth 	= pl_setting('ba_fotos_post_title_col') ? pl_setting('ba_fotos_post_title_col') : 9;
- 		$rtwidth 	= pl_setting('ba_fotos_post_date_col') ? pl_setting('ba_fotos_post_date_col') : 3;
+ 		$ltwidth 	= pl_setting('ba_fotos_post_title_col') ? pl_setting('ba_fotos_post_title_col').'%' : '85%';
+ 		$rtwidth 	= pl_setting('ba_fotos_post_date_col') ? pl_setting('ba_fotos_post_date_col').'%' : '15%';
  		$align 		= pl_setting('ba_fotos_post_header_layout') ? pl_setting('ba_fotos_post_header_layout') : 'title-left';
+
+ 		$ltalign	= pl_setting('ba_fotos_post_title_align') ? pl_setting('ba_fotos_post_title_align') : false;
+ 		$rtalign	= pl_setting('ba_fotos_post_date_align') ? pl_setting('ba_fotos_post_date_align') : false;
+
  		$title      = (is_home()) ? sprintf('<h2 class="fotos-entry-title"><a href="%s">%s</a></h2>',get_permalink(),get_the_title()) : sprintf('<h2 class="fotos-entry-title">%s</h2>',get_the_title());
 
  		$meta		= sprintf('<p class="fotos-entry-cats">Filed under %s</p>',do_shortcode('[post_categories]'));
 
- 		$left 		= sprintf('<div class="span%s fotos-entry-title-wrap">%s%s</div>',$ltwidth,$title,$meta);
- 		$right 		= sprintf('<div class="span%s fotos-entry-date-wrap">%s</div>',$rtwidth,$date->date_markup());
+ 		$left 		= sprintf('<div style="width:%s;" class="fotos-entry-title-wrap %s">%s%s</div>',$ltwidth,$ltalign,$title,$meta);
+ 		$right 		= sprintf('<div style="width:%s;" class="fotos-entry-date-wrap %s">%s</div>',$rtwidth,$rtalign,$date->date_markup());
 
- 		printf('<header class="row fotos-post-header fotos-post-%s">%s%s</header>',$align,$left,$right);
+ 		printf('<header class=" fix fotos-post-header fotos-post-%s">%s%s</header>',$align,$left,$right);
 
 	}
 
@@ -118,7 +121,7 @@ class fotosPostLoop {
 		printf('</div></footer>');
 
 	}
-	
+
 	function plain_mode(){
 
 		$out	= '';
