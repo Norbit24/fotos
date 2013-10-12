@@ -22,3 +22,340 @@
         }
     }
 }
+
+
+
+////////////////////////
+////////////////////////
+//Post Header
+////////////////////////
+////////////////////////
+
+.fotos-post-header {
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid @baseContrast;
+
+    &.fotos-post-title-left {
+        .fotos-entry-date-stack-style {
+            float: right;
+        }
+    }
+    &.fotos-post-title-right {
+        .fotos-entry-title-wrap {
+            float: right;
+            margin-right:0;
+        }
+        .fotos-entry-date-wrap {
+            float: left;
+            margin-left:0;
+        }
+    }
+    &.fotos-post-title-center {
+        .fotos-entry-title-wrap {
+            margin-bottom:10px;
+        }
+        .fotos-entry-title-wrap,
+        .fotos-entry-date-wrap {
+            margin-left:0;
+            margin-right:0;
+            text-align: center;
+            display: block;
+            float:none;
+            width:100% !important; //overriding js
+        }
+    }
+}
+
+
+.fotos {
+    .fotos-entry-title-wrap,
+    .fotos-entry-date-wrap {
+        margin-bottom:0;
+        float: left;
+    }
+}
+
+.fotos-entry-title {
+    margin:0;
+    line-height: @plHeaderSize + 18;
+}
+
+.fotos-entry-date-wrap {
+    text-align: right;
+
+    .fotos-entry-date{
+        font-size:@plFontSize - 2;
+        display: inline-block;
+    }
+}
+
+.fotos-entry-cats {
+    margin:0;
+    font-size:13px;
+    line-height: 15px;
+    color:fadeout(@pl-text,15);
+}
+
+// Date Block Style
+.fotos-entry-date-block-style {
+    width:92px;
+    float: right;
+    margin-top:20px;
+
+    .fotos-date-block-day {
+        float: left;
+        font-weight: bold;
+        font-size: 2em;
+        margin-top:4px;
+        letter-spacing: -0.1em;
+    }
+    .fotos-date-block-year {
+
+    }
+    .fotos-date-block-monthyear {
+        text-align: center;
+        border-right: none;
+        padding:4px 0 0 4px;
+        overflow: hidden;
+    }
+    .fotos-date-block-month,
+    .fotos-date-block-year {
+        line-height:0.75em;
+        font-size:0.83em;
+        text-align: left;
+        overflow: hidden;
+    }
+    .fotos-date-block-month {
+        text-transform: uppercase;
+        margin-bottom:4px;
+    }
+}
+
+// Date Stacked
+.fotos-entry-date-stack-style {
+    text-align: center;
+
+    .fotos-date-block-month {
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .fotos-date-block-month,
+    .fotos-date-block-year{
+        line-height:0.75em;
+        font-size:0.83em;
+    }
+    .fotos-date-block-day {
+        font-weight: bold;
+        font-size: 1.7em;
+        line-height: 1em;
+    }
+
+}
+
+////////////////////////
+////////////////////////
+// Post Content
+////////////////////////
+////////////////////////
+
+.fotos-mag-col-guard (@plContentWidth) when(@plContentWidth >= 1024) {
+    .content-columns(3,20);
+}
+.fotos-mag-col-guard (@plContentWidth) when(@plContentWidth < 1024) {
+    .content-columns(2,20);
+}
+
+.fotos-article {
+
+    p {
+        &:first-of-type{
+            margin-top:5px;
+        }
+    }
+
+    .fotos-post-content.fotos-mag-col {
+
+        .fotos-mag-col-guard (@plContentWidth);
+
+        @media(max-width:@resPortraitTablet) {
+            .content-columns(2,20);
+        }
+        @media(max-width:@resPhoneLandscape) {
+            .content-columns(1,0);
+        }
+
+    }
+}
+
+////////////////////////
+////////////////////////
+// Post Social
+////////////////////////
+////////////////////////
+.section-fotos-post-social {
+    //.pl-section-pad {
+        //padding:15px;
+        //.box-sizing(border-box);
+    //}
+}
+
+.fotos-social-share-wrap {
+
+    &.center {
+        text-align: center;
+    }
+    &.tar {
+        text-align: right;
+    }
+    &.tal {
+        text-align: left;
+    }
+
+    a {
+        display: inline-block;
+        margin:0 10px;
+
+        &:first-child {
+            margin-left:0;
+        }
+        &:last-child {
+            margin-right:0;
+        }
+    }
+}
+
+
+////////////////////////
+////////////////////////
+// Post Comments
+////////////////////////
+////////////////////////
+
+.ba-fotos-comment-trigger-wrap {
+    margin-top:20px;
+    border-top:1px solid @baseContrast;
+    border-bottom:1px solid @baseContrast;
+    padding:10px 0;
+
+    a {
+        display: inline-block;
+        color:inherit;
+
+        &:hover {
+            cursor: pointer;
+            color:@pl-link;
+        }
+    }
+
+    .fotos-comments-num {
+        float: right;
+    }
+}
+
+.ba-fotos-comment-wrap {
+    padding:10px;
+    .box-sizing(border-box);
+    border-bottom:1px solid @baseContrast;
+
+    .fotos-single-comment {
+        font-size:12px;
+        margin-bottom:10px;
+
+        &:last-child {
+            margin-bottom:0;
+        }
+
+        .fotos-comment-date,
+        .fotos-comment-content {
+            margin:0;
+        }
+
+        .fotos-comment-content {
+            line-height: 1.2em;
+            padding-top:3px;
+        }
+
+        .fotos-comment-date small{
+            margin-top:3px;
+            font-size:11px;
+        }
+    }
+
+    .ba-fotos-commentform {
+        margin:0;
+
+        form {
+            input {
+                width:100%;
+                height:auto;
+            }
+
+            textarea {
+                font-size:inherit;
+            }
+        }
+
+        .fotos-form-submit,
+        .fotos-label-control {
+            font-size:12px;
+            line-height:18px;
+            margin-bottom:0;
+        }
+        .fotos-label-full {
+            width:100%;
+            height:auto;
+            font-size: 14px;
+            line-height: 14px;
+        }
+    }
+
+}
+
+.fotos {
+    .ba-fotos-commentform form {
+        margin-bottom: 0;
+    }
+}
+
+.hentry .fotos-comment-list {
+    margin:0;
+    height:212px;
+    overflow-y:auto;
+    width:100%;
+    position: relative;
+
+    .odd {
+        padding:5px;
+        .box-sizing(border-box);
+        background: fadeout(@pl-base,30);
+    }
+
+    .fotos-no-comments {
+        color:fadeout(@pl-text,60);
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 46%;
+        left: 0;
+        width: 100%;
+    }
+
+    .children {
+        list-style: none;
+        margin-top:0;
+        margin-bottom:10px;
+
+        &:before {
+            content:'';
+            position: absolute;
+            margin-top:-7px;
+            left:0;
+            height:18px;
+            width:12px;
+            border-bottom:1px solid @baseContrast;
+            border-left:1px solid @baseContrast;
+        }
+    }
+}

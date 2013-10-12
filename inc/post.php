@@ -41,7 +41,9 @@ class fotosPostLoop {
 
 	function post_content(){
 
- 		printf('<section class="fotos-post-content">%s</section>', apply_filters('the_content',get_the_content()));
+		$col = pl_setting('ba_fotos_post_content_cols') ? 'fotos-mag-col' : false;
+
+ 		printf('<section class="fotos-post-content %s">%s%s</section>',$col, apply_filters('the_content',get_the_content()),pledit(get_the_ID()) );
 
 	}
 

@@ -365,23 +365,26 @@ html[xmlns] .slides {
 }
 
 // UI HACKS
-.opt-ba_fotos_social_mode,
-.opt-ba_fotos_social_align,
-.opt-ba_fotos_custom_social,
-.opt-ba_fotos_social_separator,
-.opt-ba_fotos_post_date_style,
-.opt-ba_fotos_nav_colors,
-.opt-ba_fotos_nav_options,
-.opt-ba_fotos_post_header_layout,
-.opt-ba_fotos_post_title_col,
-.opt-ba_fotos_post_date_col,
-.opt-ba_fotos_post_title_align,
-.opt-ba_fotos_post_date_align {
-    width:33.333%;
+div[class*='opt-ba_']{
+
+    @width: 33.333%;
+    @pad:   20px;
+
+    width:@width;
     display:inline-block;
     vertical-align: top;
-    padding:20px;
+    padding:@pad;
     .box-sizing(border-box);
+
+    @media(max-width:1000px){
+        width:50%;
+        padding: 10px;
+    }
+    @media(max-width:767px){
+        width:100%;
+        display: block;
+        padding:0 0 20px 0;
+    }
 }
 
 
