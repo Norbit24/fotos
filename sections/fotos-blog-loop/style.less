@@ -94,7 +94,7 @@
     margin:0;
     font-size:13px;
     line-height: 15px;
-    color:fadeout(@pl-text,15);
+    color:fadeout(@fotos-post-meta,15);
 }
 
 // Date Block Style
@@ -153,6 +153,13 @@
     }
 
 }
+
+.fotos-entry-date-stack-style,
+.fotos-entry-date-block-style,
+.fotos-entry-date {
+    color:@fotos-post-date;
+}
+
 
 ////////////////////////
 ////////////////////////
@@ -233,15 +240,21 @@
 ////////////////////////
 ////////////////////////
 
+.ba-fotos-comment-main-wrap {
+    background: darken(@fotos-post-comm-bg,2);
+}
+
 .ba-fotos-comment-trigger-wrap {
     margin-top:20px;
-    border-top:1px solid @baseContrast;
-    border-bottom:1px solid @baseContrast;
-    padding:10px 0;
+    border-top:1px solid darken(@fotos-post-comm-bg,7);
+    border-bottom:1px solid darken(@fotos-post-comm-bg,7);
+    padding:6px 10px;
+    .box-sizing(border-box);
 
     a {
+        font-size:@plFontSize - 2;
         display: inline-block;
-        color:inherit;
+        color:@fotos-post-comm-txt;
 
         &:hover {
             cursor: pointer;
@@ -257,7 +270,8 @@
 .ba-fotos-comment-wrap {
     padding:10px;
     .box-sizing(border-box);
-    border-bottom:1px solid @baseContrast;
+    background:@fotos-post-comm-bg;
+    border-bottom:1px solid darken(@fotos-post-comm-bg,7);
 
     .fotos-single-comment {
         font-size:12px;
@@ -286,15 +300,17 @@
     .ba-fotos-commentform {
         margin:0;
 
-        form {
-            input {
-                width:100%;
-                height:auto;
-            }
+        input,
+        textarea {
+            width:100%;
+            height:auto;
+            font-size:inherit;
+            .box-shadow(none);
+            border:1px solid darken(@fotos-post-comm-bg,7);
+        }
 
-            textarea {
-                font-size:inherit;
-            }
+        .fotos-label-control {
+            color:fadeout(@fotos-post-comm-txt,15);
         }
 
         .fotos-form-submit,
@@ -329,11 +345,11 @@
     .odd {
         padding:5px;
         .box-sizing(border-box);
-        background: fadeout(@pl-base,30);
+        background: fadeout(@fotos-post-comm-bg,30);
     }
 
     .fotos-no-comments {
-        color:fadeout(@pl-text,60);
+        color:fadeout(@fotos-post-comm-txt,60);
         text-align: center;
         display: block;
         position: absolute;
@@ -354,8 +370,8 @@
             left:0;
             height:18px;
             width:12px;
-            border-bottom:1px solid @baseContrast;
-            border-left:1px solid @baseContrast;
+            border-bottom:1px solid darken(@fotos-post-comm-bg,7);
+            border-left:1px solid darken(@fotos-post-comm-bg,7);
         }
     }
 }

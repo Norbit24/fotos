@@ -16,6 +16,18 @@ class fotosGlobalOptions {
 	function __construct(){
 
 		$this->theme_options();
+
+		add_filter('pless_vars',array($this,'fotos_less'));
+	}
+
+	function fotos_less($less){
+
+		$less['fotos-post-meta'] 		= pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
+		$less['fotos-post-date'] 		= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
+		$less['fotos-post-comm-bg'] 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
+		$less['fotos-post-comm-txt'] 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
+
+		return $less;
 	}
 
 	function theme_options(){
@@ -159,6 +171,18 @@ class fotosGlobalOptions {
 						'fotos-date-stacked'	=> array('name' => __( 'Stacked', 'fotos' ) ),
 						'fotos-date-minimal'	=> array('name' => __( 'Minimal Style Date', 'fotos' ) ),
 					),
+				),
+				array(
+					'title'                   	=> __( 'Post Categories Text', 'fotos' ),
+					'type'	                  	=> 'text',
+					'key' 						=> 'ba_fotos_post_cat_text',
+					'help'						=> __('Here you can replace the text underneath the post title. By default it says <em>Filed under</em>, but you can change that here.', 'fotos')
+				),
+				array(
+					'title'                   	=> __( 'Post Tags Text', 'fotos' ),
+					'type'	                  	=> 'text',
+					'key' 						=> 'ba_fotos_post_tag_text',
+					'help'						=> __('Here you can replace the text underneath the post title. By default it says <em>Tagged with</em>, but you can change that here.', 'fotos')
 				)
 	        )
 		);
@@ -235,6 +259,44 @@ class fotosGlobalOptions {
 					)
 
 				)
+			),
+			'help' => ''
+		);
+
+		$options[] = array(
+			'pos'            					=> 25,
+		   	'name'           					=> __('Fotos - Colors','fotos'),
+		   	'icon'           					=> 'icon-circle',
+			'type' 								=> 'multi',
+			'opts' 								=> array(
+				array(
+					'title'   					=> __('Post Meta', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#777',
+				    'key'						=> 'ba_fotos_post_meta_color',
+					'help' 						=> __('This is the text that shows what categories the post is in.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Date', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#777',
+				    'key'						=> 'ba_fotos_post_date_color',
+					'help' 						=> __('Optionally change the color of the post date. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Comments Background', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#fff',
+				    'key'						=> 'ba_fotos_post_comm_bg',
+					'help' 						=> __('Optionally set a background color for the post comments. By default it will take whatever color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Comments Text', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#333',
+				    'key'						=> 'ba_fotos_post_comm_txt',
+					'help' 						=> __('Optionally change the color of the text for teh post comments. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+				),
 			),
 			'help' => ''
 		);
