@@ -96,18 +96,6 @@ class fotosGlobalOptions {
 					'title'						=> __('Separator Images (optional)', 'fotos'),
 					'type'						=> 'image_upload',
 					'key'						=> 'ba_fotos_social_separator',
-				),
-				array(
-					'title'                   	=> __( 'Date Format', 'fotos' ),
-					'type'	                  	=> 'select',
-					'key' 						=> 'ba_fotos_post_date_style',
-					'default'					=> 'fotos-date-default',
-					'opts'						=> array(
-						'fotos-date-default' 	=> array('name' => __( 'Full Date', 'fotos' ) ),
-						'fotos-date-block'		=> array('name' => __( 'Block Style Date', 'fotos' ) ),
-						'fotos-date-stacked'	=> array('name' => __( 'Stacked', 'fotos' ) ),
-						'fotos-date-minimal'	=> array('name' => __( 'Minimal Style Date', 'fotos' ) ),
-					),
 				)
 			),
 			'help' => ''
@@ -221,6 +209,18 @@ class fotosGlobalOptions {
 						'pull-left' 			=> array('name' => __( 'Align Left', 'fotos' ) ),
 						'pull-right'			=> array('name' => __( 'Align Right', 'fotos' ) ),
 						'center'				=> array('name' => __( 'Centered', 'fotos' ) ),
+					),
+				),
+				array(
+					'title'                   	=> __( 'Post Date Format', 'fotos' ),
+					'type'	                  	=> 'select',
+					'key' 						=> 'ba_fotos_post_date_style',
+					'default'					=> 'fotos-date-default',
+					'opts'						=> array(
+						'fotos-date-default' 	=> array('name' => __( 'Full Date', 'fotos' ) ),
+						'fotos-date-block'		=> array('name' => __( 'Block Style Date', 'fotos' ) ),
+						'fotos-date-stacked'	=> array('name' => __( 'Stacked', 'fotos' ) ),
+						'fotos-date-minimal'	=> array('name' => __( 'Minimal Style Date', 'fotos' ) ),
 					),
 				)
 	        )
