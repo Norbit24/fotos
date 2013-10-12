@@ -34,7 +34,7 @@ function fotos_mask_mode($toolbar){
 
 	unset($toolbar['settings']['panel']['navbar']);
 
-	plprint($toolbar);
+	//plprint($toolbar);
 	return $toolbar;
 }
 
