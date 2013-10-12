@@ -71,18 +71,30 @@ class fotosPostLoop {
 		$pinterest 	= self::pinterest(array('permalink' => $perm, 'image' => $thumb, 'desc' => $desc));
 		$mode 		= pl_setting('ba_fotos_social_mode') ? pl_setting('ba_fotos_social_mode') : 'icon';
 		$layout 	= pl_setting('ba_fotos_social_align') ? pl_setting('ba_fotos_social_align') : 'tal';
+		$sharetxt 	= (pl_setting('ba_fotos_social_share_txt')) ? sprintf('<span class="ba-fotos-social-share-txt">%s</span>',pl_setting('ba_fotos_social_share_txt')) : false;
+		$shareimg	= pl_setting('ba_fotos_social_share_img');
+		$author 	= get_the_author();
 
 		?>
 		<section class="fotos-social-share-wrap <?php echo $layout;?>">
 			<?php
 
-				if('plain' == $mode) {
-					echo $this->plain_mode();
-				} elseif ('image' == $mode) {
-					echo $this->img_mode();
+				if ($shareimg) {
+					printf('<img src="%s" alt="share %s posts"/>',$shareimg, $author);
 				} else {
-					echo $this->icon_mode();
+					printf('%s',$sharetxt);
 				}
+
+				switch($mode):
+					case 'plain':
+						echo $this->plain_mode();
+					break;
+					case 'image':
+						echo $this->img_mode();
+					break;
+					default:
+						echo $this->icon_mode();
+				endswitch;
 
 			?>
 		</section>
@@ -95,19 +107,25 @@ class fotosPostLoop {
 		$withcomments = 1;
 		$commnum = number_format_i18n( get_comments_number($post->ID) ); // this is right
 
+		$showcommtxt = pl_setting('ba_fotos_post_comment_text') ? pl_setting('ba_fotos_post_comment_text') : __('Show Comments', 'fotos');
+		$customcommtxt = pl_setting('ba_fotos_post_comm_custom_txt') ? pl_setting('ba_fotos_post_comm_custom_txt') : __('Comment', 'fotos');
+
+		$customcommtxtplural = str_replace($customcommtxt, $customcommtxt.'s', $customcommtxt);
+
 		$args = array('post_id' => $post->ID,'order'   => 'ASC');
 		$wp_query->comments = get_comments( $args );
 
 		if($commnum == 1)
-			$commtext = '<i class="icon-comment"></i> 1 Note';
+			$commtext = sprintf('<i class="icon-comment"></i> 1 %s',$customcommtxt);
 		if($commnum > 1)
-			$commtext = sprintf('<i class="icon-comment"></i> %s Notes',$commnum);
+			$commtext = sprintf('<i class="icon-comments"></i> %s %s',$commnum,$customcommtxtplural);
 		if($commnum == 0)
 			$commtext = false;
 
+
 		?><footer class="ba-fotos-comment-main-wrap">
 			<div class="ba-fotos-comment-trigger-wrap fix">
-				<a class="fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>">Show Comments</a>
+				<a class="fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><?php echo $showcommtxt;?></a>
 				<a class="fotos-comments-num fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><?php echo $commtext;?></a>
 			</div>
 			<?php
@@ -300,12 +318,14 @@ class fotosPostLoop {
 		$wp_query->comments = get_comments( $args );
 		$commnum = number_format_i18n( get_comments_number($post->ID) ); // this is right
 
+		$nocommtxt = pl_setting('ba_fotos_post_no_comment_text') ? pl_setting('ba_fotos_post_no_comment_text') : __('No comments found.', 'fotos');
+
 		printf('<div class="ba-fotos-comment-wrap"><div class="row ba-fotos-comment-drawer"><div class="span7 zmb">');
 
 			printf('<ul class="unstyled fotos-comment-list">');
 
 				if($commnum == 0) {
-					printf('<p class="fotos-no-comments">No Notes Found</p>');
+					printf('<p class="fotos-no-comments">%s</p>',$nocommtxt);
 				} else {
 					wp_list_comments( array( 'callback' => array($this,'fotos_comment_template') ) );
 				}

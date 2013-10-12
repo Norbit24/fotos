@@ -203,7 +203,28 @@ class fotosGlobalOptions {
 		);
 		
 		$options[] = array(
-			'pos'            					=> 24,
+		   	'name'           					=> __('Fotos - Post Comments','fotos'),
+		   	'icon'           					=> 'icon-circle',
+			'type' 								=> 'multi',
+	        'pos'   							=> 24,
+	        'opts'  							=> array(
+				array(
+					'title'                   	=> __( 'Post Comments Text', 'fotos' ),
+					'type'	                  	=> 'text',
+					'key' 						=> 'ba_fotos_post_comment_text',
+					'help'						=> __('By default this reads "Show Comments" but you can change this here.','fotos'),
+				),
+				array(
+					'title'                   	=> __( 'No Comments Found Text', 'fotos' ),
+					'type'	                  	=> 'text',
+					'key' 						=> 'ba_fotos_post_no_comment_text',
+					'help'						=> __('By default this reads "No comments found." but you can change this here.','fotos'),
+				),
+	        )
+		);
+
+		$options[] = array(
+			'pos'            					=> 25,
 		   	'name'           					=> __('Fotos - Post Social','fotos'),
 		   	'icon'           					=> 'icon-circle',
 			'type' 								=> 'multi',
@@ -235,6 +256,19 @@ class fotosGlobalOptions {
 					'title'						=> __('Separator Images (optional)', 'fotos'),
 					'type'						=> 'image_upload',
 					'key'						=> 'ba_fotos_social_separator',
+					'help'						=> __('This will be placed between the social sharing links.', 'fotos')
+				),
+				array(
+					'title'						=> __('Social Sharing Text', 'fotos'),
+					'type'						=> 'text',
+					'key'						=> 'ba_fotos_social_share_txt',
+					'help'						=> __('Use this option to add some text before the sharing icons. Maybe something like "share this post" would be fitting ya? You can also use an image instead. Check out the next option over!', 'fotos')
+				),
+				array(
+					'title'						=> __('Social Sharing Image (instead of text)', 'fotos'),
+					'type'						=> 'image_upload',
+					'key'						=> 'ba_fotos_social_share_img',
+					'help'						=> __('Upload an image to use <strong>in place</strong> of the text that reads "Share Post."', 'fotos')
 				),
 				array(
 					'title'						=> __('Custom Social Images', 'fotos'),
@@ -264,7 +298,7 @@ class fotosGlobalOptions {
 		);
 
 		$options[] = array(
-			'pos'            					=> 25,
+			'pos'            					=> 26,
 		   	'name'           					=> __('Fotos - Colors','fotos'),
 		   	'icon'           					=> 'icon-circle',
 			'type' 								=> 'multi',
