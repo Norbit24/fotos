@@ -151,7 +151,7 @@ class fotosPostLoop {
 		$fbimg  	= pl_setting('ba_fotos_fb_img');
  		$pinimg 	= pl_setting('ba_fotos_pinterest_img');
  		$getsep 	= pl_setting('ba_fotos_social_separator');
- 		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter" style="background:url(%s) no-repeat;height:15px;width:15px;overflow:hidden;"></span>',$getsep) : false;
+ 		$sep 		= ($getsep) ? sprintf('<span class="ba-fotos-social-post-delimiter" style="background:url(%s) no-repeat;height:15px;width:15px;overflow:hidden;"></span>',$getsep) : false;
 
 		$out 		= '';
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$title,$perm,$handle,$twitimg,$title,$sep);
