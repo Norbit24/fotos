@@ -16,7 +16,10 @@ class baFotosSeparator extends PageLinesSection {
  	function section_template() {
 
  		$type = $this->opt('ba_fotos_break_type') ? $this->opt('ba_fotos_break_type') : 'solid';
- 		printf('<div class="pl-content"><hr class="fotos-break fotos-break-%s"></div>',$type);
+ 		$margintop = $this->opt('ba_fotos_break_margin_top') ? $this->opt('ba_fotos_break_margin_top') : false;
+ 		$marginbottom = $this->opt('ba_fotos_break_margin_bottom') ? $this->opt('ba_fotos_break_margin_bottom') : false;
+ 		
+ 		printf('<div class="pl-content" style="margin-top:%s;margin-bottom:%s;"><hr class="fotos-break fotos-break-%s"></div>',$margintop,$marginbottom,$type);
 
 	}
 
@@ -30,6 +33,7 @@ class baFotosSeparator extends PageLinesSection {
 			'type'	                  	=> 'multi',
 			'opts'	                  	=> array(
 				array(
+					'col'				=> 4,
 					'key'			  	=> 'ba_fotos_break_type',
 					'type' 			 	=> 'select',
 					'default'		  	=> 'solid',
@@ -41,6 +45,20 @@ class baFotosSeparator extends PageLinesSection {
 						'dotted' 		=> array('name'	=> 'Dotted'),
 					),
 				),
+				array(
+					'col'				=> 4,
+					'key'				=> 'ba_fotos_break_margin_top',
+					'type'				=> 'text',
+					'title'				=> __('Margin Top', 'fotos'),
+					'help'				=> __('Acceptable values include 10% or 10px.', 'fotos')
+				),
+				array(
+					'col'				=> 4,
+					'key'				=> 'ba_fotos_break_margin_bottom',
+					'type'				=> 'text',
+					'title'				=> __('Margin Bottom', 'fotos'),
+					'help'				=> __('Acceptable values include 10% or 10px.', 'fotos')
+				)
 			)
 
 		);
