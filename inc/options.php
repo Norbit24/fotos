@@ -209,6 +209,12 @@ class fotosGlobalOptions {
 					'key' 						=> 'ba_fotos_content_shadow',
 					'help'						=> __('Add a shadow to the boxed wrap area.','fotos'),
 				),
+				array(
+					'title'						=> __('Article Separator', 'fotos'),
+					'type'						=> 'textarea',
+					'key'						=> 'ba_fotos_art_sep',
+					'help'						=> __('Whatever you put here will be placed in between the articles on the home page of the posts. You can enter HTML here as well.', 'fotos')
+				)
 	        )
 		);
 		

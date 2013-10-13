@@ -33,7 +33,8 @@ class fotosBlogLoop extends PageLinesSection {
 
  	function section_template() {
 
- 		$loop = new fotosPostLoop;
+ 		$loop 	= new fotosPostLoop;
+ 		$artsep = pl_setting('ba_fotos_art_sep');
 
  		if(have_posts()): while(have_posts()) : the_post();
 
@@ -43,6 +44,10 @@ class fotosBlogLoop extends PageLinesSection {
 	 			$loop->post_social();
 	 			$loop->post_comments();
 	 		?></article><?php
+
+	 		if($artsep && is_home()){
+	 			echo $artsep;
+	 		}
 
  		endwhile; else:
  			echo 'Sorry no posts found';

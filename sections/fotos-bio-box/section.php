@@ -19,10 +19,10 @@ class fotosBioBox extends PageLinesSection {
  		$rtwidth 	= $this->opt('ba_fotos_bio_img_col') ? $this->opt('ba_fotos_bio_img_col') : 4;
  		$align 		= $this->opt('ba_fotos_bio_layout') ? $this->opt('ba_fotos_bio_layout') : 'title-left';
 
- 		$text 		= $this->opt('ba_fotos_bio_text') ? $this->opt('ba_fotos_bio_text') : 'I love unicorns.';
- 		$img		= $this->opt('ba_fotos_bio_image') ? $this->opt('ba_fotos_bio_image') : 'http://placehold.it/500/500';
+ 		$text 		= $this->opt('ba_fotos_bio_text') ? $this->opt('ba_fotos_bio_text') : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim augue risus, a euismod lacus laoreet sed. Morbi volutpat sapien at metus tempus euismod ultricies eget leo. Suspendisse iaculis augue in euismod mattis. Donec id gravida mauris, et consectetur augue.';
+ 		$img		= $this->opt('ba_fotos_bio_image') ? $this->opt('ba_fotos_bio_image') : PL_CHILD_URL.'/assets/img/fotos-default-dark.png';
 
- 		$left 		= sprintf('<div class="span%s fotos-bio-txt-wrap" data-sync="ba_fotos_bio_text">%s%s</div>',$ltwidth,$text,$this->links());
+ 		$left 		= sprintf('<div class="span%s fotos-bio-txt-wrap">%s%s</div>',$ltwidth,$text,$this->links());
  		$right 		= sprintf('<div class="span%s fotos-bio-img-wrap"><img data-sync="ba_fotos_bio_image" class="fotos-bio-img" alt="" src="%s"></div>',$rtwidth,$img);
 
  		printf('<div class="row fotos-bio-box fotos-bio-box-%s">%s%s</div>',$align,$left,$right);
