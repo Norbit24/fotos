@@ -1,11 +1,12 @@
 <?php
 /*
-Section: Fotos Advanced Nav
+Section: Navigation
 Author: Nick Haskins
 Author URI: http://nickhaskins.co
 Version: 1.0
 Description: A full-featured navigation system with horizontal, vertical, fixed top, fixed bottom, and unlimited sub-menus.
 Class Name: fotosNav
+Filter: nav
 */
 
 class fotosNav extends PageLinesSection {

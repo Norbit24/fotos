@@ -4,6 +4,7 @@
 	Description: Create boxes of images.
 	Class Name: baFotosBoxes
 	Version: 1.0
+	Filter: component
 */
 
 class baFotosBoxes extends PageLinesSection{

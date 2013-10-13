@@ -5,6 +5,7 @@
 	Class Name: baFotosIcons
 	Version: 1.0
 	Loading: active
+	Filter: social
 */
 
 class baFotosIcons extends PageLinesSection{
@@ -77,7 +78,7 @@ class baFotosIcons extends PageLinesSection{
 					),
 					array(
 						'key'		=> 'icon',
-						'label'		=> __( 'Link', 'fotos' ),
+						'label'		=> __( 'Icon', 'fotos' ),
 						'type'		=> 'select_icon'
 					),
 					array(

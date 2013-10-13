@@ -6,6 +6,7 @@ Author URI: http://nickhaskins.co
 Version: 1.0
 Description: A separator section providing options for a solid, double, dashed, or dotted line. Can be used full-width, or content-width.
 Class Name: baFotosSeparator
+Filter: component
 */
 
 class baFotosSeparator extends PageLinesSection {

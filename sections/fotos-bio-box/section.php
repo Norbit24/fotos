@@ -1,12 +1,13 @@
 <?php
 /*
-Section: Simple Bio Box
+Section: Bio Box
 Author: Nick Haskins
 Author URI: http://nickhaskins.co
 Version: 1.0
 Description: Displays a bio image, bio text, and configurable social links.
 Class Name: fotosBioBox
 Loading: active
+Filter: component
 */
 
 class fotosBioBox extends PageLinesSection {

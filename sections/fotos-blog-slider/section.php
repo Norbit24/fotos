@@ -4,7 +4,7 @@
 	Description: A sliding content section that can use posts, or not, and can run full width.
 	Class Name: baFotosBlogSlider
 	Version: 1.0
-	Filter: full-width
+	Filter: full-width, slider
 */
 
 class baFotosBlogSlider extends PageLinesSection{

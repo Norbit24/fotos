@@ -7,6 +7,8 @@ Version: 1.0
 Description: Displays the posts for the blog page
 Class Name: fotosBlogLoop
 Loading: active
+Filter: component
+
 */
 
 class fotosBlogLoop extends PageLinesSection {
