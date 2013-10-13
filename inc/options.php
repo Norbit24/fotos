@@ -34,6 +34,9 @@ class fotosGlobalOptions {
 		$less['fotos-post-comm-bg'] 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
 		$less['fotos-post-comm-txt'] 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
 
+		$less['fotos-box-shadow-color'] = pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
+		
+
 		return $less;
 	}
 
@@ -204,7 +207,7 @@ class fotosGlobalOptions {
 					'title'                   	=> __( 'Content Shadow', 'fotos' ),
 					'type'	                  	=> 'check',
 					'key' 						=> 'ba_fotos_content_shadow',
-					'help'						=> __('Add a box shadow around the main content column.','fotos'),
+					'help'						=> __('Add a shadow to the boxed wrap area.','fotos'),
 				),
 	        )
 		);
@@ -400,6 +403,13 @@ class fotosGlobalOptions {
 				    'default'					=> '#333',
 				    'key'						=> 'ba_fotos_post_comm_txt',
 					'help' 						=> __('Optionally change the color of the text for teh post comments. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Content Shadow Color', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#111',
+				    'key'						=> 'ba_fotos_box_shadow_color',
+					'help' 						=> __('Optionally change the color of the box shadow around the main content column. This only takes effect if you have the option checked under Fotos-->Post Content.' , 'fotos'),
 				),
 			),
 			'help' => ''
