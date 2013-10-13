@@ -16,8 +16,14 @@ class fotosGlobalOptions {
 	function __construct(){
 
 		$this->theme_options();
+		$this->global_misc();
 
 		add_filter('pless_vars',array($this,'fotos_less'));
+	}
+
+	function global_misc(){
+		if(pl_setting('ba_fotos_content_shadow'))
+			pagelines_add_bodyclass('fotos-content-shadow');
 	}
 
 	function fotos_less($less){
@@ -195,10 +201,10 @@ class fotosGlobalOptions {
 	        'pos'   							=> 23,
 	        'opts'  							=> array(
 				array(
-					'title'                   	=> __( 'Post Content Columns', 'fotos' ),
+					'title'                   	=> __( 'Content Shadow', 'fotos' ),
 					'type'	                  	=> 'check',
-					'key' 						=> 'ba_fotos_',
-					'help'						=> __('Toggling this will split your post content into magazine style columns.','fotos'),
+					'key' 						=> 'ba_fotos_content_shadow',
+					'help'						=> __('Add a box shadow around the main content column.','fotos'),
 				),
 	        )
 		);
