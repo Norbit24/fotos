@@ -365,25 +365,28 @@ html[xmlns] .slides {
 }
 
 // UI HACKS
-div[class*='opt-ba_']{
 
-    @width: 33.333%;
-    @pad:   20px 20px 0;
+#PageLinesToolbox .panel-theme{
+    div[class*='opt-ba_']{
 
-    width:@width;
-    display:inline-block;
-    vertical-align: top;
-    padding:@pad;
-    .box-sizing(border-box);
+        @width: 33.333%;
+        @pad:   20px 20px 0;
 
-    @media(max-width:1000px){
-        width:50%;
-        padding: 10px;
-    }
-    @media(max-width:767px){
-        width:100%;
-        display: block;
-        padding:0 0 20px 0;
+        width:@width;
+        display:inline-block;
+        vertical-align: top;
+        padding:@pad;
+        .box-sizing(border-box);
+
+        @media(max-width:1000px){
+            width:50%;
+            padding: 10px;
+        }
+        @media(max-width:767px){
+            width:100%;
+            display: block;
+            padding:0 0 20px 0;
+        }
     }
 }
 
