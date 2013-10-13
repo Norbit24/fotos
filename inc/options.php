@@ -306,6 +306,56 @@ class fotosGlobalOptions {
 
 		$options[] = array(
 			'pos'            					=> 26,
+		   	'name'           					=> __('Fotos - Contact Form','fotos'),
+		   	'icon'           					=> 'icon-bullseye',
+			'type' 								=> 'multi',
+			'opts' 								=> array(
+				array(
+					'key' 						=> 'ba_fotos_contact_email',
+					'type'						=> 'text',
+					'label'						=> __( 'Default email send address', 'fotos' ),
+					'help'						=> __( 'Email address to send for To. Leave blank to use admin email', 'fotos' )
+				),
+				array(
+					'key' 						=> 'ba_fotos_contact_enable_extra',
+					'type'						=> 'check',
+					'default'					=> false,
+					'label'						=> __( 'Enable extra custom field', 'fotos' )
+				),
+				array(
+					'key' 						=> 'ba_fotos_contact_extra_field',
+					'type'						=> 'text',
+					'default'					=> '',
+					'label'						=> __( 'Extra field text', 'fotos' )
+				),
+				array(
+					'key' 						=> 'ba_fotos_contact_enable_captcha',
+					'type'						=> 'check',
+					'default'					=> true,
+					'label'						=> __( 'Enable simple antispam question', 'fotos' )
+				),
+				array(
+					'key' 						=> 'ba_fotos_contact_captcha_question',
+					'type'						=> 'text',
+					'default'					=> '2 + 5',
+					'label'						=> __( 'Antispam question', 'fotos' )
+				),
+				array(
+					'key' 						=> 'ba_fotos_contact_captcha_answer',
+					'type'						=> 'text',
+					'default'					=> '7',
+					'label'						=> __( 'Antispam answer', 'fotos' )
+				),
+				array(
+					'key' 						=> 'ba_fotos_contact_email_layout',
+					'type'						=> 'text',
+					'label'						=> __( 'Format for email subject. Possible values: %name% %blog%<br />Defaults: [%blog%] New message from %name%.', 'fotos' ), 
+				)
+			)
+		);
+
+		$options[] = array(
+			'pos'            					=> 27,
 		   	'name'           					=> __('Fotos - Colors','fotos'),
 		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',

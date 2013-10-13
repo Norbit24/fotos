@@ -21,6 +21,7 @@ class baFotosTheme {
 	function init() {
 
 		include('libs/custom-meta-boxes/custom-meta-boxes.php' );
+		include('inc/contact.php');
 		include('inc/unset.php');
 		include('inc/meta.php');
 		include('inc/options.php');
