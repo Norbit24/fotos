@@ -41,7 +41,6 @@ class baFotosContact extends PageLinesSection{
 		</script>
 		<?php
 
-		plprint(pl_setting('ba_fotos_contact_email'));
 	}
 
 	function section_template(){
