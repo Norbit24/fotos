@@ -39,7 +39,7 @@ class fotosGlobalOptions {
 			'pos'            					=> 20,
 			'key'								=> 'fotos_skins_setup',
 		   	'name'           					=> __('Fotos - Skins','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 	        'type'      						=> 'multi',
 	        'opts'          					=> array(
 	        	array(
@@ -54,7 +54,7 @@ class fotosGlobalOptions {
 
 		$options[] = array(
 		   	'name'           					=> __('Fotos - Nav Options','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 	        'pos'   							=> 21,
 	        'opts'  							=> array(
@@ -104,7 +104,7 @@ class fotosGlobalOptions {
 
 		$options[] = array(
 		   	'name'           					=> __('Fotos - Post Header','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 	        'pos'   							=> 22,
 	        'opts'  							=> array(
@@ -190,7 +190,7 @@ class fotosGlobalOptions {
 
 		$options[] = array(
 		   	'name'           					=> __('Fotos - Post Content','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 	        'pos'   							=> 23,
 	        'opts'  							=> array(
@@ -205,7 +205,7 @@ class fotosGlobalOptions {
 		
 		$options[] = array(
 		   	'name'           					=> __('Fotos - Post Comments','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 	        'pos'   							=> 24,
 	        'opts'  							=> array(
@@ -233,7 +233,7 @@ class fotosGlobalOptions {
 		$options[] = array(
 			'pos'            					=> 25,
 		   	'name'           					=> __('Fotos - Post Social','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 			'opts' 								=> array(
 				array(
@@ -307,7 +307,7 @@ class fotosGlobalOptions {
 		$options[] = array(
 			'pos'            					=> 26,
 		   	'name'           					=> __('Fotos - Colors','fotos'),
-		   	'icon'           					=> 'icon-circle',
+		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 			'opts' 								=> array(
 				array(
