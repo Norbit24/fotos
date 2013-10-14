@@ -40,6 +40,78 @@ class fotosGlobalOptions {
 		return $less;
 	}
 
+	function skins_screen(){
+		ob_start();
+
+		$skins = $this->skins_array();
+
+		?>
+
+		<div class="fotos-admin-skins row">
+			<div class="span9">
+				<ul class="fotos-admin-skins-list fix">
+					<?php
+						foreach($skins as $skin):
+
+							$name 	= $skin['name'];
+							$img 	= $skin['img'];
+							$desc 	= $skin['desc'];
+							$demo 	= $skin['demo'];
+							$dl 	= $skin['download'];
+
+							?><li>
+								<img class="fotos-admin-skins-img" src="<?php echo $img;?>">
+								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $dl;?>"><i class="icon-download"></i> Download</a><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>"><i class="icon-globe"></i> Demo</a></p>
+								<p class="fotos-admin-skins-desc"><?php echo $desc;?></p>
+							</li><?php
+
+						endforeach;
+					?>
+				</ul>
+			</div>
+			<div class="span3">
+				<p class="zmt">Watch a quick video on what Fotos skins are, and how to apply them to your site.</p>
+				<div class="fitvids">
+					<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+
+		<?php
+		return ob_get_clean();
+
+
+	}
+
+	function skins_array(){
+
+		$skins_array = array(
+			array(
+				'name'		=> 'Dapper',
+				'img'		=> PL_CHILD_URL.'/assets/admin/dapper-thumb.png',
+				'desc'		=> 'An awesome skin yo',
+				'demo'		=> 'http://dapper.fotostheme.com',
+				'download'	=> 'http://here.com'
+			),
+			array(
+				'name'		=> 'Another',
+				'img'		=> 'http://placehold.it/247x185',
+				'desc'		=> 'An awesome skin yo',
+				'demo'		=> 'http://google.com',
+				'download'	=> 'http://here.com'
+			),
+			array(
+				'name'		=> 'A third',
+				'img'		=> 'http://placehold.it/247x185',
+				'desc'		=> 'An awesome skin yo',
+				'demo'		=> 'http://google.com',
+				'download'	=> 'http://here.com'
+			)
+		);
+
+		return $skins_array;
+	}
+
 	function theme_options(){
 
 		$options = array();
@@ -54,7 +126,7 @@ class fotosGlobalOptions {
 	        	array(
 	        		'key' 						=> 'fotos_theme_skins',
 	        		'type' 						=> 'template',
-	        		'template'					=> 'coming soon!',
+	        		'template'					=> $this->skins_screen(),
 	        		'title' 					=> 'Available Skins',
 		        ),
 	        ),

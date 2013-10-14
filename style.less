@@ -468,6 +468,60 @@ html[xmlns] .slides {
 }
 
 
+.fotos-admin-skins {
+    @color: #333;
+    @muted: #CCC;
+    .fotos-admin-skins-list {
+        li {
+            display: inline-block;
+            vertical-align: top;
+            margin-right:-4px;
+            padding:15px;
+            .box-sizing(border-box);
+            width:33.333%;
+
+            .fotos-admin-skins-img {
+                width:100%;
+                .box-sizing(border-box);
+                border:1px solid @muted;
+                margin-bottom:5px;
+                .box-shadow(0 0 5px -2px rgba(0,0,0,0.35));
+            }
+            .fotos-admin-skins-name {
+                font-weight: bold;
+                margin:0;
+            }
+            .fotos-admin-skins-linkout {
+                float: right;
+                font-size:9px;
+                font-weight: normal;
+                text-transform: uppercase;
+                line-height:10px;
+                padding:2px 4px;
+                background: #0077cc;
+                color:@white;
+                text-shadow:none;
+                margin:4px 2px 0;
+                &:first-of-type {
+                    margin-right:0;
+                }
+            }
+            .fotos-admin-skins-desc {
+                color:@muted;
+                margin:0;
+            }
+        }
+    }
+}
+#PageLinesToolbox #fotos_theme_skins {
+    .opt-name{
+        display:none;
+    }
+    .opt-box {
+        padding:0;
+    }
+}
+
 
 
 
