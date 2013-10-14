@@ -1,0 +1,35 @@
+.fotos-cap-box {
+    display: inline-block;
+    color: @pl-text;
+
+    &:hover {
+        h1,h2,h3,h4,h5,h6,p {
+            color:@pl-link;
+        }
+    }
+}
+
+.fotos-slabtext {
+    margin:0;
+    font-family:'Arial Black';
+    text-transform: uppercase;
+    line-height:1;
+}
+
+.slabtexted .slabtext{
+    display:-moz-inline-box;
+    display:inline-block;
+    white-space:nowrap;
+}
+.slabtextinactive .slabtext{
+    display:inline;
+    white-space:normal;
+    font-size:1em !important;
+    letter-spacing:inherit !important;
+    word-spacing:inherit !important;
+    *letter-spacing:0 !important;
+    *word-spacing:0 !important;
+}
+.slabtextdone .slabtext{
+display:block;
+}

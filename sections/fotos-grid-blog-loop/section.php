@@ -25,7 +25,7 @@ class fotosGridBlogLoop extends PageLinesSection {
 		?>
 		<script>
 			jQuery(document).ready(function(){
-			      jQuery('.ba-fotos-grid-loop-list').imagesLoaded(function() {
+			    jQuery('.ba-fotos-grid-loop-list').imagesLoaded(function() {
 			        // Prepare layout options.
 			        var options = {
 			          autoResize: true, // This will auto-update the layout when the browser window is resized.
@@ -39,6 +39,10 @@ class fotosGridBlogLoop extends PageLinesSection {
 
 			        // Call the layout function.
 			        jQuery(handler).wookmark(options);
+
+			        jQuery('.ba-fotos-grid-loop-list .ba-fotos-grid-loop-link').hover(function () {
+					    jQuery(this).toggleClass('fotos-grid-hover');
+					});
 			    });
 			});
 		</script><?php
@@ -47,11 +51,13 @@ class fotosGridBlogLoop extends PageLinesSection {
 
  	function section_template() {
 
- 		printf('<div class="ba-fotos-grid-loop-wrap"><ul class="ba-fotos-grid-loop-list fix">');
+ 		$border = $this->opt('ba_fotos_grid_loop_border') ? 'fotos-grid-border' : false;
+
+ 		printf('<div class="ba-fotos-grid-loop-wrap"><ul class="ba-fotos-grid-loop-list %s fix">',$border);
 
 	 		if(have_posts()): while(have_posts()) : the_post();
 
-	 			$header = sprintf('<h5 class="ba-fotos-grid-loop-title"><a class="ba-fotos-grid-loop-link" href="%s" title="%s">%s</a></h5>',get_permalink(),get_the_title(),get_the_title());
+	 			$header = sprintf('<h5 class="ba-fotos-grid-loop-title"><a class="ba-fotos-grid-loop-title-link" href="%s" title="%s">%s</a></h5>',get_permalink(),get_the_title(),get_the_title());
 
 	 			$html = '';
 
@@ -70,9 +76,38 @@ class fotosGridBlogLoop extends PageLinesSection {
 
  		printf('</ul></div>');
 
+ 		if(function_exists('wp_pagenavi') && show_posts_nav()):
+
+			$args = array(
+				'before' => '<div class="pagination pagenavi">',
+				'after' => '</div>',
+			);
+			wp_pagenavi( $args );
+
+		elseif (show_posts_nav()) : //Checks to see if there is more than one page for nav. ?>
+			<ul class="fotos-pagination fix">
+				<li class="previous previous-entries">
+					<?php next_posts_link(__('&larr; Older Posts','fotos')) ?>
+				</li>
+				<li class="next next-entries">
+					<?php previous_posts_link(__('Newer Posts &rarr;','fotos')) ?>
+				</li>
+			</ul>
+	<?php endif;
+
 	}
 
 
-	function section_opts( ){}
+	function section_opts( ){
+		$options = array(
+			array(
+				'key'	=> 'ba_fotos_grid_loop_border',
+				'title'	=> __('Content Border', 'fotos'),
+				'type'	=> 'check',
+				'label'	=> __('Add a border around the post items.','fotos')
+			)
+		);
+		return $options;
+	}
 
 }

@@ -38,7 +38,9 @@ class fotosPostLoop {
  		$left 		= sprintf('<div style="width:%s;" class="fotos-entry-title-wrap %s">%s%s</div>',$ltwidth,$ltalign,$title,$meta);
  		$right 		= sprintf('<div style="width:%s;" class="fotos-entry-date-wrap %s">%s</div>',$rtwidth,$rtalign,$date->date_markup());
 
- 		printf('<header class=" fix fotos-post-header fotos-post-%s">%s%s</header>',$align,$left,$right);
+ 		$border 	= pl_setting('ba_fotos_post_header_border') ? 'fotos-border-bottom' : false;
+ 		
+ 		printf('<header class="fix fotos-post-header fotos-post-%s %s">%s%s</header>',$align,$border,$left,$right);
 
 	}
 

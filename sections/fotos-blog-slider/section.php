@@ -41,7 +41,8 @@ class baFotosBlogSlider extends PageLinesSection{
 		$tran = $this->opt('ba_fotos_blog_slider_transition') ? $this->opt('ba_fotos_blog_slider_transition') : 'fade';
 		$speed = $this->opt('ba_fotos_blog_slider_speed') ? $this->opt('ba_fotos_blog_slider_speed') : '6000';
 		$showargs = sprintf('data-cycle="fx" data-cycle-timeout="%s" data-cycle-slides="> div" data-cycle-pause-on-hover="true" ',$speed);
-		$height = $this->opt('ba_fotos_blog_slider_height') ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
+		$getheight = $this->opt('ba_fotos_blog_slider_height');
+		$height = ($getheight) ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
 
 		$output = '';
 
@@ -53,7 +54,7 @@ class baFotosBlogSlider extends PageLinesSection{
 
 				foreach( $slide_array as $slide ){
 					$postimg 	=  pl_array_get('img', $slide);
-					$output 	.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:cover"><div class="fotos-blog-slider-inner-wrap"></div></div>',$postimg);
+					$output 	.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:cover;min-height:%s;"><div class="fotos-blog-slider-inner-wrap"></div></div>',$postimg,$getheight);
 				}
 
 			} else {

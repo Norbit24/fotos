@@ -193,6 +193,12 @@ class fotosGlobalOptions {
 					'type'	                  	=> 'text',
 					'key' 						=> 'ba_fotos_post_tag_text',
 					'help'						=> __('Here you can replace the text underneath the post title. By default it says <em>Tagged with</em>, but you can change that here.', 'fotos')
+				),
+				array(
+					'title'                   	=> __( 'Post Header Border', 'fotos' ),
+					'type'	                  	=> 'check',
+					'key' 						=> 'ba_fotos_post_header_border',
+					'help'						=> __('Add a border below the post title and date.', 'fotos')
 				)
 	        )
 		);
@@ -420,7 +426,22 @@ class fotosGlobalOptions {
 			),
 			'help' => ''
 		);
+		$options[] = array(
+			'pos'            					=> 28,
+		   	'name'           					=> __('Fotos - Misc','fotos'),
+		   	'icon'           					=> 'icon-bullseye',
+			'type' 								=> 'multi',
+			'opts' 								=> array(
+				array(
+					'title'   					=> __('Logo', 'fotos'),
+				    'type'    					=> 'image_upload',
+				    'key'						=> 'ba_fotos_global_logo',
+					'help' 						=> __('This controls the color for the post title. By default, it uses the same color you have set under Global Options-->Color & Style' , 'fotos'),
+				),
 
+			),
+			'help' => ''
+		);
 		pl_add_theme_tab($options);
 	}
 }

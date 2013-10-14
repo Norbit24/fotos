@@ -15,7 +15,7 @@ class baFotosContact extends PageLinesSection{
 		jQuery(document).ready(function(){
 
 			// first check to see if teh "contact" class exists before we do anything else
-			if(jQuery('.fotos-nav-menu li').hasClass('contact')) {
+			if(jQuery('.fotos-nav-menu li, .simplenav li').hasClass('contact')) {
 
 				// add collapse class to the section
 				jQuery('.section-fotos-contact').addClass('collapse');
@@ -27,7 +27,7 @@ class baFotosContact extends PageLinesSection{
 				id = '#'+ getid +'';
 
 				// get the target
-				target = jQuery('.fotos-nav-menu li.contact a');
+				target = jQuery('.fotos-nav-menu .contact a, .simplenav .contact a');
 
 				// set the target and atts to make it toggle
 				jQuery(target).attr('href',id).attr('data-target',''+id+'').attr('data-toggle','collapse');
