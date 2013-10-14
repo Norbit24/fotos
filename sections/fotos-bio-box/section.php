@@ -17,7 +17,7 @@ class fotosBioBox extends PageLinesSection {
 
  		$ltwidth 	= $this->opt('ba_fotos_bio_txt_col') ? $this->opt('ba_fotos_bio_txt_col') : 8;
  		$rtwidth 	= $this->opt('ba_fotos_bio_img_col') ? $this->opt('ba_fotos_bio_img_col') : 4;
- 		$align 		= $this->opt('ba_fotos_bio_layout') ? $this->opt('ba_fotos_bio_layout') : 'title-left';
+ 		$align 		= $this->opt('ba_fotos_bio_layout') ? $this->opt('ba_fotos_bio_layout') : 'image-right';
 
  		$text 		= $this->opt('ba_fotos_bio_text') ? $this->opt('ba_fotos_bio_text') : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dignissim augue risus, a euismod lacus laoreet sed. Morbi volutpat sapien at metus tempus euismod ultricies eget leo. Suspendisse iaculis augue in euismod mattis. Donec id gravida mauris, et consectetur augue.';
  		$img		= $this->opt('ba_fotos_bio_image') ? $this->opt('ba_fotos_bio_image') : PL_CHILD_URL.'/assets/img/fotos-default-dark.png';
@@ -120,6 +120,8 @@ class fotosBioBox extends PageLinesSection {
 			'opts'						=> array(
 				'image-right' 			=> array('name' => __( 'Text Left - Image Right', 'fotos' ) ),
 				'image-left'			=> array('name' => __( 'Image Left - Text Right', 'fotos' ) ),
+				'image-top'				=> array('name' => __( 'Image Top - Text Bottom', 'fotos' ) ),
+				'image-bottom'			=> array('name' => __( 'Text Top - Image Bottom', 'fotos' ) ),
 			),
 		);
 
