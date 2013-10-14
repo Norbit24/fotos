@@ -111,7 +111,6 @@ class fotosNav extends PageLinesSection {
 		$options = array();
 
 		$options[] = array(
-			'col'						=> 8,
 			'title'   					=> __('Choose a Menu', 'fotos'),
 		    'type'    					=> 'select_menu',
 		    'key' 						=> 'ba_fotos_nav_menu',
@@ -119,7 +118,6 @@ class fotosNav extends PageLinesSection {
 		);
 
 		$options[] = array(
-			'col'						=> 2,
 			'title'   					=> __('Align Right', 'fotos'),
 		    'type'    					=> 'check',
 		    'key' 						=> 'ba_fotos_nav_align_right',
@@ -127,13 +125,11 @@ class fotosNav extends PageLinesSection {
 		);
 
 		$options[] = array(
-			'col'						=> 8,
 			'title'   					=> __('Nav Modes', 'fotos'),
 		    'type'    					=> 'select',
 		    'key'						=> 'ba_fotos_nav_nav_mode',
 		    'opts'						=> array(
 		    	'fotos-nav-fixed-top' 	=> array('name' => __('Fixed Top','fotos')),
-		    	'fotos-nav-fixed-bott' 	=> array('name' => __('Fixed Bottom','fotos')),
 		    	'fotos-nav-vert-mode' 	=> array('name' => __('Vertical Mode','fotos'))
 		    ),
 			'help' 						=> __('Choose a fixed position for the nav. If "Fixed Bottom" is chosen, sub-menus will drop-up, instead of down. Vertical Mode will run the menu as a vertical menu.' , 'fotos'),

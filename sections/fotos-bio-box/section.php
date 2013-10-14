@@ -25,13 +25,32 @@ class fotosBioBox extends PageLinesSection {
  		$left 		= sprintf('<div class="span%s fotos-bio-txt-wrap">%s%s</div>',$ltwidth,$text,$this->links());
  		$right 		= sprintf('<div class="span%s fotos-bio-img-wrap"><img data-sync="ba_fotos_bio_image" class="fotos-bio-img" alt="" src="%s"></div>',$rtwidth,$img);
 
- 		printf('<div class="row fotos-bio-box fotos-bio-box-%s">%s%s</div>',$align,$left,$right);
+ 		$bgimg		= $this->opt('ba_fotos_bio_box_bg_img');
+ 		$bgimgrep	= $this->opt('ba_fotos_bio_box_bg_repeat');
+ 		$bgpad		= $this->opt('ba_fotos_bio_box_bg_pad');
+
+ 		$bgcolor	= pl_hashify($this->opt('ba_fotos_bio_box_bg_color'));
+ 		$txtcolor	= pl_hashify($this->opt('ba_fotos_bio_box_txt_color'));
+
+ 		$color 		= ($txtcolor) ? sprintf('color:%s;',$txtcolor) : false;
+ 		$pad 		= ($bgpad) ? sprintf('padding:%s;',$bgpad) : false;
+
+ 		if($bgimg):
+ 			$bg 	= sprintf('background:url(\'%s\');',$bgimg);
+ 		elseif($bgcolor):
+ 			$bg 	= sprintf('background:%s;',$bgcolor);
+ 		else:
+ 			$bg 	= false;
+ 		endif;
+
+ 		$style		= ($bgimg || $bgpad || $bgcolor || $txtcolor) ? sprintf('style="%s%s%s;"',$bg,$pad,$color) : false;
+
+ 		printf('<div class="row fotos-bio-box fotos-bio-box-%s" %s>%s%s</div>',$align,$style,$left,$right);
 	}
 
 	function links(){
 
 		$output = '';
-		$count = 1;
 		$icon_array = $this->opt('ba_fotos_bio_link_array');
 
 		if( is_array($icon_array) ){
@@ -43,7 +62,6 @@ class fotosBioBox extends PageLinesSection {
 				$link 		=  pl_array_get('link', $icon);
 				$icon 		=  pl_array_get('icon', $icon);
 				$output 	.= sprintf('<a href="%s"><i class="icon-%s icon-fotos icon-fotos-default"></i></a>',$link,$icon);
-				$count++;
 			}
 
 		}
@@ -62,45 +80,33 @@ class fotosBioBox extends PageLinesSection {
 			'title'                   	=> __( 'Bio Text', 'fotos' ),
 			'type'	                  	=> 'textarea',
 			'key' 						=> 'ba_fotos_bio_text',
-			'col'						=> 3,
 		);
 
 		$options[] = array(
 			'title'                   	=> __( 'Bio Image', 'fotos' ),
 			'type'	                  	=> 'image_upload',
 			'key' 						=> 'ba_fotos_bio_image',
-			'col'						=> 3,
 		);
 
 		$options[] = array(
-			'key'			  	=> 'ba_fotos_bio_links_num',
-			'type' 			  	=> 'count_select',
-			'count_start'	  	=> 1,
-			'count_number'	  	=> 10,
-			'default'		  	=> 3,
-			'label' 	      	=> __( 'Number of Social Links to Setup', 'fotos' ),
-		);
-
-		$options[] = array(
-			'key'	=> 'ba_fotos_bio_link_array',
-			'type'	=> 'accordion',
-			'title'	=> 'Social Links Setup',
-			'col'	=> 4,
-			'opts' => array(
+			'key'						=> 'ba_fotos_bio_link_array',
+			'type'						=> 'accordion',
+			'title'						=> 'Social Links Setup',
+			'opts' 						=> array(
 				array(
-					'key'		=> 'link',
-					'label'		=> __( 'Icon Link', 'fotos' ),
-					'type'		=> 'text'
+					'key'				=> 'link',
+					'label'				=> __( 'Icon Link', 'fotos' ),
+					'type'				=> 'text'
 				),
 				array(
-					'key'		=> 'icon',
-					'label'		=> __( 'Icon', 'fotos' ),
-					'type'		=> 'select_icon'
+					'key'				=> 'icon',
+					'label'				=> __( 'Icon', 'fotos' ),
+					'type'				=> 'select_icon'
 				),
 				array(
-					'key'		=> 'img',
-					'label'		=> __( 'Image (instead of icon)', 'fotos' ),
-					'type'		=> 'image_upload'
+					'key'				=> 'img',
+					'label'				=> __( 'Image (instead of icon)', 'fotos' ),
+					'type'				=> 'image_upload'
 				),
 			),
 
@@ -111,7 +117,6 @@ class fotosBioBox extends PageLinesSection {
 			'type'	                  	=> 'select',
 			'key' 						=> 'ba_fotos_bio_layout',
 			'default'					=> 'image-right',
-			'col'						=> 4,
 			'opts'						=> array(
 				'image-right' 			=> array('name' => __( 'Text Left - Image Right', 'fotos' ) ),
 				'image-left'			=> array('name' => __( 'Image Left - Text Right', 'fotos' ) ),
@@ -119,30 +124,65 @@ class fotosBioBox extends PageLinesSection {
 		);
 
 		$options[] = array(
-			'title'                   => __( 'Bio Column Widths', 'fotos' ),
-			'type'	                  => 'multi',
-			'col'						=> 8,
-			'opts'	                  => array(
+			'title'                   	=> __( 'Bio Column Widths', 'fotos' ),
+			'type'	                  	=> 'multi',
+			'key'						=> 'ba_fotos_bio_col_widths',
+			'opts'	                  	=> array(
 				array(
-					'key'			  => 'ba_fotos_bio_txt_col',
-					'type' 			  => 'count_select',
-					'count_start'	  => 1,
-					'count_number'	  => 11,
-					'default'		  => 8,
-					'label' 	      => __( 'Text Column Span', 'fotos' ),
-					'help'			  => __('How wide the title column shoudl be based on a 12-column grid.', 'fotos')
+					'key'			  	=> 'ba_fotos_bio_txt_col',
+					'type' 			  	=> 'count_select',
+					'count_start'	  	=> 1,
+					'count_number'	  	=> 11,
+					'default'		  	=> 8,
+					'label' 	      	=> __( 'Text Column Span', 'fotos' ),
+					'help'			  	=> __('How wide the title column shoudl be based on a 12-column grid.', 'fotos')
 				),
 				array(
-					'key'			  => 'ba_fotos_bio_img_col',
-					'type' 			  => 'count_select',
-					'count_start'	  => 1,
-					'count_number'	  => 11,
-					'default'		  => 4,
-					'label' 	      => __( 'Image Column Span', 'fotos' ),
-					'help'			  => __('How wide the date column should be based on a 12-column grid.', 'fotos')
+					'key'			  	=> 'ba_fotos_bio_img_col',
+					'type' 			  	=> 'count_select',
+					'count_start'	  	=> 1,
+					'count_number'	  	=> 11,
+					'default'		  	=> 4,
+					'label' 	      	=> __( 'Image Column Span', 'fotos' ),
+					'help'			  	=> __('How wide the date column should be based on a 12-column grid.', 'fotos')
 				),
 			)
 
+		);
+
+		$options[] = array(
+			'key'					  	=> 'ba_fotos_bio_bg_img_atts',
+			'type' 					  	=> 'multi',
+			'label' 				  	=> __( 'Bio Box Design', 'fotos' ),
+			'opts'					  	=> array(
+				array(
+					'key'				=> 'ba_fotos_bio_box_bg_color',
+					'type' 				=> 'color',
+					'default'			=> '#FFF',
+					'label' 			=> __( 'Background Color', 'fotos' ),
+				),
+				array(
+					'key'				=> 'ba_fotos_bio_box_txt_color',
+					'type' 				=> 'color',
+					'default'			=> '#333',
+					'label' 			=> __( 'Text Color', 'fotos' ),
+				),
+				array(
+					'key'				=> 'ba_fotos_bio_box_bg_pad',
+					'type' 				=> 'text',
+					'label' 			=> __( 'Box Padding', 'fotos' ),
+				),
+				array(
+					'key'				=> 'ba_fotos_bio_box_bg_img',
+					'type' 				=> 'image_upload',
+					'label' 			=> __( 'Background Image', 'fotos' ),
+				),
+				array(
+					'key'				=> 'ba_fotos_bio_box_bg_repeat',
+					'type' 				=> 'check',
+					'label' 			=> __( 'Repeat Background Image', 'fotos' ),
+				)
+			)
 		);
 
 		return $options;

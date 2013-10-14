@@ -33,7 +33,7 @@ class fotosContact {
 			return;
 		$ie_ver = pl_detect_ie();
 		if( $ie_ver < 10 )
-			wp_enqueue_script( 'formalize', PL_CHILD_URL.'/assets/js/formalize.js', array( 'jquery' ), $this->version, true );
+			wp_enqueue_script( 'formalize', PL_CHILD_URL.'/assets/js/formalize.min.js', array( 'jquery' ), $this->version, true );
 	}
 
 	function form() {
