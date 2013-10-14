@@ -38,8 +38,8 @@ class baFotosBlogSlider extends PageLinesSection{
 		$type = $this->opt('ba_fotos_blog_slider_type');
 		$id = $this->get_the_id();
 		$contentwidth = ($this->opt('ba_fotos_blog_slider_full_width')) ? false : 'pl-content';
-		$tran = $this->opt('ba_featured_transition') ? $this->opt('ba_featured_transition') : 'fade';
-		$speed = $this->opt('ba_featured_speed') ? $this->opt('ba_featured_speed') : '6000';
+		$tran = $this->opt('ba_fotos_blog_slider_transition') ? $this->opt('ba_fotos_blog_slider_transition') : 'fade';
+		$speed = $this->opt('ba_fotos_blog_slider_speed') ? $this->opt('ba_fotos_blog_slider_speed') : '6000';
 		$showargs = sprintf('data-cycle="fx" data-cycle-timeout="%s" data-cycle-slides="> div" data-cycle-pause-on-hover="true" ',$speed);
 		$height = $this->opt('ba_fotos_blog_slider_height') ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
 
@@ -47,7 +47,7 @@ class baFotosBlogSlider extends PageLinesSection{
 
 		printf('<section class="fotos-blog-slider %s"><div class="fotos-blog-slider-show fotos-blog-slider-show-%s" %s %s>',$contentwidth,$id,$showargs,$height);
 
-			$slide_array = $this->opt('fotos_blog_slider_array');
+			$slide_array = $this->opt('ba_fotos_blog_slider_array');
 
 			if( is_array($slide_array) ){
 
@@ -58,7 +58,7 @@ class baFotosBlogSlider extends PageLinesSection{
 
 			} else {
 
-				echo setup_section_notify($this);
+				$this->do_defaults();
 			}
 
 			printf('%s',$output);
@@ -69,16 +69,11 @@ class baFotosBlogSlider extends PageLinesSection{
 
 	function do_defaults(){
 
-		$items = $this->opt('ba_featured_slide_num') ? $this->opt('ba_featured_slide_num') : $this->default_limit;
-
 		$output = '';
 
-		for($i=1;$i<=$items;$i++):
+		for($i=1;$i<=$this->default_limit;$i++):
 
 			$images 	= array(PL_CHILD_URL.'/assets/img/img1.jpg',PL_CHILD_URL.'/assets/img/img2.jpg',PL_CHILD_URL.'/assets/img/img3.jpg');
-			$link       = sprintf('<a class="fotos-blog-slider-link" href="#" title="Continue Reading"><i class="icon-angle-right"></i></a>');
-			$desc       = sprintf('<p class="fotos-blog-slider-subtitle">Wow awesome</p>');
-			$heading    = sprintf('<h2 class="fotos-blog-slider-title">That\'s what she said.</h2>');
 
 			$output		.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:cover;"></div>',$images[array_rand($images)]);
 
@@ -105,36 +100,56 @@ class baFotosBlogSlider extends PageLinesSection{
 
 		$options = array(
 			array(
-				'key'				=> 'fotos_bs_hi',
-				'type'				=> 'template',
-				'title'				=> __('Optimal Image Size', 'fotos'),
-				'template'			=> $this->recc_width()
+				'key'						=> 'ba_fotos_bs_hi',
+				'type'						=> 'template',
+				'title'						=> __('Optimal Image Size', 'fotos'),
+				'template'					=> $this->recc_width()
 			),
 			array(
-				'key'				=> 'fotos_blog_slider_array',
-				'type'				=> 'accordion',
-				'title'				=> __('Slide Images', 'fotos'),
-				'col'				=> 4,
-				'opts' 				=> array(
+				'key'						=> 'ba_fotos_blog_slider_array',
+				'type'						=> 'accordion',
+				'title'						=> __('Slide Images', 'fotos'),
+				'opts' 						=> array(
 					array(
-						'key'		=> 'img',
-						'label'		=> __( 'Image', 'fotos' ),
-						'type'		=> 'image_upload'
+						'key'				=> 'img',
+						'label'				=> __( 'Image', 'fotos' ),
+						'type'				=> 'image_upload'
 					)
 				),
-				'help'				=> __('Here you can add new images, and reorder existing images by dragging each individual item', 'fotos')
+				'help'						=> __('Here you can add new images, and reorder existing images by dragging each individual item', 'fotos')
 			),
 			array(
-				'title'             => __( 'Slider Height', 'fotos' ),
-				'type'	            => 'text',
-				'key'				=> 'ba_fotos_blog_slider_height',
-				'help'				=> __('This default height for the slider is 420px. You can change this by supplying your own height such as <em>500px</em> as an example', 'fotos')
+				'title'             		=> __( 'Slider Height', 'fotos' ),
+				'type'	            		=> 'text',
+				'key'						=> 'ba_fotos_blog_slider_height',
+				'help'						=> __('This default height for the slider is 300px. You can change this by supplying your own height such as <em>500px</em> as an example', 'fotos')
 			),
 			array(
-				'title'             => __( 'Make Full Width', 'fotos' ),
-				'type'	            => 'check',
-				'key'				=> 'ba_fotos_blog_slider_full_width',
-				'help'				=> __('If you check this box, the slider will stretch 100% across teh screen.','fotos')
+				'title'             		=> __( 'Make Full Width', 'fotos' ),
+				'type'	            		=> 'check',
+				'key'						=> 'ba_fotos_blog_slider_full_width',
+				'help'						=> __('If you check this box, the slider will stretch 100% across teh screen.','fotos')
+			),
+			array(
+				'title'						=> __('Blog Slider Options', 'fotos'),
+				'type'						=> 'multi',
+				'key'						=> 'ba_fotos_blog_slider_opts',
+				'opts'						=> array(
+					array(
+						'key'				=> 'ba_fotos_blog_slider_speed',
+						'type'				=> 'text',
+					),
+					array(
+						'key'				=> 'ba_fotos_blog_slider_transition',
+						'type'				=> 'select',
+						'title'				=> __('Slider Transition Type', 'fotos'),
+						'opts'				=> array(
+							'fade'			=> array('name' => __('Fade', 'fotos')),
+							'fadeOut'		=> array('name' => __('Fade Out', 'fotos')),
+							'scrollHorz'	=> array('name' => __('Scroll Horizontally', 'fotos'))
+						)
+					)
+				)
 			)
 		);
 
