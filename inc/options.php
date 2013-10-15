@@ -16,18 +16,26 @@ class fotosGlobalOptions {
 	function __construct(){
 
 		$this->theme_options();
-		$this->global_misc();
 
 		add_filter('pless_vars',array($this,'fotos_less'));
+		add_filter('body_class',array($this,'body_class'));
 	}
 
-	function global_misc(){
+	function body_class($classes){
+
 		if(pl_setting('ba_fotos_content_shadow'))
-			pagelines_add_bodyclass('fotos-content-shadow');
+			$classes[] = 'fotos-content-shadow';
+		if(pl_setting('ba_fotos_post_header_bg_img'))
+			$classes[] = 'fotos-postheader-hasbg';
+		else
+			$classes[] = '';
+
+		return $classes;
 	}
 
 	function fotos_less($less){
 
+		$less['fotos-header-bg-color']  = pl_setting('ba_fotos_post_header_bg_color') ? pl_hashify(pl_setting('ba_fotos_post_header_bg_color')) : '@pl-base';
 		$less['fotos-post-title'] 		= pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
 		$less['fotos-post-meta'] 		= pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
 		$less['fotos-post-date'] 		= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
@@ -35,7 +43,6 @@ class fotosGlobalOptions {
 		$less['fotos-post-comm-txt'] 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
 
 		$less['fotos-box-shadow-color'] = pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
-		
 
 		return $less;
 	}
@@ -449,7 +456,7 @@ class fotosGlobalOptions {
 
 		$options[] = array(
 			'pos'            					=> 27,
-		   	'name'           					=> __('Fotos - Colors','fotos'),
+		   	'name'           					=> __('Fotos - Design','fotos'),
 		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 			'opts' 								=> array(
@@ -470,9 +477,22 @@ class fotosGlobalOptions {
 				array(
 					'title'   					=> __('Post Date', 'fotos'),
 				    'type'    					=> 'color',
-				    'default'					=> '#777',
+				    'default'					=> '#333',
 				    'key'						=> 'ba_fotos_post_date_color',
 					'help' 						=> __('Optionally change the color of the post date. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Header Background', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#FFF',
+				    'key'						=> 'ba_fotos_post_header_bg_color',
+					'help' 						=> __('Controls the background color of the post header.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Header Background Image', 'fotos'),
+				    'type'    					=> 'image_upload',
+				    'key'						=> 'ba_fotos_post_header_bg_img',
+					'help' 						=> __('Use a background image for the post header, instead of teh color above.' , 'fotos'),
 				),
 				array(
 					'title'   					=> __('Post Comments Background', 'fotos'),
