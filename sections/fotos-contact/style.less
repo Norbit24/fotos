@@ -4,11 +4,35 @@
         border-bottom:1px solid @baseContrast;
     }
 
+    .ba-fotos-contact-form-wrap {
+        padding:20px 0;
+        .box-sizing(border-box);
+
+        &.contact-align-swap {
+            .ba-fotos-contact-has-sb {
+                float: right;
+                margin-right:0;
+            }
+            .ba-fotos-contact-has-form {
+                float: left;
+                margin-left:0;
+                margin-right:2.127659574%;
+            }
+        }
+    }
+
     .fotos-contact-msg{
         height: 100px;
     }
     .fotos-contact-input{
         width: 49%;
+        height:auto;
+        font-size:16px;
+        line-height: 24px;
+    }
+    form textarea {
+        font-size:16px;
+        line-height: 24px;
     }
     .fotos-contact-email{
         float: right;
@@ -18,11 +42,16 @@
         width: 100%;
     }
     form{
-        margin: 20px auto;
+        margin: 0;
     }
     .fotos-contact-response{
         margin-bottom: 1em;
         display: none;
+    }
+
+    .send-fotos:hover {
+        color:@white;
+        background: darken(@pl-link,7);
     }
 }
 .fotos-contact-pointer{

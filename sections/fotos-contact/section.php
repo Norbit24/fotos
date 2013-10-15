@@ -9,6 +9,10 @@
 
 class baFotosContact extends PageLinesSection{
 
+	function section_persistent(){
+
+	}
+
 	function section_head(){
 		?>
 		<script>
@@ -45,10 +49,75 @@ class baFotosContact extends PageLinesSection{
 
 	function section_template(){
 
-		$form = new fotosContact;
+		$formclass = new fotosContact;
+		$area 		= $this->opt('ba_fotos_contact_sb_area');
+		$layout 	= $this->opt('ba_fotos_contact_form_layout') ? 'contact-align-swap' : false;
 
-		printf('<div class="ba-fotos-contact-form-wrap">%s</div>',$form->form());
+		?>
+		<div class="ba-fotos-contact-form-wrap <?php echo $layout;?> row">
+			<div class="span6 zmb ba-fotos-contact-has-sb">
+
+			<?php
+
+				if($area):
+					pagelines_draw_sidebar($area);
+				else:
+					echo setup_section_notify($this);
+				endif;
+
+			?>
+
+			</div>
+			<div class="span6 zmb ba-fotos-contact-has-form">
+
+			<?php echo $formclass->form(); ?>
+
+			</div>
+		</div>
+		<?php
+
+
 
 	}
 
+	function section_opts(){
+
+		$opts = array(
+			array(
+				'key'		=> 'ba_fotos_contact_sb_area',
+				'type'		=> 'select',
+				'opts'		=> get_sidebar_select(),
+				'title'		=> 'Select Widget Area',
+				'label'		=>	'Select a widget area',
+				'help'		=> "Select the widget area you would like to use.",
+			),
+			array(
+				'key'		=> 'ba_fotos_contact_help',
+				'type'		=> 'link',
+				'url'		=> admin_url( 'widgets.php' ),
+				'title'		=> 'Widget Areas Help',
+				'label'		=>	'<i class="icon-retweet"></i> Edit Widget Areas',
+				'help'		=> "This section uses widgetized areas that are created and edited in inside your admin.",
+			),
+			array(
+				'key'		=> 'ba_fotos_contact_form_layout',
+				'type'		=> 'check',
+				'title'		=> __('Form Alignment', 'fotos'),
+				'help'		=> __('Ticking this will make the form move to the left, with the widget area on the right.','fotos')
+			)
+		);
+
+		if(!class_exists('CustomSidebars')){
+			$opts[] = array(
+				'key'		=> 'ba_fotos_contact_sb_custom_sidebars',
+				'type'		=> 'link',
+				'url'		=> 'http://wordpress.org/extend/plugins/custom-sidebars/',
+				'title'		=> 'Get Custom Sidebars',
+				'label'		=>	'<i class="icon-external-link"></i> Check out plugin',
+				'help'		=> "We have detected that you don't have the Custom Sidebars plugin installed. We recommend you install this plugin to create custom widgetized areas on demand.",
+			);
+		}
+
+		return $opts;
+	}
 }

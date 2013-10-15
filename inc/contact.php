@@ -38,11 +38,11 @@ class fotosContact {
 
 	function form() {
 		ob_start();
-		$email		= __( 'Email Address', 'fotos' );
+		$email		= __( 'Email', 'fotos' );
 		$name		= __( 'Name', 'fotos' );
-		$message	= __( 'Your Message...', 'fotos' );
-		$send		= __( 'Send Message', 'fotos' );
-	?>
+		$message	= __( 'Message...', 'fotos' );
+		$send		= __( 'Send', 'fotos' );
+		?>
 
 		<div class="fotos-contact-response"></div>
 		<form class="fotos-contact-form" id="ajaxcontactform" action="" method="post" enctype="multipart/form-data">
@@ -74,8 +74,7 @@ class fotosContact {
 		</form>
 
 		<?php
-		$form = ob_get_clean();
-		echo $form;
+		return ob_get_clean();
 	}
 
 
