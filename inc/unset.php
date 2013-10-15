@@ -63,7 +63,7 @@ function fotos_remove_core_sections($sections){
 	unset($sections['parent']['PageLinesQuickSlider']);
 	unset($sections['parent']['PageLinesPostLoop']);
 
-	plprint($sections);
+	//plprint($sections);
 	return $sections;
 }
 
