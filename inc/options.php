@@ -27,6 +27,8 @@ class fotosGlobalOptions {
 			$classes[] = 'fotos-content-shadow';
 		if(pl_setting('ba_fotos_post_header_bg_img'))
 			$classes[] = 'fotos-postheader-hasbg';
+		if(pl_setting('ba_fotos_post_social_txt_color'))
+			$classes[] = 'fotos-postsocial-hascolor';
 		else
 			$classes[] = '';
 
@@ -39,6 +41,7 @@ class fotosGlobalOptions {
 		$less['fotos-post-title'] 		= pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
 		$less['fotos-post-meta'] 		= pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
 		$less['fotos-post-date'] 		= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
+		$less['fotos-post-social-txt'] 	= pl_setting('ba_fotos_post_social_txt_color') ? pl_hashify(pl_setting('ba_fotos_post_social_txt_color')) : '@pl-text';
 		$less['fotos-post-comm-bg'] 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
 		$less['fotos-post-comm-txt'] 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
 
@@ -493,6 +496,13 @@ class fotosGlobalOptions {
 				    'type'    					=> 'image_upload',
 				    'key'						=> 'ba_fotos_post_header_bg_img',
 					'help' 						=> __('Use a background image for the post header, instead of teh color above.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Social Text', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#333',
+				    'key'						=> 'ba_fotos_post_social_txt_color',
+					'help' 						=> __('Applies color to the social text or icons. Does not apply if you are using images in place of icons or text for social sharing.' , 'fotos'),
 				),
 				array(
 					'title'   					=> __('Post Comments Background', 'fotos'),

@@ -92,6 +92,9 @@ class fotosPostLoop {
 					case 'plain':
 						echo $this->plain_mode();
 					break;
+					case 'text':
+						echo $this->txt_mode();
+					break;
 					case 'image':
 						echo $this->img_mode();
 					break;
@@ -103,7 +106,7 @@ class fotosPostLoop {
 		</section>
 		<?php
 	}
-	
+
 	function post_comments(){
 
 		global $post, $withcomments,$wp_query;
@@ -148,6 +151,28 @@ class fotosPostLoop {
 
 	}
 
+	function txt_mode(){
+
+		global $post;
+
+		$excerpt 	= wp_strip_all_tags( pl_short_excerpt($post->ID, 10, '') );
+		$perm 		= get_permalink($post->ID);
+		$title 		= wp_strip_all_tags( get_the_title( $post->ID ) );
+		$thumb 		= (has_post_thumbnail($post->ID)) ? pl_the_thumbnail_url( $post->ID ) : '';
+		$handle		= pl_setting('twittername');
+		$getsep 	= pl_setting('ba_fotos_social_separator');
+ 		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
+
+		$out 		= '';
+		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s">twitter</a>%s',$title,$perm,$handle,$sep);
+		$out 		.= sprintf('<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=%s&p[images][0]=%s&p[title]=%s&p[summary]=%s">facebook</a>%s',$perm,$thumb,$title,$excerpt,$sep);
+		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s">pinterest</a>%s',$perm,$thumb,$excerpt,$sep);
+		$out 		.= sprintf('<a href="#" class="fotos-back-to-top">back to top</a>');
+
+		return $out;
+
+	}
+
 	function plain_mode(){
 
 		$out	= '';
@@ -179,7 +204,7 @@ class fotosPostLoop {
 		$out 		= '';
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$title,$perm,$handle,$twitimg,$title,$sep);
 		$out 		.= sprintf('<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=%s&p[images][0]=%s&p[title]=%s&p[summary]=%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$perm,$thumb,$title,$excerpt,$fbimg,$title,$sep);
-		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>',$perm,$thumb,$excerpt,$pinimg, $title);
+		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$perm,$thumb,$excerpt,$pinimg, $title,$sep);
 		$out 		.= sprintf('<a href="#" class="fotos-back-to-top"><img class="ba-fotos-back-to-top" src="%s" alt="%s" /></a>',$bttimg,$bttalt);
 		
 		return $out;
@@ -200,7 +225,7 @@ class fotosPostLoop {
 		$out 		= '';
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s"><i class="icon-twitter icon-fotos icon-fotos-default"></i></a>%s',$title,$perm,$handle,$sep);
 		$out 		.= sprintf('<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=%s&p[images][0]=%s&p[title]=%s&p[summary]=%s"><i class="icon-facebook icon-fotos icon-fotos-default"></i></a>%s',$perm,$thumb,$title,$excerpt,$sep);
-		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s"><i class="icon-pinterest icon-fotos icon-fotos-default"></i></a>',$perm,$thumb,$excerpt);
+		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s"><i class="icon-pinterest icon-fotos icon-fotos-default"></i></a>%s',$perm,$thumb,$excerpt,$sep);
 		$out 		.= sprintf('<a href="#" class="fotos-back-to-top"><i class="icon-arrow-up icon-fotos icon-fotos-default"></i></a>');
 		
 		return $out;
