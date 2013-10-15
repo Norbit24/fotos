@@ -113,7 +113,7 @@ class fotosPostLoop {
 		$withcomments = 1;
 		$commnum = number_format_i18n( get_comments_number($post->ID) ); // this is right
 
-		$showcommtxt = pl_setting('ba_fotos_post_comment_text') ? pl_setting('ba_fotos_post_comment_text') : __('Show Comments', 'fotos');
+		$showcommtxt = pl_setting('ba_fotos_post_comment_text') ? pl_setting('ba_fotos_post_comment_text') : __('Comments', 'fotos');
 		$customcommtxt = pl_setting('ba_fotos_post_comm_custom_txt') ? pl_setting('ba_fotos_post_comm_custom_txt') : __('Comment', 'fotos');
 
 		$customcommtxtplural = str_replace($customcommtxt, $customcommtxt.'s', $customcommtxt);
@@ -131,7 +131,7 @@ class fotosPostLoop {
 
 		?><footer class="ba-fotos-comment-main-wrap">
 			<div class="ba-fotos-comment-trigger-wrap fix">
-				<a class="fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><?php echo $showcommtxt;?></a>
+				<a class="fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><span>Show</span> <?php echo $showcommtxt;?></a>
 				<a class="fotos-comments-num fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><?php echo $commtext;?></a>
 			</div>
 			<?php

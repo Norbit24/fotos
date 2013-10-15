@@ -19,11 +19,6 @@ class fotosBlogLoop extends PageLinesSection {
 		?>
 			<script>
 				jQuery(document).ready(function(){
-					txt = jQuery('.post-<?php echo $post->ID;?> .fotos-comments-trigger');
-					jQuery(txt).click(function(e){
-						e.preventDefault();
-						jQuery(this).text(jQuery(this).text() == 'Hide Comments' ? 'Show Comments' : 'Hide Comments');
-					});
 					jQuery('.fotos-back-to-top').click(function() {
 						jQuery('body,html').animate({
 							scrollTop: 0
