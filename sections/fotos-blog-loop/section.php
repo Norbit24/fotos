@@ -24,6 +24,12 @@ class fotosBlogLoop extends PageLinesSection {
 						e.preventDefault();
 						jQuery(this).text(jQuery(this).text() == 'Hide Comments' ? 'Show Comments' : 'Hide Comments');
 					});
+					jQuery('.fotos-back-to-top').click(function() {
+						jQuery('body,html').animate({
+							scrollTop: 0
+						}, 800, 'easeOutExpo');
+						return false;
+					});
 				});
 			</script>
 		<?php

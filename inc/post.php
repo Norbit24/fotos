@@ -171,13 +171,16 @@ class fotosPostLoop {
 		$fbimg  	= pl_setting('ba_fotos_fb_img');
  		$pinimg 	= pl_setting('ba_fotos_pinterest_img');
  		$getsep 	= pl_setting('ba_fotos_social_separator');
+ 		$bttimg 	= pl_setting('ba_fotos_btt_img');
+ 		$bttalt 	= pl_setting('ba_fotos_btt_img_alt');
  		$sep 		= ($getsep) ? sprintf('<span class="ba-fotos-social-post-delimiter" style="background:url(\'%s\') no-repeat;height:15px;width:15px;overflow:hidden;display:inline-block;"></span>',$getsep) : false;
 
 		$out 		= '';
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$title,$perm,$handle,$twitimg,$title,$sep);
 		$out 		.= sprintf('<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=%s&p[images][0]=%s&p[title]=%s&p[summary]=%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$perm,$thumb,$title,$excerpt,$fbimg,$title,$sep);
 		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>',$perm,$thumb,$excerpt,$pinimg, $title);
-
+		$out 		.= sprintf('<a href="#" class="fotos-back-to-top"><img class="ba-fotos-back-to-top" src="%s" alt="%s" /></a>',$bttimg,$bttalt);
+		
 		return $out;
 	}
 
@@ -197,7 +200,8 @@ class fotosPostLoop {
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s"><i class="icon-twitter icon-fotos icon-fotos-default"></i></a>%s',$title,$perm,$handle,$sep);
 		$out 		.= sprintf('<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=%s&p[images][0]=%s&p[title]=%s&p[summary]=%s"><i class="icon-facebook icon-fotos icon-fotos-default"></i></a>%s',$perm,$thumb,$title,$excerpt,$sep);
 		$out 		.= sprintf('<a href="http://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s"><i class="icon-pinterest icon-fotos icon-fotos-default"></i></a>',$perm,$thumb,$excerpt);
-
+		$out 		.= sprintf('<a href="#" class="fotos-back-to-top"><i class="icon-arrow-up icon-fotos icon-fotos-default"></i></a>');
+		
 		return $out;
 
 	}
