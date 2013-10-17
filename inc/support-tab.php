@@ -50,7 +50,24 @@ function fotos_support_tab($toolbar){
 // Video Panel Callback
 function ba_fotos_vids_call(){
 
-	?><p>test</p><?php
+	?>
+
+	<div class="row">
+		<div class="span3">
+			<iframe src="//player.vimeo.com/video/76342353?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+		<div class="span3">
+			<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+		<div class="span3">
+			<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+		<div class="span3">
+			<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+	</div>
+
+	<?php
 
 }
 
