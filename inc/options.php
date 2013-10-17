@@ -545,7 +545,7 @@ class fotosGlobalOptions {
 				    'type'    					=> 'image_upload',
 				    'key'						=> 'ba_fotos_global_logo',
 					'help' 						=> __('This controls the color for the post title. By default, it uses the same color you have set under Global Options-->Color & Style' , 'fotos'),
-				),
+				)
 
 			),
 			'help' => ''
