@@ -35,18 +35,31 @@ class baFotosBlogSlider extends PageLinesSection{
 
 	function section_template(){
 
-		$type = $this->opt('ba_fotos_blog_slider_type');
-		$id = $this->get_the_id();
-		$contentwidth = ($this->opt('ba_fotos_blog_slider_full_width')) ? false : 'pl-content';
-		$tran = $this->opt('ba_fotos_blog_slider_transition') ? $this->opt('ba_fotos_blog_slider_transition') : 'fade';
-		$speed = $this->opt('ba_fotos_blog_slider_speed') ? $this->opt('ba_fotos_blog_slider_speed') : '6000';
-		$showargs = sprintf('data-cycle="fx" data-cycle-timeout="%s" data-cycle-slides="> div" data-cycle-pause-on-hover="true" ',$speed);
-		$getheight = $this->opt('ba_fotos_blog_slider_height');
-		$height = ($getheight) ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
+		$type 			= $this->opt('ba_fotos_blog_slider_type');
+		$id 			= $this->get_the_id();
+		$contentwidth 	=	 ($this->opt('ba_fotos_blog_slider_full_width')) ? false : 'pl-content';
+		$tran 			= $this->opt('ba_fotos_blog_slider_transition') ? $this->opt('ba_fotos_blog_slider_transition') : 'fade';
+		$speed 			= $this->opt('ba_fotos_blog_slider_speed') ? $this->opt('ba_fotos_blog_slider_speed') : '6000';
+		$showargs 		= sprintf('data-cycle="fx" data-cycle-timeout="%s" data-cycle-slides="> div" data-cycle-pause-on-hover="true" ',$speed);
+		$getheight 		= $this->opt('ba_fotos_blog_slider_height');
+		$height 		= ($getheight) ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
 
-		$overlayhtml = $this->opt('ba_fotos_blog_slider_overlay_html');
+		// Get Styles
+		$overbgcolor 	= $this->opt('ba_fotos_blog_slider_overlay_bg_color') ? sprintf('background:%s;',pl_hashify($this->opt('ba_fotos_blog_slider_overlay_bg_color'))) : false;
+		$overtxtcolor 	= $this->opt('ba_fotos_blog_slider_overlay_text_color') ? sprintf('color:%s;',pl_hashify($this->opt('ba_fotos_blog_slider_overlay_text_color'))) : false;
+		$overpad 		= $this->opt('ba_fotos_blog_slider_overlay_padding') ? sprintf('padding:%s;',$this->opt('ba_fotos_blog_slider_overlay_padding')) : false;
+		$overwidth 		= $this->opt('ba_fotos_blog_slider_overlay_width') ? sprintf('width:%s;',$this->opt('ba_fotos_blog_slider_overlay_width')) : false;
 
-		$overlay = ($overlayhtml) ? sprintf('<div class="fotos-blog-slider-overlay">%s</div>', $overlayhtml) : false;
+		// Combine styles
+		$overlaystyles = ($overbgcolor || $overtxtcolor || $overpad || $overwidth) ? sprintf('style="%s%s%s%s"',$overbgcolor,$overtxtcolor,$overpad,$overwidth) : false;
+
+		// Get Position
+		$overposition 	= $this->opt('ba_fotos_blog_slider_overlay_position') ? $this->opt('ba_fotos_blog_slider_overlay_position') : 'left';
+
+		// Do Overlay, Content, Position, and Styles
+		$overlayhtml 	= $this->opt('ba_fotos_blog_slider_overlay_html');
+		$overlay 		= ($overlayhtml) ? sprintf('<div class="fotos-blog-slider-overlay %s" %s>%s</div>',$overposition,$overlaystyles,$overlayhtml) : false;
+
 
 		$output = '';
 
@@ -136,15 +149,56 @@ class baFotosBlogSlider extends PageLinesSection{
 				'help'						=> __('If you check this box, the slider will stretch 100% across teh screen.','fotos')
 			),
 			array(
-				'title'						=> __('Blog Slider Overlay', 'fotos'),
+				'title'						=> __('Blog Slider Overlay HTML', 'fotos'),
+				'type'						=> 'textarea',
+				'key'						=> 'ba_fotos_blog_slider_overlay_html',
+				'help'						=> __('Anything you place in here will activate the overlay. You can put anything here, including HTML (don\'t be scared)!','fotos')
+			),
+			array(
+				'title'						=> __('Blog Slider Overlay Colors', 'fotos'),
 				'type'						=> 'multi',
-				'key'						=> 'ba_fotos_blog_slider_overlay_opts',
+				'key'						=> 'ba_fotos_blog_slider_overlay_colors',
 				'opts'						=> array(
 					array(
-						'key'				=> 'ba_fotos_blog_slider_overlay_html',
-						'type'				=> 'textarea',
-						'title'				=> 'Overlay HTML',
-						'help'				=> __('You can put anything here including HTML!','fotos')
+						'key'				=> 'ba_fotos_blog_slider_overlay_bg_color',
+						'type'				=> 'color',
+						'title'				=> __('Overlay Background Color', 'fotos')
+					),
+					array(
+						'key'				=> 'ba_fotos_blog_slider_overlay_text_color',
+						'type'				=> 'color',
+						'color'				=> '#333',
+						'title'				=> __('Overlay Text Color', 'fotos')
+					)
+				)
+			),
+			array(
+				'title'						=> __('Blog Slider Overlay Design', 'fotos'),
+				'type'						=> 'multi',
+				'key'						=> 'ba_fotos_blog_slider_overlay_design',
+				'opts'						=> array(
+					array(
+						'key'				=> 'ba_fotos_blog_slider_overlay_width',
+						'type'				=> 'text',
+						'title'				=> __('Overlay Width', 'fotos')
+					),
+					array(
+						'key'				=> 'ba_fotos_blog_slider_overlay_position',
+						'type'				=> 'select',
+						'title'				=> __('Overlay Position', 'fotos'),
+						'default'			=> 'left',
+						'opts'				=> array(
+							'left'			=> array('name' => __('Left', 'fotos')),
+							'right'			=> array('name' => __('Right', 'fotos')),
+							'center'		=> array('name' => __('Centered', 'fotos')),
+							'quart-left'	=> array('name' => __('1/4 Left', 'fotos')),
+							'quart-right'	=> array('name' => __('1/4 Right', 'fotos'))
+						)
+					),
+					array(
+						'key'				=> 'ba_fotos_blog_slider_overlay_padding',
+						'type'				=> 'text',
+						'title'				=> __('Overlay Outer Padding', 'fotos')
 					)
 				)
 			),
@@ -162,6 +216,7 @@ class baFotosBlogSlider extends PageLinesSection{
 						'key'				=> 'ba_fotos_blog_slider_transition',
 						'type'				=> 'select',
 						'title'				=> __('Slider Transition Type', 'fotos'),
+						'default'			=> 'fade',
 						'opts'				=> array(
 							'fade'			=> array('name' => __('Fade', 'fotos')),
 							'fadeOut'		=> array('name' => __('Fade Out', 'fotos')),
