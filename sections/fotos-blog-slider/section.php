@@ -44,9 +44,13 @@ class baFotosBlogSlider extends PageLinesSection{
 		$getheight = $this->opt('ba_fotos_blog_slider_height');
 		$height = ($getheight) ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
 
+		$overlayhtml = $this->opt('ba_fotos_blog_slider_overlay_html');
+
+		$overlay = ($overlayhtml) ? sprintf('<div class="fotos-blog-slider-overlay">%s</div>', $overlayhtml) : false;
+
 		$output = '';
 
-		printf('<section class="fotos-blog-slider %s"><div class="fotos-blog-slider-show fotos-blog-slider-show-%s" %s %s>',$contentwidth,$id,$showargs,$height);
+		printf('<section class="fotos-blog-slider %s">%s<div class="fotos-blog-slider-show fotos-blog-slider-show-%s" %s %s>',$contentwidth,$overlay,$id,$showargs,$height);
 
 			$slide_array = $this->opt('ba_fotos_blog_slider_array');
 
@@ -132,6 +136,19 @@ class baFotosBlogSlider extends PageLinesSection{
 				'help'						=> __('If you check this box, the slider will stretch 100% across teh screen.','fotos')
 			),
 			array(
+				'title'						=> __('Blog Slider Overlay', 'fotos'),
+				'type'						=> 'multi',
+				'key'						=> 'ba_fotos_blog_slider_overlay_opts',
+				'opts'						=> array(
+					array(
+						'key'				=> 'ba_fotos_blog_slider_overlay_html',
+						'type'				=> 'textarea',
+						'title'				=> 'Overlay HTML',
+						'help'				=> __('You can put anything here including HTML!','fotos')
+					)
+				)
+			),
+			array(
 				'title'						=> __('Blog Slider Options', 'fotos'),
 				'type'						=> 'multi',
 				'key'						=> 'ba_fotos_blog_slider_opts',
@@ -139,6 +156,7 @@ class baFotosBlogSlider extends PageLinesSection{
 					array(
 						'key'				=> 'ba_fotos_blog_slider_speed',
 						'type'				=> 'text',
+						'title'				=> __('Transition Speed', 'fotos')
 					),
 					array(
 						'key'				=> 'ba_fotos_blog_slider_transition',

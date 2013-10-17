@@ -33,6 +33,44 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
 
 .fotos-nav {
     background:@fotos-nav-base-color;
+    position: relative;
+
+
+    &.fotos-nav-left {
+
+        .searchform {
+            position: absolute;
+            top:5px;
+            right:0;
+        }
+    }
+    &.fotos-nav-right {
+
+        .fotos-nav-menu {
+            .pull-right();
+        }
+
+        .searchform {
+            left:8px;
+
+            .searchfield {
+                float: left;
+            }
+        }
+
+    }
+    &.fotos-nav-center {
+
+        ul.sm {
+            text-align: center;
+            li {
+                float: none;
+                display: inline-block;
+            }
+        }
+
+    }
+
 }
 
 .fotos-nav-menu,
@@ -97,12 +135,6 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
 }
 
 .fotos-nav-menu {
-
-    &.pull-right {
-        @media(max-width:@resPortraitTablet) {
-            float:none;
-        }
-    }
 
     ul a.has-submenu{
         padding-right:23px;
@@ -206,6 +238,42 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         .box-sizing(border-box);
     }
 
+
+    .fotos-nav.fotos-nav-center,
+    .fotos-nav-right,
+    .fotos-nav-left {
+        .fotos-nav-menu {
+            float:none;
+            text-align: left;
+        }
+        ul.sm li {
+           display: inherit;
+        }
+    }
+    .fotos-nav.fotos-nav-center .searchform,
+    .fotos-nav.fotos-nav-right .searchform,
+    .fotos-nav.fotos-nav-left .searchform{
+        display: block;
+        float:none;
+        position: static;
+        width:100%;
+        padding:0 10px;
+        .box-sizing(border-box);
+        margin:10px 0 0;
+
+        .searchfield {
+            width:100%;
+            float:none;
+            .border-radius(0);
+            background-color: darken(@fotos-nav-base-color,2);
+            .box-shadow(none);
+            border:1px solid darken(@fotos-nav-base-color,5);
+            color:@white;
+            height:30px;
+            font-size:14px;
+            padding:2px;
+        }
+    }
 
 /* Menu box
 ===================*/

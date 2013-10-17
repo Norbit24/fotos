@@ -74,18 +74,22 @@ class fotosNav extends PageLinesSection {
  		$fixpos = $this->opt('ba_fotos_nav_nav_mode');
  		$mode 	= ('fotos-nav-vert-mode' == $fixpos) ? 'sm-vertical' : false;
  		$id 	= $this->get_the_id();
- 		$align  = ($this->opt('ba_fotos_nav_align_right')) ? 'pull-right' : false;
+ 		$align  = $this->opt('ba_fotos_nav_nav_align') ? $this->opt('ba_fotos_nav_nav_align') : 'fotos-nav-left';
 
-		echo '<nav class="fotos-nav fix" role="navigation">';
+		echo '<div class="fotos-nav fix '.$align.'" role="navigation">';
+
+			if($this->opt('ba_fotos_nav_do_search'))
+				get_search_form();
 
 			$args = array(
-				'menu_class'  	=> 'sm '.$mode.' fotos-nav-menu '.$align.' fotos-nav-menu-'.$id,
+				'menu_class'  	=> 'sm '.$mode.' fotos-nav-menu fotos-nav-menu-'.$id,
 				'menu'			=> $menu,
 				'depth' 		=> 10,
+				'fallback_cb'   => 'pl_nav_callback'
 			);
 			wp_nav_menu( $args );
 
-		echo '</nav>';
+		echo '</div>';
 
 	}
 
@@ -118,21 +122,35 @@ class fotosNav extends PageLinesSection {
 		);
 
 		$options[] = array(
-			'title'   					=> __('Align Right', 'fotos'),
-		    'type'    					=> 'check',
-		    'key' 						=> 'ba_fotos_nav_align_right',
-			'help' 						=> __('Align the menu to the right.' , 'fotos'),
+			'title'   					=> __('Nav Alignment', 'fotos'),
+		    'type'    					=> 'select',
+		    'key'						=> 'ba_fotos_nav_nav_align',
+		    'default'					=> 'fotos-nav-left',
+		    'opts'						=> array(
+		    	'fotos-nav-left' 		=> array('name' => __('Align Left','fotos')),
+		    	'fotos-nav-right' 		=> array('name' => __('Align Right','fotos')),
+		    	'fotos-nav-center' 		=> array('name' => __('Centered','fotos'))
+		    )
 		);
 
 		$options[] = array(
 			'title'   					=> __('Nav Modes', 'fotos'),
 		    'type'    					=> 'select',
 		    'key'						=> 'ba_fotos_nav_nav_mode',
+		    'default'					=> 'standard',
 		    'opts'						=> array(
+		    	'standard' 				=> array('name' => __('Standard','fotos')),
 		    	'fotos-nav-fixed-top' 	=> array('name' => __('Fixed Top','fotos')),
 		    	'fotos-nav-vert-mode' 	=> array('name' => __('Vertical Mode','fotos'))
 		    ),
 			'help' 						=> __('Choose a fixed position for the nav. If "Fixed Bottom" is chosen, sub-menus will drop-up, instead of down. Vertical Mode will run the menu as a vertical menu.' , 'fotos'),
+		);
+
+		$options[] = array(
+			'title'   					=> __('Enable Search', 'fotos'),
+		    'type'    					=> 'check',
+		    'key' 						=> 'ba_fotos_nav_do_search',
+			'help' 						=> __('Enable a search form that fits inside the navigation.' , 'fotos'),
 		);
 
 		return $options;
