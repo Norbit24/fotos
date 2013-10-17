@@ -5,7 +5,7 @@ require_once( dirname(__FILE__) . '/setup.php' );
 
 class baFotosTheme {
 
-	const version = '1.0';
+	const version = '0.9';
 
 	function __construct() {
 
@@ -98,7 +98,7 @@ class baFotosTheme {
 							</th>
 							<td>
 								<input id="ba_fotos_license_key" name="ba_fotos_license_key" type="text" class="regular-text" value="<?php esc_attr( $license ); ?>" />
-								<label class="description" for="ba_fotos_license_key"><?php _e('Enter your license key','fotos'); ?></label>
+								<label class="description" for="ba_fotos_license_key"><?php _e('Enter your license key to enable automatic updates.','fotos'); ?></label>
 							</td>
 						</tr>
 						<?php if( false !== $license ) { ?>
