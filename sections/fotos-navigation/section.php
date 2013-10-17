@@ -75,8 +75,9 @@ class fotosNav extends PageLinesSection {
  		$mode 	= ('fotos-nav-vert-mode' == $fixpos) ? 'sm-vertical' : false;
  		$id 	= $this->get_the_id();
  		$align  = $this->opt('ba_fotos_nav_nav_align') ? $this->opt('ba_fotos_nav_nav_align') : 'fotos-nav-left';
+ 		$navbg 	= pl_setting('ba_fotos_nav_bg_img') ? sprintf('style="background-image:url(\'%s\')"',pl_setting('ba_fotos_nav_bg_img')) : false;
 
-		echo '<div class="fotos-nav fix '.$align.'" role="navigation">';
+		echo '<div class="fotos-nav fix '.$align.'" role="navigation" '.$navbg.'>';
 
 			if($this->opt('ba_fotos_nav_do_search'))
 				get_search_form();

@@ -168,7 +168,13 @@ class fotosGlobalOptions {
 	            			'default'			=> '#333',
 	            			'help'				=> __('Set a base color.', 'fotos')
 	            		),
-	            	),
+	            		array(
+	            			'key'				=> 'ba_fotos_nav_bg_img',
+	            			'title'				=> __('Background Pattern (optional)', 'fotos'),
+	            			'type'				=> 'image_upload',
+	            			'help'				=> __('Upload a pattern or texture to use on the nav.', 'fotos')
+	            		)
+	            	)
 	            ),
 	        	array(
 	            	'title' 					=> __('Nav Font Options', 'fotos'),
