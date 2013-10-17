@@ -13,16 +13,11 @@ class baFotosTheme {
 		$this->url = sprintf('%s', PL_CHILD_URL);
 		$this->dir = sprintf('/%s', PL_CHILD_DIR);
 
-		$this->init();
-
-	}
-
-	// Initialize
-	function init() {
-
+		// Includes
 		include('libs/custom-meta-boxes/custom-meta-boxes.php' );
 		include('inc/contact.php');
 		include('inc/unset.php');
+		include('inc/support-tab.php');
 		include('inc/meta.php');
 		include('inc/options.php');
 		include('inc/post.php');
@@ -30,11 +25,18 @@ class baFotosTheme {
 		include('inc/gallery.php');
 		include('inc/fotos-shortcodes.php');
 
+		$this->init();
+
+	}
+
+	// Initialize
+	function init() {
+
 		// bypass posix check
 		add_filter( 'render_css_posix_', '__return_true' );
 
 		// Fotos Utilities
-		add_action( 'wp_enqueue_scripts',array($this,'scripts' ));
+		add_action( 'wp_enqueue_scripts',array($this,'scripts'));
 
 	}
 
