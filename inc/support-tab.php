@@ -32,7 +32,7 @@ class fotosSupportTab {
 	function support_tab($toolbar){
 
 	    $toolbar['fotos-support'] = array(
-	        'name'        		=> 'Fotos Help',
+	        'name'        		=> 'Fotos Hub',
 	        'icon'        		=> 'icon-bullseye',
 	        'pos'        		=> 70,
 	        'panel'      		=> array(
@@ -44,16 +44,16 @@ class fotosSupportTab {
 	                'icon'      => 'icon-film'
 	            ),
 	            'docs'      => array(
-	                'name'      => __( 'Docs', 'fotos' ),
-	                'icon'      => 'icon-folder-close',
-	                'type'		=> 'call',
-	             	'call'		=> array($this,'ba_fotos_docs_call')
-	            ),
-	            'support'      => array(
-	                'name'      => __( 'Support', 'fotos' ),
+	                'name'      => __( 'Help', 'fotos' ),
 	                'icon'      => 'icon-ambulance',
 	                'type'		=> 'call',
 	             	'call'		=> array($this,'ba_fotos_docs_call')
+	            ),
+	            'market'      => array(
+	                'name'      => __( 'Fotos Market', 'fotos' ),
+	                'icon'      => 'icon-shopping-cart',
+	                'type'		=> 'call',
+	             	'call'		=> array($this,'ba_fotos_market_call')
 	            )
 	        )
 	    );
@@ -68,19 +68,38 @@ class fotosSupportTab {
 
 		<div class="row">
 			<div class="span3">
-				<iframe src="//player.vimeo.com/video/76342353?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p class="zmt fotos-help"><strong>Getting started with fotos</strong></p>
+				<img src="http://placehold.it/300x184">
 			</div>
 			<div class="span3">
-				<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p class="zmt fotos-help"><strong>Working with options</strong></p>
+				<img src="http://placehold.it/300x184">
 			</div>
 			<div class="span3">
-				<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p class="zmt fotos-help"><strong>How to setup the contact form</strong></p>
+				<img src="http://placehold.it/300x184">
 			</div>
 			<div class="span3">
-				<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="300" height="184" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<p class="zmt fotos-help"><strong>How to create a gallery</strong></p>
+				<img src="http://placehold.it/300x184">
 			</div>
 		</div>
+		<div class="row">
+			<div class="span3">
+				<p class="zmt fotos-help"><strong>How to install skins</strong></p>
+				<img src="http://placehold.it/300x184">
+			</div>
+			<div class="span3">
+				<p class="zmt fotos-help"><strong>Installing Fotos plugins</strong></p>
+				<img src="http://placehold.it/300x184">
+			</div>
+			<div class="span3">
 
+			</div>
+			<div class="span3">
+
+			</div>
+		</div>
 		<?php
 
 	}
@@ -90,12 +109,23 @@ class fotosSupportTab {
 		?>
 		<div class="row">
 			<div class="span6">
-				<p>				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae viverra dui, sit amet tincidunt lorem. Cras semper porttitor euismod. Vestibulum accumsan neque fringilla est placerat, et bibendum sapien tempus. Nunc massa dolor, varius eget dignissim ac, tempor sit amet justo. Pellentesque blandit lectus sed erat cursus egestas. Pellentesque porta urna sit amet interdum viverra. Aenean porta sem turpis, ut eleifend arcu mollis vel. Quisque condimentum dolor ac nisi semper, et imperdiet nisi sodales. In ultrices nibh lectus, at molestie mi tempor non. In interdum lacus ut mi molestie cursus. Pellentesque elementum sit amet justo eget tristique. Suspendisse potenti.</p>	
+				<p class="zmt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae viverra dui, sit amet tincidunt lorem. Cras semper porttitor euismod.</p>
+				<a class="btn btn-info"><i class="icon-user"></i> Support Forums</a>
+				<a class="btn btn-info"><i class="icon-folder-close"></i> Documentation</a>
 			</div>
 			<div class="span6">
-				<p>				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae viverra dui, sit amet tincidunt lorem. Cras semper porttitor euismod. Vestibulum accumsan neque fringilla est placerat, et bibendum sapien tempus. Nunc massa dolor, varius eget dignissim ac, tempor sit amet justo. Pellentesque blandit lectus sed erat cursus egestas. Pellentesque porta urna sit amet interdum viverra. Aenean porta sem turpis, ut eleifend arcu mollis vel. Quisque condimentum dolor ac nisi semper, et imperdiet nisi sodales. In ultrices nibh lectus, at molestie mi tempor non. In interdum lacus ut mi molestie cursus. Pellentesque elementum sit amet justo eget tristique. Suspendisse potenti.</p>
+				<p class="zmt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae viverra dui, sit amet tincidunt lorem. Cras semper porttitor euismod.</p>
+				<a class="btn btn-info"><i class="icon-twitter"></i> Follow Us</a>
+				<a class="btn btn-info"><i class="icon-facebook"></i> Like Us</a>
 			</div>
 		</div>
+		<?php
+	}
+
+	function ba_fotos_market_call(){
+		?>
+		<p class="span12">The <a href="http://nickhaskins.co/fotos" target="_blank">Fotos Market</a> is where you can find cool plugins and amazing skins to compliment your site with. We're going to display those products here soon, but in the mean time head on over and <a href="http://nickhaskins.co/fotos" target="_blank">check out</a> the market!</p>
+		<p>P.S. - Want to be a Fotos Author and earn a nice little recurring income? <a href="http://nickhaskins.co/fotos-authors/" target="_blank">Apply here</a>.</p>
 		<?php
 	}
 

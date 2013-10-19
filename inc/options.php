@@ -71,7 +71,7 @@ class fotosGlobalOptions {
 
 							?><li>
 								<img class="fotos-admin-skins-img" src="<?php echo $img;?>">
-								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $dl;?>"><i class="icon-download"></i> Download</a><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>"><i class="icon-globe"></i> Demo</a></p>
+								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>"><i class="icon-globe"></i> Demo</a></p>
 								<p class="fotos-admin-skins-desc"><?php echo $desc;?></p>
 							</li><?php
 
@@ -80,10 +80,13 @@ class fotosGlobalOptions {
 				</ul>
 			</div>
 			<div class="span3">
-				<p class="zmt">Watch a quick video on what Fotos skins are, and how to apply them to your site.</p>
-				<div class="fitvids">
-					<iframe src="//player.vimeo.com/video/61810658?title=0&amp;byline=0&amp;portrait=0" width="100%" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
+				<p class="zmt"><strong>How to install Fotos skins</strong></p>
+				<ul class="fotos-install-step-list">
+					<li><span>1</span> click Settings-->Import/Export</li>
+					<li><span>2</span> click the green button that reads <em>Select config file</em></li>
+					<li><span>3</span> navigate to your theme folder, and into your skins directory</li>
+					<li><span>4</span> select a skin and import</li>
+				</ul>
 			</div>
 		</div>
 
@@ -101,7 +104,7 @@ class fotosGlobalOptions {
 				'img'		=> PL_CHILD_URL.'/assets/admin/dapper-thumb.png',
 				'desc'		=> 'An awesome skin yo',
 				'demo'		=> 'http://dapper.fotostheme.com',
-				'download'	=> 'http://here.com'
+				'download'	=> '#importexport'
 			),
 			array(
 				'name'		=> 'Another',
