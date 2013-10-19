@@ -107,17 +107,13 @@ class fotosSupportTab {
 	// Docs Panel Callback
 	function ba_fotos_docs_call(){
 		?>
-		<div class="row">
-			<div class="span6">
-				<p class="zmt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae viverra dui, sit amet tincidunt lorem. Cras semper porttitor euismod.</p>
-				<a class="btn btn-info"><i class="icon-user"></i> Support Forums</a>
-				<a class="btn btn-info"><i class="icon-folder-close"></i> Documentation</a>
-			</div>
-			<div class="span6">
-				<p class="zmt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae viverra dui, sit amet tincidunt lorem. Cras semper porttitor euismod.</p>
-				<a class="btn btn-info"><i class="icon-twitter"></i> Follow Us</a>
-				<a class="btn btn-info"><i class="icon-facebook"></i> Like Us</a>
-			</div>
+
+		<p class="zmt">Are you stuck and need some help? Have no fear, the Fotos Heros are here! You can also follow us on Twitter to get up to the minute info on news and new updates.</p>
+		<div class="btn-group">
+			<a class="btn btn-info"><i class="icon-user"></i> &nbsp;Support Forum</a>
+			<a class="btn btn-info"><i class="icon-folder-close"></i> &nbsp;Docs</a>
+			<a class="btn btn-info"><i class="icon-twitter-sign"></i> &nbsp;Follow Us</a>
+			<a class="btn btn-info"><i class="icon-facebook-sign"></i> &nbsp;Be a Fan</a>
 		</div>
 		<?php
 	}
