@@ -34,7 +34,7 @@ class fotosSupportTab {
 	    $toolbar['fotos-support'] = array(
 	        'name'        		=> 'Fotos Hub',
 	        'icon'        		=> 'icon-bullseye',
-	        'pos'        		=> 70,
+	        'pos'        		=> 50,
 	        'panel'      		=> array(
 	        	'heading'       => __( 'Fotos Support', 'fotos' ),
 	        	'docs'      => array(

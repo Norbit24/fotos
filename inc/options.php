@@ -357,6 +357,7 @@ class fotosGlobalOptions {
 				    	'icon' 					=> array('name' => __('Icons','fotos')),
 				    	'image' 				=> array('name' => __('Custom Image','fotos')),
 				    	'plain' 				=> array('name' => __('Plain Button','fotos')),
+				    	'text' 					=> array('name' => __('Plain Text','fotos'))
 				    ),
 					'help' 						=> __('' , 'fotos'),
 				),
