@@ -275,6 +275,12 @@ class fotosGlobalOptions {
 					),
 				),
 				array(
+					'key'						=> 'ba_fotos_post_date_margin',
+					'type'						=> 'text',
+					'title'						=> 'Post Date Margin Top',
+					'help'						=> __('Acceptable values include 20px or 20%.','fotos')
+				),
+				array(
 					'title'                   	=> __( 'Post Date Format', 'fotos' ),
 					'type'	                  	=> 'select',
 					'key' 						=> 'ba_fotos_post_date_style',
