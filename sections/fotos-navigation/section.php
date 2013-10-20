@@ -37,6 +37,7 @@ class fotosNav extends PageLinesSection {
 		$fixpos = $this->opt('ba_fotos_nav_nav_mode');
 		$dropup = ('fotos-nav-fixed-bott' == $fixpos) ? true : 0;
 		$id = $this->get_the_id();
+		$margin = pl_setting('ba_fotos_nav_margin');
 
 		?><script>
 			jQuery(window).load(function(){
@@ -64,6 +65,14 @@ class fotosNav extends PageLinesSection {
 
 			pagelines_add_bodyclass($top);
 		}
+
+		if($margin) { ?>
+			<style>
+			.fotos-nav-menu {
+				margin:<?php echo $margin;?>
+			}
+			</style>
+		<?php }
 
 	}
 

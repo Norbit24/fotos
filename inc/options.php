@@ -196,9 +196,22 @@ class fotosGlobalOptions {
 	            			'default'			=> 'open_sans',
 	            			'type'				=> 'type',
 	            			'help'				=> __('Set a base color.', 'fotos')
-	            		),
-	            	),
+	            		)
+	            	)
 	            ),
+	        	array(
+	            	'title' 					=> __('Nav Placement Options', 'fotos'),
+	            	'key'						=> 'ba_fotos_nav_options',
+	            	'type'						=> 'multi',
+	            	'opts'						=> array(
+	            		array(
+	            			'key'				=> 'ba_fotos_nav_margin',
+	            			'title'				=> __('Navigation Margin', 'fotos'),
+	            			'type'				=> 'text',
+	            			'help'				=> __('Optionally set a margin for the nav. Enter using css shorthand like <em>20px 10px 5px 10px</em>.', 'fotos')
+	            		)
+	            	)
+	            )
 	        )
 		);
 

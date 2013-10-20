@@ -37,18 +37,21 @@ class baFotosBlogSlider extends PageLinesSection{
 
 		$type 			= $this->opt('ba_fotos_blog_slider_type');
 		$id 			= $this->get_the_id();
-		$contentwidth 	=	 ($this->opt('ba_fotos_blog_slider_full_width')) ? false : 'pl-content';
+		$contentwidth 	= $this->opt('ba_fotos_blog_slider_full_width') ? false : 'pl-content';
 		$tran 			= $this->opt('ba_fotos_blog_slider_transition') ? $this->opt('ba_fotos_blog_slider_transition') : 'fade';
 		$speed 			= $this->opt('ba_fotos_blog_slider_speed') ? $this->opt('ba_fotos_blog_slider_speed') : '6000';
 		$showargs 		= sprintf('data-cycle="fx" data-cycle-timeout="%s" data-cycle-slides="> div" data-cycle-pause-on-hover="true" ',$speed);
 		$getheight 		= $this->opt('ba_fotos_blog_slider_height');
-		$height 		= ($getheight) ? sprintf('style="min-height:%s;"',$this->opt('ba_fotos_blog_slider_height')) : false;
+		$height 		= ($getheight) ? sprintf('style="min-height:%s;"',$getheight) : false;
 
 		// Get Styles
 		$overbgcolor 	= $this->opt('ba_fotos_blog_slider_overlay_bg_color') ? sprintf('background:%s;',pl_hashify($this->opt('ba_fotos_blog_slider_overlay_bg_color'))) : false;
 		$overtxtcolor 	= $this->opt('ba_fotos_blog_slider_overlay_text_color') ? sprintf('color:%s;',pl_hashify($this->opt('ba_fotos_blog_slider_overlay_text_color'))) : false;
 		$overpad 		= $this->opt('ba_fotos_blog_slider_overlay_padding') ? sprintf('padding:%s;',$this->opt('ba_fotos_blog_slider_overlay_padding')) : false;
 		$overwidth 		= $this->opt('ba_fotos_blog_slider_overlay_width') ? sprintf('width:%s;',$this->opt('ba_fotos_blog_slider_overlay_width')) : false;
+
+		// Crop Mode
+		$bgcrop			= $this->opt('ba_fotos_blog_slider_crop') ? $this->opt('ba_fotos_blog_slider_crop') : 'cover';
 
 		// Combine styles
 		$overlaystyles = ($overbgcolor || $overtxtcolor || $overpad || $overwidth) ? sprintf('style="%s%s%s%s"',$overbgcolor,$overtxtcolor,$overpad,$overwidth) : false;
@@ -71,7 +74,7 @@ class baFotosBlogSlider extends PageLinesSection{
 
 				foreach( $slide_array as $slide ){
 					$postimg 	=  pl_array_get('img', $slide);
-					$output 	.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:cover;min-height:%s;"><div class="fotos-blog-slider-inner-wrap"></div></div>',$postimg,$getheight);
+					$output 	.= sprintf('<div class="fotos-blog-slider-item" style="background:url(\'%s\') no-repeat center center;background-size:%s;min-height:%s;"><div class="fotos-blog-slider-inner-wrap"></div></div>',$postimg,$bgcrop,$getheight);
 				}
 
 			} else {
@@ -224,6 +227,17 @@ class baFotosBlogSlider extends PageLinesSection{
 						)
 					)
 				)
+			),
+			array(
+				'key'				=> 'ba_fotos_blog_slider_crop',
+				'type'				=> 'select',
+				'title'				=> __('Blog Slider Crop Options', 'fotos'),
+				'default'			=> 'cover',
+				'opts'				=> array(
+					'cover'			=> array('name' => __('Cover', 'fotos')),
+					'contain'		=> array('name' => __('Contain', 'fotos'))
+				),
+				'desc'				=> __('Cover will fit any size image and scale across the size of the slider. Contain will constrain your image to the size of the slider, but will respect your image aspect ratio.', 'fotos')
 			)
 		);
 
