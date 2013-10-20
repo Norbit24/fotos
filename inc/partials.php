@@ -16,8 +16,8 @@ class baFotosPartials {
 	function date_markup(){
 
 		$datestyle  = pl_setting('ba_fotos_post_date_style') ? pl_setting('ba_fotos_post_date_style') : 'fotos-date-default';
-		$month 		= get_the_time('M');
-        $day  		= ('fotos-date-stacked' == $datestyle) ? get_the_time('d') : get_the_time('j');
+		$month 		= ('fotos-date-minimal' == $datestyle) ? get_the_time('m') : get_the_time('M');
+        $day  		= ('fotos-date-stacked' == $datestyle || 'fotos-date-minimal' == $datestyle) ? get_the_time('d') : get_the_time('j');
         $year 		= get_the_time('Y');
 
  		switch($datestyle):
@@ -41,7 +41,7 @@ class baFotosPartials {
  									</div>',$month,$day,$year);
  				break;
  			case 'fotos-date-minimal':
- 				$out = sprintf('<span class="fotos-entry-date">%s%s%s</span>',$month,$day,$year);
+ 				$out = sprintf('<span class="fotos-entry-date">%s.%s.%s</span>',$month,$day,$year);
  				break;
  			default:
  			 	$out = sprintf('<span class="fotos-entry-date">%s</span>',get_the_date());
