@@ -210,6 +210,10 @@
 .fotos-postsocial-hascolor {
     .fotos-social-share-wrap a {
         color:@fotos-post-social-txt;
+
+        &:hover {
+            color:@pl-link;
+        }
     }
 }
 .fotos-social-share-wrap {
@@ -240,6 +244,10 @@
         &:last-child {
             margin-right:0;
         }
+
+        &:hover {
+            color:@pl-link;
+        }
     }
 }
 
@@ -253,10 +261,17 @@
 .ba-fotos-comment-trigger-wrap {
     margin-top:20px;
     background:@fotos-post-comm-bg;
-    border-top:1px solid darken(@fotos-post-comm-bg,7);
-    border-bottom:1px solid darken(@fotos-post-comm-bg,7);
     padding:6px 10px;
     .box-sizing(border-box);
+
+    &.fotos-comm-hasborder {
+        border-top:1px solid darken(@fotos-post-comm-bg,7);
+        border-bottom:1px solid darken(@fotos-post-comm-bg,7);
+
+        .ba-fotos-comment-wrap {
+            border-bottom:1px solid darken(@fotos-post-comm-bg-dr,7);
+        }
+    }
 
     a {
         font-size:@plFontSize - 2;
@@ -278,7 +293,6 @@
     padding:10px;
     .box-sizing(border-box);
     background:@fotos-post-comm-bg-dr;
-    border-bottom:1px solid darken(@fotos-post-comm-bg-dr,7);
 
     .fotos-single-comment {
         font-size:12px;

@@ -41,7 +41,10 @@ class fotosPostLoop {
  		$border 	= pl_setting('ba_fotos_post_header_border') ? 'fotos-border-bottom' : false;
  		$bgimg 		= pl_setting('ba_fotos_post_header_bg_img') ? sprintf('style="background-image:url(\'%s\');"',pl_setting('ba_fotos_post_header_bg_img')) : false;
  		
- 		printf('<header class="fix fotos-post-header fotos-post-%s %s" %s>%s%s</header>',$align,$border,$bgimg,$left,$right);
+ 		// all caps
+ 		$allcaps	= pl_setting('ba_fotos_post_header_caps') ? 'fotos-caps' : false;
+
+ 		printf('<header class="fix fotos-post-header fotos-post-%s %s %s" %s>%s%s</header>',$align,$border,$allcaps,$bgimg,$left,$right);
 
 	}
 
@@ -121,6 +124,8 @@ class fotosPostLoop {
 		$args = array('post_id' => $post->ID,'order'   => 'ASC');
 		$wp_query->comments = get_comments( $args );
 
+		$hasborder = pl_setting('ba_fotos_post_comm_border') ? 'fotos-comm-hasborder' : false;
+
 		if($commnum == 1)
 			$commtext = sprintf('<i class="icon-comment"></i> 1 %s',$customcommtxt);
 		if($commnum > 1)
@@ -130,7 +135,7 @@ class fotosPostLoop {
 
 
 		?><footer class="ba-fotos-comment-main-wrap">
-			<div class="ba-fotos-comment-trigger-wrap fix">
+			<div class="ba-fotos-comment-trigger-wrap fix <?php echo $hasborder;?>">
 				<a class="fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><span>Show</span> <?php echo $showcommtxt;?></a>
 				<a class="fotos-comments-num fotos-comments-trigger" data-toggle="collapse" data-target="#fotos-comments-<?php echo $post->ID;?>"><?php echo $commtext;?></a>
 			</div>
@@ -161,7 +166,7 @@ class fotosPostLoop {
 		$thumb 		= (has_post_thumbnail($post->ID)) ? pl_the_thumbnail_url( $post->ID ) : '';
 		$handle		= pl_setting('twittername');
 		$getsep 	= pl_setting('ba_fotos_social_separator');
- 		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
+ 		$sep 		= ($getsep) ? sprintf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
 
 		$out 		= '';
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s">twitter</a>%s',$title,$perm,$handle,$sep);
@@ -199,7 +204,7 @@ class fotosPostLoop {
  		$getsep 	= pl_setting('ba_fotos_social_separator');
  		$bttimg 	= pl_setting('ba_fotos_btt_img');
  		$bttalt 	= pl_setting('ba_fotos_btt_img_alt');
- 		$sep 		= ($getsep) ? sprintf('<span class="ba-fotos-social-post-delimiter" style="background:url(\'%s\') no-repeat;height:15px;width:15px;overflow:hidden;display:inline-block;"></span>',$getsep) : false;
+ 		$sep 		= ($getsep) ? printf('<span class="ba-fotos-social-post-delimiter">%s</span>',$getsep) : false;
 
 		$out 		= '';
 		$out 		.= sprintf('<a href="http://twitter.com/home?status=%s %s via @%s"><img class="ba-fotos-social-twitter" src="%s" alt="%s" /></a>%s',$title,$perm,$handle,$twitimg,$title,$sep);

@@ -338,6 +338,12 @@ class fotosGlobalOptions {
 					'type'	                  	=> 'check',
 					'key' 						=> 'ba_fotos_post_header_border',
 					'help'						=> __('Add a border below the post title and date.', 'fotos')
+				),
+				array(
+					'title'                   	=> __( 'Post Header All Caps', 'fotos' ),
+					'type'	                  	=> 'check',
+					'key' 						=> 'ba_fotos_post_header_caps',
+					'help'						=> __('Put the post title in all caps.', 'fotos')
 				)
 	        )
 		);
@@ -373,20 +379,26 @@ class fotosGlobalOptions {
 					'title'                   	=> __( 'Comments Text', 'fotos' ),
 					'type'	                  	=> 'text',
 					'key' 						=> 'ba_fotos_post_comm_custom_txt',
-					'help'						=> __('By default this reads "Comment" but you can change this here. Fotos will automatically apply the plural version for you.','fotos'),
+					'help'						=> __('By default this reads "Comment" but you can change this here. Fotos will automatically apply the plural version for you.','fotos')
 				),
 				array(
 					'title'                   	=> __( 'Show Comments Text', 'fotos' ),
 					'type'	                  	=> 'text',
 					'key' 						=> 'ba_fotos_post_comment_text',
-					'help'						=> __('By default this reads "Show Comments" but you can change this here.','fotos'),
+					'help'						=> __('By default this reads "Show Comments" but you can change this here.','fotos')
 				),
 				array(
 					'title'                   	=> __( 'No Comments Found Text', 'fotos' ),
 					'type'	                  	=> 'text',
 					'key' 						=> 'ba_fotos_post_no_comment_text',
-					'help'						=> __('By default this reads "No comments found." but you can change this here.','fotos'),
+					'help'						=> __('By default this reads "No comments found." but you can change this here.','fotos')
 				),
+				array(
+					'title'                   	=> __( 'Add Comment Bar Borders', 'fotos' ),
+					'type'	                  	=> 'check',
+					'key' 						=> 'ba_fotos_post_comm_border',
+					'help'						=> __('Add a border to the top and bottom of the comment bar.','fotos')
+				)
 	        )
 		);
 
