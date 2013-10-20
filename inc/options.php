@@ -310,6 +310,11 @@ class fotosGlobalOptions {
 					'help'						=> __('Acceptable values include 20px or 20%.','fotos')
 				),
 				array(
+					'key'						=> 'ba_fotos_post_date_bg_img',
+					'type'						=> 'image_upload',
+					'title'						=> __('Post Date Background Image', 'fotos')
+				),
+				array(
 					'title'                   	=> __( 'Post Date Format', 'fotos' ),
 					'type'	                  	=> 'select',
 					'key' 						=> 'ba_fotos_post_date_style',

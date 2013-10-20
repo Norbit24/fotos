@@ -15,12 +15,22 @@ class baFotosPartials {
 
 	function date_markup(){
 
-		$datestyle  = pl_setting('ba_fotos_post_date_style') ? pl_setting('ba_fotos_post_date_style') : 'fotos-date-default';
-		$month 		= ('fotos-date-minimal' == $datestyle) ? get_the_time('m') : get_the_time('M');
-        $day  		= ('fotos-date-stacked' == $datestyle || 'fotos-date-minimal' == $datestyle) ? get_the_time('d') : get_the_time('j');
-        $year 		= get_the_time('Y');
-        $getmargin 	= pl_setting('ba_fotos_post_date_margin');
-        $margin 	= $getmargin ? sprintf('style="margin-top:%s;"',$getmargin) : false;
+		$datestyle  	= pl_setting('ba_fotos_post_date_style') ? pl_setting('ba_fotos_post_date_style') : 'fotos-date-default';
+		$month 			= ('fotos-date-minimal' == $datestyle) ? get_the_time('m') : get_the_time('M');
+        $day  			= ('fotos-date-stacked' == $datestyle || 'fotos-date-minimal' == $datestyle) ? get_the_time('d') : get_the_time('j');
+        $year 			= get_the_time('Y');
+
+        // margin styles
+        $getmargin 		= pl_setting('ba_fotos_post_date_margin');
+
+       	//date styles
+ 		$datebgimg 		= pl_setting('ba_fotos_post_date_bg_img');
+
+ 		$datebgimghorz 	= pl_setting('ba_fotos_post_date_bg_img_horz') ? pl_setting('ba_fotos_post_date_bg_img_horz') : 'center';
+ 		$datebgimgvert 	= pl_setting('ba_fotos_post_date_bg_img_vert') ? pl_setting('ba_fotos_post_date_bg_img_vert') : 'center';
+
+ 		$styles 		= ($datebgimg || $getmargin) ? sprintf('style="background:url(\'%s\') %s %s no-repeat;margin-top:%s;"',$datebgimg,$datebgimghorz,$datebgimgvert,$getmargin) : false;
+
 
  		switch($datestyle):
 
@@ -33,20 +43,20 @@ class baFotosPartials {
  								<div class="fotos-date-block-monthyear">
  									<div class="fotos-date-block-month">%s</div>
  									<div class="fotos-date-block-year">%s</div>
- 								</div></div>',$margin,$day,$month,$year);
+ 								</div></div>',$styles,$day,$month,$year);
  			break;
  			case 'fotos-date-stacked':
  				$out = sprintf('<div class="fotos-entry-date-stack-style" %s>
  									<div class="fotos-date-block-month">%s</div>
  									<div class="fotos-date-block-day">%s</div>
  									<div class="fotos-date-block-year">%s</div>
- 									</div>',$margin,$month,$day,$year);
+ 									</div>',$styles,$month,$day,$year);
  			break;
  			case 'fotos-date-minimal':
- 				$out = sprintf('<span class="fotos-entry-date" %s>%s.%s.%s</span>',$margin,$month,$day,$year);
+ 				$out = sprintf('<span class="fotos-entry-date" %s>%s.%s.%s</span>',$styles,$month,$day,$year);
  			break;
  			default:
- 			 	$out = sprintf('<span class="fotos-entry-date" %s>%s</span>',$margin,get_the_date());
+ 			 	$out = sprintf('<span class="fotos-entry-date" %s>%s</span>',$styles,get_the_date());
 
  		endswitch;
 

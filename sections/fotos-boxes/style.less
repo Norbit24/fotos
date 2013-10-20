@@ -50,12 +50,21 @@
     .ba-fotos-box-link-wrap {
         display: block;
         position: relative;
+        .transition(all .2s ease);
 
         .ba-fotos-box-cap {
             display: block;
             width:100%;
             padding:2px 4px;
             .box-sizing(border-box);
+        }
+
+        &:hover {
+            .scale(1.1);
+        }
+
+        &:active {
+            .scale(1.0);
         }
 
     }

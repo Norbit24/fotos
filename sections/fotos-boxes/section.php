@@ -15,6 +15,7 @@ class baFotosBoxes extends PageLinesSection{
 		// Widget Titles
 		if($this->opt('ba_fotos_box_cap_font'))
 			echo load_custom_font( $this->opt('ba_fotos_box_cap_font'),'.ba-fotos-box-cap');
+
 	}
 
 	function section_template(){

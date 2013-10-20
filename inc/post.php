@@ -19,27 +19,27 @@ class fotosPostLoop {
 
 	function post_header(){
 
- 		$date 		= new baFotosPartials;
+ 		$date 			= new baFotosPartials;
 
- 		$cattxt		= pl_setting('ba_fotos_post_cat_text') ? pl_setting('ba_fotos_post_cat_text') : __('Filed under', 'fotos');
- 		$tagtxt		= pl_setting('ba_fotos_post_tag_text') ? pl_setting('ba_fotos_post_tag_text') : __('Tagged width', 'fotos');
+ 		$cattxt			= pl_setting('ba_fotos_post_cat_text') ? pl_setting('ba_fotos_post_cat_text') : __('Filed under', 'fotos');
+ 		$tagtxt			= pl_setting('ba_fotos_post_tag_text') ? pl_setting('ba_fotos_post_tag_text') : __('Tagged width', 'fotos');
 
- 		$ltwidth 	= pl_setting('ba_fotos_post_title_col') ? pl_setting('ba_fotos_post_title_col').'%' : '85%';
- 		$rtwidth 	= pl_setting('ba_fotos_post_date_col') ? pl_setting('ba_fotos_post_date_col').'%' : '15%';
- 		$align 		= pl_setting('ba_fotos_post_header_layout') ? pl_setting('ba_fotos_post_header_layout') : 'title-left';
+ 		$ltwidth 		= pl_setting('ba_fotos_post_title_col') ? pl_setting('ba_fotos_post_title_col').'%' : '85%';
+ 		$rtwidth 		= pl_setting('ba_fotos_post_date_col') ? pl_setting('ba_fotos_post_date_col').'%' : '15%';
+ 		$align 			= pl_setting('ba_fotos_post_header_layout') ? pl_setting('ba_fotos_post_header_layout') : 'title-left';
 
- 		$ltalign	= pl_setting('ba_fotos_post_title_align') ? pl_setting('ba_fotos_post_title_align') : false;
- 		$rtalign	= pl_setting('ba_fotos_post_date_align') ? pl_setting('ba_fotos_post_date_align') : false;
+ 		$ltalign		= pl_setting('ba_fotos_post_title_align') ? pl_setting('ba_fotos_post_title_align') : false;
+ 		$rtalign		= pl_setting('ba_fotos_post_date_align') ? pl_setting('ba_fotos_post_date_align') : false;
 
- 		$title      = (is_home()) ? sprintf('<h2 class="fotos-entry-title"><a href="%s">%s</a></h2>',get_permalink(),get_the_title()) : sprintf('<h2 class="fotos-entry-title">%s</h2>',get_the_title());
+ 		$title      	= (is_home()) ? sprintf('<h2 class="fotos-entry-title"><a href="%s">%s</a></h2>',get_permalink(),get_the_title()) : sprintf('<h2 class="fotos-entry-title">%s</h2>',get_the_title());
 
- 		$meta		= sprintf('<p class="fotos-entry-cats">%s %s</p>',$cattxt,do_shortcode('[post_categories]'));
+ 		$meta			= sprintf('<p class="fotos-entry-cats">%s %s</p>',$cattxt,do_shortcode('[post_categories]'));
 
- 		$left 		= sprintf('<div style="width:%s;" class="fotos-entry-title-wrap %s">%s%s</div>',$ltwidth,$ltalign,$title,$meta);
- 		$right 		= sprintf('<div style="width:%s;" class="fotos-entry-date-wrap %s">%s</div>',$rtwidth,$rtalign,$date->date_markup());
+ 		$left 			= sprintf('<div style="width:%s;" class="fotos-entry-title-wrap %s">%s%s</div>',$ltwidth,$ltalign,$title,$meta);
+ 		$right 			= sprintf('<div style="width:%s;" class="fotos-entry-date-wrap %s">%s</div>',$rtwidth,$rtalign,$date->date_markup());
 
- 		$border 	= pl_setting('ba_fotos_post_header_border') ? 'fotos-border-bottom' : false;
- 		$bgimg 		= pl_setting('ba_fotos_post_header_bg_img') ? sprintf('style="background-image:url(\'%s\');"',pl_setting('ba_fotos_post_header_bg_img')) : false;
+ 		$border 		= pl_setting('ba_fotos_post_header_border') ? 'fotos-border-bottom' : false;
+ 		$bgimg 			= pl_setting('ba_fotos_post_header_bg_img') ? sprintf('style="background-image:url(\'%s\');"',pl_setting('ba_fotos_post_header_bg_img')) : false;
  		
  		// all caps
  		$allcaps	= pl_setting('ba_fotos_post_header_caps') ? 'fotos-caps' : false;
