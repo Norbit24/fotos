@@ -250,12 +250,9 @@
 ////////////////////////
 ////////////////////////
 
-.ba-fotos-comment-main-wrap {
-    background: darken(@fotos-post-comm-bg,2);
-}
-
 .ba-fotos-comment-trigger-wrap {
     margin-top:20px;
+    background:@fotos-post-comm-bg;
     border-top:1px solid darken(@fotos-post-comm-bg,7);
     border-bottom:1px solid darken(@fotos-post-comm-bg,7);
     padding:6px 10px;
@@ -280,8 +277,8 @@
 .ba-fotos-comment-wrap {
     padding:10px;
     .box-sizing(border-box);
-    background:@fotos-post-comm-bg;
-    border-bottom:1px solid darken(@fotos-post-comm-bg,7);
+    background:@fotos-post-comm-bg-dr;
+    border-bottom:1px solid darken(@fotos-post-comm-bg-dr,7);
 
     .fotos-single-comment {
         font-size:12px;
@@ -316,7 +313,7 @@
             height:auto;
             font-size:inherit;
             .box-shadow(none);
-            border:1px solid darken(@fotos-post-comm-bg,7);
+            border:1px solid darken(@fotos-post-comm-bg-dr,7);
         }
 
         .fotos-label-control {

@@ -43,6 +43,7 @@ class fotosGlobalOptions {
 		$less['fotos-post-date'] 		= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
 		$less['fotos-post-social-txt'] 	= pl_setting('ba_fotos_post_social_txt_color') ? pl_hashify(pl_setting('ba_fotos_post_social_txt_color')) : '@pl-text';
 		$less['fotos-post-comm-bg'] 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
+		$less['fotos-post-comm-bg-dr'] 	= pl_setting('ba_fotos_post_comm_drawer_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_drawer_bg')) : '@pl-base';
 		$less['fotos-post-comm-txt'] 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
 
 		$less['fotos-box-shadow-color'] = pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
@@ -534,11 +535,18 @@ class fotosGlobalOptions {
 					'help' 						=> __('Applies color to the social text or icons. Does not apply if you are using images in place of icons or text for social sharing.' , 'fotos'),
 				),
 				array(
-					'title'   					=> __('Post Comments Background', 'fotos'),
+					'title'   					=> __('Post Comments Bar', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#fff',
 				    'key'						=> 'ba_fotos_post_comm_bg',
-					'help' 						=> __('Optionally set a background color for the post comments. By default it will take whatever color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+					'help' 						=> __('Optionally set a background color for the post comments bar. By default it will take whatever Base color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Comments Drawer', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#fff',
+				    'key'						=> 'ba_fotos_post_comm_drawer_bg',
+					'help' 						=> __('Optionally set a background color for the post comments drawer. By default it will take whatever Base color you have chosen under Global Options-->Color & Style.' , 'fotos'),
 				),
 				array(
 					'title'   					=> __('Post Comments Text', 'fotos'),
