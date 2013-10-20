@@ -31,11 +31,102 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
     z-index: 999;
 }
 
+// The menu
 .fotos-nav {
-    background:@fotos-nav-base-color;
     position: relative;
 
+    // Nav With Color
+    &.fotos-nav-hascolor {
+        background:@fotos-nav-base-color;
 
+        .fotos-nav-menu,
+        .fotos-nav-menu ul {
+
+            li {
+                &.current-menu-item a,
+                &.current_page_item a{
+                    background:darken(@fotos-nav-base-color,7);
+
+                    &:hover,
+                    &:focus {
+                        background:@fotos-nav-base-color;
+                    }
+
+                    &:active {
+                        background:darken(@fotos-nav-base-color,7);
+                    }
+
+                }
+            }
+
+            .sub-menu li a{
+                background:darken(@fotos-nav-base-color,7);
+
+                &:hover {
+                    background: @fotos-nav-base-color;
+                }
+            }
+
+
+            a {
+                color:@fotos-nav-font-color;
+                font-size:@fotos-nav-font-size;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.highlighted {
+                    background:darken(@fotos-nav-base-color,7);
+                }
+            }
+        }
+
+    }
+
+    // Minimal Nav OPtion
+    &.fotos-nav-minimal {
+
+        .fotos-nav-menu,
+        .fotos-nav-menu ul {
+
+            li {
+                &.current-menu-item a,
+                &.current_page_item a{
+                    color:@fotos-nav-base-color;
+
+                    &:hover,
+                    &:focus {
+                        color:darken(@fotos-nav-base-color,7);
+                    }
+
+                    &:active {
+                        color:darken(@fotos-nav-base-color,7);
+                    }
+
+                }
+            }
+
+            .sub-menu li a{
+
+                &:hover {
+                    color: @fotos-nav-base-color;
+                }
+            }
+
+
+            a {
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.highlighted {
+                    color:darken(@fotos-nav-base-color,7);
+                }
+            }
+        }
+    }
+
+    // Nav Left Aligned
     &.fotos-nav-left {
 
         .searchform {
@@ -44,6 +135,8 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
             right:0;
         }
     }
+
+    // nav Right Aligned
     &.fotos-nav-right {
 
         .fotos-nav-menu {
@@ -59,6 +152,8 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         }
 
     }
+
+    // Nav Center Aligned
     &.fotos-nav-center {
 
         ul.sm {
@@ -76,32 +171,6 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
 .fotos-nav-menu,
 .fotos-nav-menu ul {
 
-    li {
-        &.current-menu-item a,
-        &.current_page_item a{
-            background:darken(@fotos-nav-base-color,7);
-
-            &:hover,
-            &:focus {
-                background:@fotos-nav-base-color;
-            }
-
-            &:active {
-                background:darken(@fotos-nav-base-color,7);
-            }
-
-        }
-    }
-
-    .sub-menu li a{
-        background:darken(@fotos-nav-base-color,7);
-
-        &:hover {
-            background: @fotos-nav-base-color;
-        }
-    }
-
-
     a {
         padding:11px 20px;
         color:@fotos-nav-font-color;
@@ -109,13 +178,6 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         font-family:'Lucida Sans Unicode','Lucida Sans','Lucida Grande',Arial,sans-serif;
         line-height:@fotos-nav-font-size + 4;
         text-decoration:none;
-
-        &:hover,
-        &:focus,
-        &:active,
-        &.highlighted {
-            background:darken(@fotos-nav-base-color,7);
-        }
 
         &.has-submenu {
             padding-right:32px;

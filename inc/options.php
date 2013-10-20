@@ -19,8 +19,18 @@ class fotosGlobalOptions {
 
 		add_filter('pless_vars',array($this,'fotos_less'));
 		add_filter('body_class',array($this,'body_class'));
+		add_filter('wp_head',array($this,'font_head'));
 	}
 
+	// Custom Fonts Init
+	function font_head(){
+
+		// Widget Titles
+		if(pl_setting('ba_fotos_widget_font'))
+			echo load_custom_font( pl_setting('ba_fotos_widget_font'),'.widgettitle');
+	}
+
+	// Conditional Body Classes
 	function body_class($classes){
 
 		if(pl_setting('ba_fotos_content_shadow'))
@@ -35,22 +45,24 @@ class fotosGlobalOptions {
 		return $classes;
 	}
 
+	// Custom LESS Vars
 	function fotos_less($less){
 
-		$less['fotos-header-bg-color']  = pl_setting('ba_fotos_post_header_bg_color') ? pl_hashify(pl_setting('ba_fotos_post_header_bg_color')) : '@pl-base';
-		$less['fotos-post-title'] 		= pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
-		$less['fotos-post-meta'] 		= pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
-		$less['fotos-post-date'] 		= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
-		$less['fotos-post-social-txt'] 	= pl_setting('ba_fotos_post_social_txt_color') ? pl_hashify(pl_setting('ba_fotos_post_social_txt_color')) : '@pl-text';
-		$less['fotos-post-comm-bg'] 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
-		$less['fotos-post-comm-bg-dr'] 	= pl_setting('ba_fotos_post_comm_drawer_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_drawer_bg')) : '@pl-base';
-		$less['fotos-post-comm-txt'] 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
+		$less['fotos-header-bg-color']   = pl_setting('ba_fotos_post_header_bg_color') ? pl_hashify(pl_setting('ba_fotos_post_header_bg_color')) : '@pl-base';
+		$less['fotos-post-title'] 		 = pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
+		$less['fotos-post-meta'] 		 = pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
+		$less['fotos-post-date'] 		 = pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
+		$less['fotos-post-social-txt'] 	 = pl_setting('ba_fotos_post_social_txt_color') ? pl_hashify(pl_setting('ba_fotos_post_social_txt_color')) : '@pl-text';
+		$less['fotos-post-comm-bg'] 	 = pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
+		$less['fotos-post-comm-bg-dr'] 	 = pl_setting('ba_fotos_post_comm_drawer_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_drawer_bg')) : '@pl-base';
+		$less['fotos-post-comm-txt'] 	 = pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
 
-		$less['fotos-box-shadow-color'] = pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
+		$less['fotos-box-shadow-color']  = pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
 
 		return $less;
 	}
 
+	// Load Skins Row
 	function skins_screen(){
 		ob_start();
 
@@ -97,6 +109,7 @@ class fotosGlobalOptions {
 
 	}
 
+	// Skins Array
 	function skins_array(){
 
 		$skins_array = array(
@@ -126,6 +139,7 @@ class fotosGlobalOptions {
 		return $skins_array;
 	}
 
+	// Global Theme Options
 	function theme_options(){
 
 		$options = array();
@@ -154,7 +168,13 @@ class fotosGlobalOptions {
 	        'pos'   							=> 21,
 	        'opts'  							=> array(
 	        	array(
-	            	'title' 					=> __('Navigation Options', 'fotos'),
+					'title'   					=> __('Site Logo', 'fotos'),
+				    'type'    					=> 'image_upload',
+				    'key'						=> 'ba_fotos_global_logo',
+					'help' 						=> __('This shows when you use the logo box, and in some nav sections.' , 'fotos'),
+				),
+	        	array(
+	            	'title' 					=> __('Navigation Design', 'fotos'),
 	            	'key'						=> 'ba_fotos_nav_colors',
 	            	'type'						=> 'multi',
 	            	'opts'						=> array(
@@ -171,6 +191,12 @@ class fotosGlobalOptions {
 	            			'type'				=> 'color',
 	            			'default'			=> '#333',
 	            			'help'				=> __('Set a base color.', 'fotos')
+	            		),
+	            		array(
+	            			'key'				=> 'ba_fotos_nav_minimal',
+	            			'title'				=> __('Minimal Nav Style', 'fotos'),
+	            			'type'				=> 'check',
+	            			'help'				=> __('By default the navigation has a background color and active page colors. Toggling this will remove most of the colors (except the dropdowns).', 'fotos')
 	            		),
 	            		array(
 	            			'key'				=> 'ba_fotos_nav_bg_img',
@@ -567,17 +593,17 @@ class fotosGlobalOptions {
 		);
 		$options[] = array(
 			'pos'            					=> 28,
-		   	'name'           					=> __('Fotos - Misc','fotos'),
+		   	'name'           					=> __('Fotos - Typography','fotos'),
 		   	'icon'           					=> 'icon-bullseye',
 			'type' 								=> 'multi',
 			'opts' 								=> array(
 				array(
-					'title'   					=> __('Logo', 'fotos'),
-				    'type'    					=> 'image_upload',
-				    'key'						=> 'ba_fotos_global_logo',
-					'help' 						=> __('This controls the color for the post title. By default, it uses the same color you have set under Global Options-->Color & Style' , 'fotos'),
+					'title'   					=> __('Widget Headings', 'fotos'),
+				    'type'    					=> 'fonts',
+				    'default'					=> 'open_sans',
+				    'key'						=> 'ba_fotos_widget_font',
+					'help' 						=> __('This controls the font family for Widget headings.' , 'fotos'),
 				)
-
 			),
 			'help' => ''
 		);

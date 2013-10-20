@@ -85,8 +85,11 @@ class fotosNav extends PageLinesSection {
  		$id 	= $this->get_the_id();
  		$align  = $this->opt('ba_fotos_nav_nav_align') ? $this->opt('ba_fotos_nav_nav_align') : 'fotos-nav-left';
  		$navbg 	= pl_setting('ba_fotos_nav_bg_img') ? sprintf('style="background-image:url(\'%s\')"',pl_setting('ba_fotos_nav_bg_img')) : false;
+ 		
+ 		$getmin	= pl_setting('ba_fotos_nav_minimal');
+ 		$mini	= $getmin ? 'fotos-nav-minimal' : 'fotos-nav-hascolor';
 
-		echo '<div class="fotos-nav fix '.$align.'" role="navigation" '.$navbg.'>';
+		echo '<div class="fotos-nav fix '.$align.' '.$mini.'" role="navigation" '.$navbg.'>';
 
 			if($this->opt('ba_fotos_nav_do_search'))
 				get_search_form();
