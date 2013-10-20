@@ -48,16 +48,18 @@ class fotosGlobalOptions {
 	// Custom LESS Vars
 	function fotos_less($less){
 
-		$less['fotos-header-bg-color']   = pl_setting('ba_fotos_post_header_bg_color') ? pl_hashify(pl_setting('ba_fotos_post_header_bg_color')) : '@pl-base';
-		$less['fotos-post-title'] 		 = pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
-		$less['fotos-post-meta'] 		 = pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
-		$less['fotos-post-date'] 		 = pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
-		$less['fotos-post-social-txt'] 	 = pl_setting('ba_fotos_post_social_txt_color') ? pl_hashify(pl_setting('ba_fotos_post_social_txt_color')) : '@pl-text';
-		$less['fotos-post-comm-bg'] 	 = pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
-		$less['fotos-post-comm-bg-dr'] 	 = pl_setting('ba_fotos_post_comm_drawer_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_drawer_bg')) : '@pl-base';
-		$less['fotos-post-comm-txt'] 	 = pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
+		$less['fotos-header-bg-color']   	= pl_setting('ba_fotos_post_header_bg_color') ? pl_hashify(pl_setting('ba_fotos_post_header_bg_color')) : '@pl-base';
+		$less['fotos-post-title'] 		 	= pl_setting('ba_fotos_post_title_color') ? pl_hashify(pl_setting('ba_fotos_post_title_color')) : '@pl-text';
+		$less['fotos-post-meta'] 		 	= pl_setting('ba_fotos_post_meta_color') ? pl_hashify(pl_setting('ba_fotos_post_meta_color')) : '@pl-text';
+		$less['fotos-post-date'] 		 	= pl_setting('ba_fotos_post_date_color') ? pl_hashify(pl_setting('ba_fotos_post_date_color')) : '@pl-text';
+		$less['fotos-post-social-txt'] 	 	= pl_setting('ba_fotos_post_social_txt_color') ? pl_hashify(pl_setting('ba_fotos_post_social_txt_color')) : '@pl-text';
+		$less['fotos-post-comm-bg'] 	 	= pl_setting('ba_fotos_post_comm_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_bg')) : '@pl-base';
+		$less['fotos-post-comm-bg-dr'] 	 	= pl_setting('ba_fotos_post_comm_drawer_bg') ? pl_hashify(pl_setting('ba_fotos_post_comm_drawer_bg')) : '@pl-base';
+		$less['fotos-post-comm-txt'] 	 	= pl_setting('ba_fotos_post_comm_txt') ? pl_hashify(pl_setting('ba_fotos_post_comm_txt')) : '@pl-text';
 
-		$less['fotos-box-shadow-color']  = pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
+		$less['fotos-widget-title-color'] 	= pl_setting('ba_fotos_widget_title_color') ? pl_hashify(pl_setting('ba_fotos_widget_title_color')) : '@pl-text';
+
+		$less['fotos-box-shadow-color']  	= pl_setting('ba_fotos_box_shadow_color') ? pl_hashify(pl_setting('ba_fotos_box_shadow_color')) : '#111';
 
 		return $less;
 	}
@@ -524,70 +526,77 @@ class fotosGlobalOptions {
 				    'type'    					=> 'color',
 				    'default'					=> '#333',
 				    'key'						=> 'ba_fotos_post_title_color',
-					'help' 						=> __('This controls the color for the post title. By default, it uses the same color you have set under Global Options-->Color & Style' , 'fotos'),
+					'help' 						=> __('This controls the color for the post title. By default, it uses the same color you have set under Global Options-->Color & Style' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Meta', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#777',
 				    'key'						=> 'ba_fotos_post_meta_color',
-					'help' 						=> __('This is the text that shows what categories the post is in.' , 'fotos'),
+					'help' 						=> __('This is the text that shows what categories the post is in.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Date', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#333',
 				    'key'						=> 'ba_fotos_post_date_color',
-					'help' 						=> __('Optionally change the color of the post date. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+					'help' 						=> __('Optionally change the color of the post date. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Header Background', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#FFF',
 				    'key'						=> 'ba_fotos_post_header_bg_color',
-					'help' 						=> __('Controls the background color of the post header.' , 'fotos'),
+					'help' 						=> __('Controls the background color of the post header.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Header Background Image', 'fotos'),
 				    'type'    					=> 'image_upload',
 				    'key'						=> 'ba_fotos_post_header_bg_img',
-					'help' 						=> __('Use a background image for the post header, instead of teh color above.' , 'fotos'),
+					'help' 						=> __('Use a background image for the post header, instead of teh color above.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Social Text', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#333',
 				    'key'						=> 'ba_fotos_post_social_txt_color',
-					'help' 						=> __('Applies color to the social text or icons. Does not apply if you are using images in place of icons or text for social sharing.' , 'fotos'),
+					'help' 						=> __('Applies color to the social text or icons. Does not apply if you are using images in place of icons or text for social sharing.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Comments Bar', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#fff',
 				    'key'						=> 'ba_fotos_post_comm_bg',
-					'help' 						=> __('Optionally set a background color for the post comments bar. By default it will take whatever Base color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+					'help' 						=> __('Optionally set a background color for the post comments bar. By default it will take whatever Base color you have chosen under Global Options-->Color & Style.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Comments Drawer', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#fff',
 				    'key'						=> 'ba_fotos_post_comm_drawer_bg',
-					'help' 						=> __('Optionally set a background color for the post comments drawer. By default it will take whatever Base color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+					'help' 						=> __('Optionally set a background color for the post comments drawer. By default it will take whatever Base color you have chosen under Global Options-->Color & Style.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Post Comments Text', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#333',
 				    'key'						=> 'ba_fotos_post_comm_txt',
-					'help' 						=> __('Optionally change the color of the text for teh post comments. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos'),
+					'help' 						=> __('Optionally change the color of the text for teh post comments. By default it will match the color you have chosen under Global Options-->Color & Style.' , 'fotos')
 				),
 				array(
 					'title'   					=> __('Content Shadow Color', 'fotos'),
 				    'type'    					=> 'color',
 				    'default'					=> '#111',
 				    'key'						=> 'ba_fotos_box_shadow_color',
-					'help' 						=> __('Optionally change the color of the box shadow around the main content column. This only takes effect if you have the option checked under Fotos-->Post Content.' , 'fotos'),
+					'help' 						=> __('Optionally change the color of the box shadow around the main content column. This only takes effect if you have the option checked under Fotos-->Post Content.' , 'fotos')
 				),
+				array(
+					'title'   					=> __('Widget Title Color', 'fotos'),
+				    'type'    					=> 'color',
+				    'default'					=> '#333',
+				    'key'						=> 'ba_fotos_widget_title_color',
+					'help' 						=> __('Optionally change the color of the Widget Titles. Hint: change the font family under Fotos - Typography' , 'fotos')
+				)
 			),
 			'help' => ''
 		);
