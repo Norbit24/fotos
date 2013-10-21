@@ -90,6 +90,7 @@ class baFotosBoxes extends PageLinesSection{
 			'type'				=> 'accordion',
 			'title'				=> 'Boxes Setup',
 			'col'				=> 4,
+			'post_type'			=> __('Box','fotos'),
 			'opts' 				=> array(
 				array(
 					'key'		=> 'img',

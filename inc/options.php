@@ -127,10 +127,10 @@ class fotosGlobalOptions {
 				'download'	=> '#importexport'
 			),
 			array(
-				'name'		=> 'Another',
-				'img'		=> 'http://placehold.it/247x185',
+				'name'		=> 'Hope',
+				'img'		=> PL_CHILD_URL.'/assets/admin/hope-thumb.png',
 				'desc'		=> 'An awesome skin yo',
-				'demo'		=> 'http://google.com',
+				'demo'		=> 'http://hope.fotostheme.com',
 				'download'	=> 'http://here.com'
 			),
 			array(

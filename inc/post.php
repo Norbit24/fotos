@@ -31,7 +31,7 @@ class fotosPostLoop {
  		$ltalign		= pl_setting('ba_fotos_post_title_align') ? pl_setting('ba_fotos_post_title_align') : false;
  		$rtalign		= pl_setting('ba_fotos_post_date_align') ? pl_setting('ba_fotos_post_date_align') : false;
 
- 		$title      	= (is_home()) ? sprintf('<h2 class="fotos-entry-title"><a href="%s">%s</a></h2>',get_permalink(),get_the_title()) : sprintf('<h2 class="fotos-entry-title">%s</h2>',get_the_title());
+ 		$title      	= (is_home()) ? sprintf('<h2 itemprop="headline" class="fotos-entry-title"><a href="%s">%s</a></h2>',get_permalink(),get_the_title()) : sprintf('<h2 class="fotos-entry-title">%s</h2>',get_the_title());
 
  		$meta			= sprintf('<p class="fotos-entry-cats">%s %s</p>',$cattxt,do_shortcode('[post_categories]'));
 
@@ -52,7 +52,7 @@ class fotosPostLoop {
 
 		$col = pl_setting('ba_fotos_post_content_cols') ? 'fotos-mag-col' : false;
 
- 		printf('<section class="fotos-post-content %s">%s%s</section>',$col, apply_filters('the_content',get_the_content()),pledit(get_the_ID()) );
+ 		printf('<section class="fotos-post-content %s" itemprop="text">%s%s</section>',$col, apply_filters('the_content',get_the_content()),pledit(get_the_ID()) );
 
 	}
 

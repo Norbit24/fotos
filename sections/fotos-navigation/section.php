@@ -89,7 +89,7 @@ class fotosNav extends PageLinesSection {
  		$getmin	= pl_setting('ba_fotos_nav_minimal');
  		$mini	= $getmin ? 'fotos-nav-minimal' : 'fotos-nav-hascolor';
 
-		echo '<div class="fotos-nav fix '.$align.' '.$mini.'" role="navigation" '.$navbg.'>';
+		echo '<nav itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" class="fotos-nav fix '.$align.' '.$mini.'" role="navigation" '.$navbg.'>';
 
 			if($this->opt('ba_fotos_nav_do_search'))
 				get_search_form();
@@ -102,7 +102,7 @@ class fotosNav extends PageLinesSection {
 			);
 			wp_nav_menu( $args );
 
-		echo '</div>';
+		echo '</nav>';
 
 	}
 

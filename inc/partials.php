@@ -20,6 +20,8 @@ class baFotosPartials {
         $day  			= ('fotos-date-stacked' == $datestyle || 'fotos-date-minimal' == $datestyle) ? get_the_time('d') : get_the_time('j');
         $year 			= get_the_time('Y');
 
+        $date 			= get_the_date('F jS, Y');
+
         // margin styles
         $getmargin 		= pl_setting('ba_fotos_post_date_margin');
 
@@ -35,15 +37,15 @@ class baFotosPartials {
  		switch($datestyle):
 
  			case 'fotos-date-default':
- 				$out = sprintf('<span class="fotos-entry-date">%s</span>',get_the_date());
+ 				$out = sprintf('<time class="fotos-entry-date" datetime="%s" itemprop="datePublished" pubdate>%s</time>',$date,get_the_date());
  			break;
  			case 'fotos-date-block':
- 				$out = sprintf('<div class="fotos-entry-date-block-style" %s>
+ 				$out = sprintf('<time class="fotos-entry-date-block-style" %s>
  								<div class="fotos-date-block-day">%s</div>
  								<div class="fotos-date-block-monthyear">
  									<div class="fotos-date-block-month">%s</div>
  									<div class="fotos-date-block-year">%s</div>
- 								</div></div>',$styles,$day,$month,$year);
+ 								</div></time>',$styles,$day,$month,$year);
  			break;
  			case 'fotos-date-stacked':
  				$out = sprintf('<div class="fotos-entry-date-stack-style" %s>
@@ -53,10 +55,10 @@ class baFotosPartials {
  									</div>',$styles,$month,$day,$year);
  			break;
  			case 'fotos-date-minimal':
- 				$out = sprintf('<span class="fotos-entry-date" %s>%s.%s.%s</span>',$styles,$month,$day,$year);
+ 				$out = sprintf('<time class="fotos-entry-date" %s>%s.%s.%s</time>',$styles,$month,$day,$year);
  			break;
  			default:
- 			 	$out = sprintf('<span class="fotos-entry-date" %s>%s</span>',$styles,get_the_date());
+ 			 	$out = sprintf('<time class="fotos-entry-date" %s>%s</time>',$styles,get_the_date());
 
  		endswitch;
 

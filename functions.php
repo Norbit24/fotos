@@ -50,6 +50,9 @@ class baFotosTheme {
 		  // Load Widgets
         add_action( 'widgets_init', array($this,'load_widgets') );
 
+        // Add Microdata
+        add_action('the_html_tag', array($this,'fotos_microdata'),15);
+
 		// Get license Key
 		$license = trim( get_option( 'ba_fotos_license_key' ) );
 
@@ -69,6 +72,29 @@ class baFotosTheme {
 		add_action('admin_init', array($this,'activate_license'));
 		add_action('admin_init', array($this,'deactivate_license'));
 
+	}
+
+	function fotos_microdata(){
+
+		$base = 'http://schema.org/';
+		if( is_page('contact') ){
+			$type = 'ContactPage';
+		}
+		elseif( is_page('about') ){
+			$type = 'AboutPage';
+		}
+		elseif( is_author() ){
+			$type = 'ProfilePage';
+		}
+		elseif( is_search() ){
+			$type = 'SearchResultsPage';
+		}
+		else {
+			$type = 'WebPage';
+		}
+		$out = sprintf('itemscope="itemscope" itemtype="%s%s"',$base,$type);
+
+		return $out;
 	}
 
 	    // Load Widgets

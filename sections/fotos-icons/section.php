@@ -69,6 +69,7 @@ class baFotosIcons extends PageLinesSection{
 				'key'				=> 'fotos_box_array',
 				'type'				=> 'accordion',
 				'title'				=> __('Fotos Icons Setup', 'fotos'),
+				'post_type'			=> __('Icon', 'fotos'),
 				'col'				=> 4,
 				'opts' 				=> array(
 					array(

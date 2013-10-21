@@ -57,7 +57,7 @@ class fotosGridBlogLoop extends PageLinesSection {
 
 	 		if(have_posts()): while(have_posts()) : the_post();
 
-	 			$header = sprintf('<h5 class="ba-fotos-grid-loop-title"><a class="ba-fotos-grid-loop-title-link" href="%s" title="%s">%s</a></h5>',get_permalink(),get_the_title(),get_the_title());
+	 			$header = sprintf('<h5 itemprop="headline" class="ba-fotos-grid-loop-title"><a class="ba-fotos-grid-loop-title-link" href="%s" title="%s">%s</a></h5>',get_permalink(),get_the_title(),get_the_title());
 
 	 			$html = '';
 

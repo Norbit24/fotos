@@ -38,7 +38,7 @@ class fotosBlogLoop extends PageLinesSection {
 
  		if(have_posts()): while(have_posts()) : the_post();
 
-	 		?><article <?php post_class('fotos-article'); ?> id="post-<?php the_ID();?>"><?php
+	 		?><article <?php post_class('fotos-article'); ?> id="post-<?php the_ID();?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost"><?php
 	 		 	$loop->post_header();
 	 			$loop->post_content();
 	 			$loop->post_social();
