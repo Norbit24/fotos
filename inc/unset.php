@@ -62,6 +62,17 @@ function fotos_remove_core_sections($sections){
 	unset($sections['parent']['plRevSlider']);
 	unset($sections['parent']['PageLinesQuickSlider']);
 	unset($sections['parent']['PageLinesPostLoop']);
+	unset($sections['parent']['PageLinesComments']);
+	unset($sections['parent']['PLheroUnit']);
+	unset($sections['parent']['pliBox']);
+	unset($sections['parent']['PageLinesMediaBox']);
+	unset($sections['parent']['PLNavBar']);
+	unset($sections['parent']['PageLinesPostAuthor']);
+	unset($sections['parent']['PageLinesPostNav']);
+
+	unset($sections['parent']['PageLinesSecondNav']);
+	unset($sections['parent']['PageLinesShareBar']);
+	unset($sections['parent']['PLWatermark']);
 
 	//plprint($sections);
 	return $sections;
