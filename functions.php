@@ -47,6 +47,9 @@ class baFotosTheme {
 		// Fotos Utilities
 		add_action( 'wp_enqueue_scripts',array($this,'scripts'));
 
+		  // Load Widgets
+        add_action( 'widgets_init', array($this,'load_widgets') );
+
 		// Get license Key
 		$license = trim( get_option( 'ba_fotos_license_key' ) );
 
@@ -67,6 +70,16 @@ class baFotosTheme {
 		add_action('admin_init', array($this,'deactivate_license'));
 
 	}
+
+	    // Load Widgets
+    function load_widgets() {
+
+        // Load Widget Lib Files
+        require_once('widgets/custom-search.php');
+
+        // Register Widgets
+        register_widget('Fotos_Custom_Search');
+    }
 
 
 	function scripts(){

@@ -98,6 +98,33 @@ body.fotos {
     color:@fotos-widget-title-color;
 }
 
+.widget.fotos-custom-search {
+    .widgettitle {
+        height:0;
+        padding:0;
+        margin:0;
+    }
+    .fotos-custom-search-form {
+        margin:0;
+
+        #search {
+            height:auto;
+            background: none;
+            border:none;
+            color:@white;
+            font-size:14px;
+            line-height:21px;
+            width:150px;
+            margin:0;
+
+            &:focus {
+                .box-shadow(none);
+                border:none;
+            }
+        }
+    }
+}
+
 //.pl-content {
    // background: @pl-base;
 //}
