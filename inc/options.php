@@ -28,6 +28,10 @@ class fotosGlobalOptions {
 		// Widget Titles
 		if(pl_setting('ba_fotos_widget_font'))
 			echo load_custom_font( pl_setting('ba_fotos_widget_font'),'.widgettitle');
+
+		if(pl_setting('ba_fotos_comm_bar_font'))
+			echo load_custom_font( pl_setting('ba_fotos_comm_bar_font'),'.ba-fotos-comment-trigger-wrap');
+
 	}
 
 	// Conditional Body Classes
@@ -629,6 +633,13 @@ class fotosGlobalOptions {
 				    'default'					=> 'open_sans',
 				    'key'						=> 'ba_fotos_widget_font',
 					'help' 						=> __('This controls the font family for Widget headings.' , 'fotos'),
+				),
+				array(
+					'title'   					=> __('Post Comments Bar', 'fotos'),
+				    'type'    					=> 'fonts',
+				    'default'					=> 'open_sans',
+				    'key'						=> 'ba_fotos_comm_bar_font',
+					'help' 						=> __('This controls the font family for comments bar (not the comments in the drawer).' , 'fotos'),
 				)
 			),
 			'help' => ''
