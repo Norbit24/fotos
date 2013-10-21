@@ -44,14 +44,14 @@ class baFotosTheme {
 		// bypass posix check
 		add_filter( 'render_css_posix_', '__return_true' );
 
+		// Add Microdata
+        add_action('the_html_tag', array($this,'fotos_microdata'));
+
 		// Fotos Utilities
 		add_action( 'wp_enqueue_scripts',array($this,'scripts'));
 
 		  // Load Widgets
         add_action( 'widgets_init', array($this,'load_widgets') );
-
-        // Add Microdata
-        add_action('the_html_tag', array($this,'fotos_microdata'),15);
 
 		// Get license Key
 		$license = trim( get_option( 'ba_fotos_license_key' ) );
@@ -77,6 +77,7 @@ class baFotosTheme {
 	function fotos_microdata(){
 
 		$base = 'http://schema.org/';
+
 		if( is_page('contact') ){
 			$type = 'ContactPage';
 		}
@@ -92,9 +93,9 @@ class baFotosTheme {
 		else {
 			$type = 'WebPage';
 		}
-		$out = sprintf('itemscope="itemscope" itemtype="%s%s"',$base,$type);
 
-		return $out;
+		echo ' itemscope="itemscope" itemtype="' . $base . $type . '"';
+
 	}
 
 	    // Load Widgets

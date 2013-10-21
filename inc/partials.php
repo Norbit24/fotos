@@ -37,7 +37,7 @@ class baFotosPartials {
  		switch($datestyle):
 
  			case 'fotos-date-default':
- 				$out = sprintf('<time class="fotos-entry-date" datetime="%s" itemprop="datePublished" pubdate>%s</time>',$date,get_the_date());
+ 				$out = sprintf('<time class="fotos-entry-date" datetime="%s" itemprop="datePublished" pubdate %s>%s</time>',$date,$styles,get_the_date());
  			break;
  			case 'fotos-date-block':
  				$out = sprintf('<time class="fotos-entry-date-block-style" %s>

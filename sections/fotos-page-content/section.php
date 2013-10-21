@@ -18,7 +18,8 @@ class fotosPageContent extends PageLinesSection {
 
  		$content = apply_filters('the_content', get_the_content());
 
- 		printf('<div class="fotos-page-content">%s</div>',$content);
+ 		printf('<div class="fotos-page-content">%s%s</div>',$content, pledit(get_the_ID()));
+
 
 	}
 
