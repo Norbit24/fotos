@@ -111,7 +111,7 @@ class baFotosTheme {
 
 	function scripts(){
 
-		wp_register_script('fotos', PL_CHILD_URL.'/assets/js/fotos.js', array('jquery'), self::version, true);
+		wp_register_script('fotos', PL_CHILD_URL.'/assets/js/fotos.min.js', array('jquery'), self::version, true);
 		wp_enqueue_script('fotos');
 	}
 
