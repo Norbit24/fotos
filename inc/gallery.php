@@ -319,7 +319,7 @@ class baFotosGallery {
 
 		?>
 
-        <div class="fotorama" data-width="100%" data-keyboard="true" data-allow-full-screen="native" data-click="true" data-nav="false" data-arrows="false" data-autoplay="false" data-ratio="<?php echo $ratio;?>"><?php
+        <div class="fotorama" data-width="100%" data-ratio="3/2" data-keyboard="true" data-allow-full-screen="native" data-click="true" data-nav="false" data-arrows="false" data-autoplay="false" data-ratio="<?php echo $ratio;?>"><?php
             foreach($images as $image) {
 
                 $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
