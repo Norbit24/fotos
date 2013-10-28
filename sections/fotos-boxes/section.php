@@ -37,7 +37,7 @@ class baFotosBoxes extends PageLinesSection{
 			foreach( $box_array as $box ){
 
 		  		$last 		= ($count == $layout) ? 'last' : false;
-				$getimg 	= pl_array_get('img', $box, 'http://placehold.it/50/50');
+				$getimg 	= pl_array_get('img', $box);
 				$link		= pl_array_get('link',$box);
 				$cap 		= pl_array_get('caption', $box);
 
