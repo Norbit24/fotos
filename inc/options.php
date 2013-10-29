@@ -127,10 +127,10 @@ class fotosGlobalOptions {
 				'download'	=> '#importexport'
 			),
 			array(
-				'name'		=> 'Hope',
-				'img'		=> PL_CHILD_URL.'/assets/admin/hope-thumb.png',
+				'name'		=> 'A second',
+				'img'		=> '#',
 				'desc'		=> 'An awesome skin yo',
-				'demo'		=> 'http://hope.fotostheme.com',
+				'demo'		=> '#',
 				'download'	=> 'http://here.com'
 			),
 			array(
