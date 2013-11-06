@@ -30,7 +30,19 @@ class baFotosTheme {
 		if ( !class_exists( 'EDD_SL_Theme_Updater' ) ) {
 			include( dirname( __FILE__ ) . '/EDD_SL_Theme_Updater.php' );
 		}
+		// hide acf UI
+		if(defined('FOTOS_DEV')) {
 
+	        if (!defined('ACF_LITE')) {
+	      		//define( 'ACF_LITE' , true );
+	      	}
+
+		} else {
+
+	        if (!defined('ACF_LITE')) {
+	      		define( 'ACF_LITE' , true );
+	      	}
+	    }
 
 		// load acf
         if ( !class_exists( 'Acf' ) ) {
@@ -42,12 +54,8 @@ class baFotosTheme {
 			include_once('libs/advanced-custom-fields/add-ons/acf-gallery/acf-gallery.php');
 		}
 
-		// hide acf UI
-        if (!defined('ACF_LITE')) {
-      		define( 'ACF_LITE' , true );
-      	}
-
-		//require_once('inc/acf-register.php');
+		if(!defined('FOTOS_DEV'))
+			require_once('inc/acf-register.php');
 
 		$this->init();
 
