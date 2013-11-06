@@ -44,7 +44,7 @@ class baFotosTheme {
 
 		// hide acf UI
         if (!defined('ACF_LITE')) {
-      		define( 'ACF_LITE' , true );
+      		//define( 'ACF_LITE' , true );
       	}
 
 		//require_once('inc/acf-register.php');
