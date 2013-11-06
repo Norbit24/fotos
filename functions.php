@@ -31,13 +31,7 @@ class baFotosTheme {
 			include( dirname( __FILE__ ) . '/EDD_SL_Theme_Updater.php' );
 		}
 		// hide acf UI
-		if(defined('FOTOS_DEV')) {
-
-	        if (!defined('ACF_LITE')) {
-	      		//define( 'ACF_LITE' , true );
-	      	}
-
-		} else {
+		if(!defined('FOTOS_DEV')) {
 
 	        if (!defined('ACF_LITE')) {
 	      		define( 'ACF_LITE' , true );
