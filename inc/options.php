@@ -90,7 +90,7 @@ class fotosGlobalOptions {
 
 							?><li>
 								<img class="fotos-admin-skins-img" src="<?php echo $img;?>">
-								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>"><i class="icon-globe"></i> Demo</a></p>
+								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>" target="_blank"><i class="icon-globe"></i> Demo</a></p>
 								<p class="fotos-admin-skins-desc"><?php echo $desc;?></p>
 							</li><?php
 
