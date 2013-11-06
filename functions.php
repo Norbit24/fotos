@@ -45,7 +45,7 @@ class baFotosTheme {
 		if ( !function_exists( 'acfgp_register_fields' ) ){
 			include_once('libs/advanced-custom-fields/add-ons/acf-gallery/acf-gallery.php');
 		}
-		//require_once('inc/acf-register.php');
+		require_once('inc/acf-register.php');
 
 		$this->init();
 
