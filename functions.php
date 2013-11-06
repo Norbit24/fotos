@@ -33,6 +33,21 @@ class baFotosTheme {
 			include( dirname( __FILE__ ) . '/EDD_SL_Theme_Updater.php' );
 		}
 
+		// hide acf UI
+        if (!defined('ACF_LITE')) {
+      		define( 'ACF_LITE' , true );
+      	}
+
+		// load acf
+        if ( !class_exists( 'Acf' ) ) {
+			include_once('libs/advanced-custom-fields/acf.php' );
+		}
+
+		// load acf gallery
+		if ( !function_exists( 'acfgp_register_fields' ) ){
+			include_once('libs/advanced-custom-fields/add-ons/acf-gallery/acf-gallery.php');
+		}
+		require_once('inc/acf-register.php');
 
 		$this->init();
 

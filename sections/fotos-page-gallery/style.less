@@ -1,0 +1,235 @@
+// Global Vars
+
+@gallery-back:      @baseContrast;
+@gallery-border:    darken(@gallery-back,3);
+
+
+.gall-container a:active,
+.gallslider a:active,
+.gall-container a:focus,
+.gallslider a:focus  {outline: none;}
+.slides,
+.gall-control-nav,
+.gall-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+.gall-pauseplay span {
+    text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+.slides:after {
+    content: "."; 
+    display: block; 
+    clear: both; 
+    visibility: hidden; 
+    line-height: 0; 
+    height: 0;
+} 
+html[xmlns] .slides {
+    display: block;
+} 
+* html .slides {
+    height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+#default-gallery-thumbs.gallslider {
+    margin: 0;
+}
+
+.plg-gallery{
+    margin: 0 auto;
+}
+
+//Default
+.gallslider {
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
+    position: relative; 
+    zoom: 1;
+
+    .slides > li {
+        display: none; 
+        -webkit-backface-visibility: hidden;/* Hide the slides before the JS is loaded. Avoids image jumping */
+        img {
+            width: 100%; 
+            display: block;
+        }
+    }
+}
+.flex-viewport {
+    max-height: 2000px;
+    .transition(all 0.4s ease);
+}
+.loading .gall-viewport {
+    max-height: 300px;
+}
+.gallslider .slides {
+    zoom: 1;
+}
+
+// Carousel Hover Treatments
+#default-gallery-thumbs {
+
+    li {
+        opacity:1;
+        &:hover {
+            opacity: 0.85;
+            .transition(.2s ease-in-out);
+        }
+
+        &:active {
+            opacity:1;
+            .transition(.2s ease-in-out);
+        }
+    }
+
+    li:active, li.gall-active-slide {
+        opacity:1;
+        .transition(.2s ease-in-out);
+
+    }
+}
+
+// Direction Nav
+.gall-direction-nav {
+    *height: 0;
+
+    a {
+        width: 30px; 
+        height: 30px;
+        margin: -15px 0 0; 
+        display: block; 
+        background: url(@{plChildRoot}/assets/img/bg_direction_nav.png) no-repeat 0 0; 
+        position: absolute; 
+        top: 50%; 
+        cursor: pointer; 
+        text-indent: -9999px; 
+        opacity: 0; 
+        .transition(all .3s ease);
+    }
+    .gall-next {
+        background-position: 100% 0; 
+        right: -36px; 
+    }
+    .gall-prev {
+        left: -36px;
+    }
+}
+.gallslider:hover {
+    .gall-next {
+        opacity: 0.8; 
+        right: 5px;
+
+        &:hover {
+            opacity:1;
+        }
+    }
+    .gall-prev {
+        opacity: 0.8; 
+        left: 5px;
+
+        &:hover {
+            opacity:1;
+        }
+    }
+}
+
+.gall-direction-nav .gall-disabled {
+    opacity: .3!important; 
+    filter:alpha(opacity=30); 
+    cursor: default;
+}
+
+// Control Nav
+.gall-control-nav {
+    width: 100%; 
+    position: absolute; 
+    bottom: -40px; 
+    text-align: center;
+
+    li {
+        margin: 0 6px; 
+        display: inline-block; 
+        zoom: 1; 
+        *display: inline;
+    }
+}
+
+// Control Paging (disabled)
+.gall-control-paging li a {
+    width: 11px; 
+    height: 11px; 
+    display: block; 
+    background: #666; 
+    background: rgba(0,0,0,0.5); 
+    cursor: pointer; 
+    text-indent: -9999px; 
+    .border-radius(20px); 
+    .box-shadow(inset 0 0 3px rgba(0,0,0,0.3));
+
+    &:hover { 
+        background: #333; 
+        background: rgba(0,0,0,0.7); 
+    }
+}
+.gall-control-paging li a.gall-active { 
+    background: #000; 
+    background: rgba(0,0,0,0.9); 
+    cursor: default; 
+}
+
+// Carousel Control
+.gall-control-thumbs {
+    margin: 5px 0 0; 
+    position: static; 
+    overflow: hidden;
+
+    li {
+        width: 25%; 
+        float: left; 
+        margin: 0;
+    }
+    img {
+        width: 100%; 
+        display: block; 
+        opacity: .7; 
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .gall-active {
+        opacity: 1; 
+        cursor: default;
+    }
+
+}
+
+#default-gallery-thumbs .gall-active-slide {
+    position: relative;
+    opacity: 1;
+    .transition(.3s);
+    &:after{
+        box-shadow: inset 0 0 10px rgba(0,0,0,.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        content: "";
+    }
+}
+
+@media screen and (max-width: 860px) {
+  .gall-direction-nav .gall-prev {opacity: 1; left: 0;}
+  .gall-direction-nav .gall-next {opacity: 1; right: 0;}
+}
