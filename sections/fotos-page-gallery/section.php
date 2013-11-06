@@ -104,26 +104,26 @@ class fwGallery extends PageLinesSection {
 
 		$opts = array(
           	array(
-                'key'       => 'fw_edit_post_content',
-                'type'      => 'edit_post',
-                'title'     => __( 'Create Gallery', 'fotos' ),
-                'label'     =>        __( '<i class="icon-edit"></i> Upload Images', 'fotos' ),
-                'help'      => __( 'Create a gallery by uploading some images.', 'fotos' ),
-                'classes'   => 'btn-primary'
+                'key'       	=> 'fw_edit_post_content',
+                'type'      	=> 'edit_post',
+                'title'     	=> __( 'Create Gallery', 'fotos' ),
+                'label'     	=> __( '<i class="icon-edit"></i> Upload Images', 'fotos' ),
+                'help'      	=> __( 'Create a gallery by uploading some images.', 'fotos' ),
+                'classes'   	=> 'btn-primary'
             ),
 			array(
-				'key' 		=> 'fw_defgallery_config',
-				'title'   	=> 'Simple Gallery Options',
-				'type'    	=> 'multi',
-				'col'		=> 6,
-				'opts' 		=> array(
+				'key' 			=> 'fw_defgallery_config',
+				'title'   		=> __('Simple Gallery Options', 'fotos'),
+				'type'    		=> 'multi',
+				'col'			=> 6,
+				'opts' 			=> array(
 					array(
-						'key' => 'fw_defgallery_dothumbs',
-						'type'    => 'check',
-						'label' => 'Show Thumbnails',
-					),
-				),
-			),
+						'key' 	=> 'fw_defgallery_dothumbs',
+						'type'  => 'check',
+						'label' => __('Show Thumbnails', 'fotos')
+					)
+				)
+			)
 		);
 
 		return $opts;

@@ -31,14 +31,14 @@ if(!have_comments() && !comments_open())
 		 * to fully load the template.
 		 */
 		if ( post_password_required() ){
-			printf('<p class="nopassword">%s</p></div></div>', __( 'This post is password protected. Enter the password to view any comments.', 'pagelines' ) );
+			printf('<p class="nopassword">%s</p></div></div>', __( 'This post is password protected. Enter the password to view any comments.', 'fotos' ) );
 			return;
 
 		}
 
 		if ( have_comments() ) : ?>
 			<h3 id="comments-title"><?php
-			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'pagelines' ),
+			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'fotos' ),
 			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
 			?></h3>
 
@@ -47,8 +47,8 @@ if(!have_comments() && !comments_open())
 			</ol>
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 						<div class="navigation fix">
-							<div class="alignleft"><?php previous_comments_link( __( "<span class='meta-nav'>&larr;</span> Older Comments", 'pagelines' ) ); ?></div>
-							<div class="alignright"><?php next_comments_link( __( "Newer Comments <span class='meta-nav'>&rarr;</span>", 'pagelines' ) ); ?></div>
+							<div class="alignleft"><?php previous_comments_link( __( "<span class='meta-nav'>&larr;</span> Older Comments", 'fotos' ) ); ?></div>
+							<div class="alignright"><?php next_comments_link( __( "Newer Comments <span class='meta-nav'>&rarr;</span>", 'fotos' ) ); ?></div>
 						</div> <!-- .navigation -->
 			<?php endif; // check for comment navigation ?>
 
@@ -60,7 +60,7 @@ if(!have_comments() && !comments_open())
 			 */
 			if ( ! comments_open() ) :
 		?>
-			<p class="nocomments"><?php _e('Comments are closed.', 'pagelines');?></p>
+			<p class="nocomments"><?php _e('Comments are closed.', 'fotos');?></p>
 		<?php endif; // end ! comments_open() ?>
 
 <?php

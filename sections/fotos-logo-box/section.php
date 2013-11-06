@@ -27,7 +27,7 @@ class fotosLogoBox extends PageLinesSection {
 		$options = array(
 			array(
 				'key'	=> 'ba_fotos_logo_gohome',
-				'title'	=> __('Link to Home', 'basiq'),
+				'title'	=> __('Link to Home', 'fotos'),
 				'type'	=> 'check'
 			),
 		);

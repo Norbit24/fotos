@@ -22,12 +22,12 @@ class Fotos_Custom_Search extends WP_Widget {
         ?>
 
         <p>
-            <label for="<?php echo $this->get_field_id('fotos_search_bg'); ?>">Image</label>
+            <label for="<?php echo $this->get_field_id('fotos_search_bg'); ?>"><?php _e('Image','fotos');?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('fotos_search_bg'); ?>" name="<?php echo $this->get_field_name('fotos_search_bg'); ?>" type="text" value="<?php echo esc_attr($image); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id('fotos_search_btn'); ?>">Search Button</label>
+            <label for="<?php echo $this->get_field_id('fotos_search_btn'); ?>"><?php _e('Search Button','fotos');?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('fotos_search_btn'); ?>" name="<?php echo $this->get_field_name('fotos_search_btn'); ?>" type="text" value="<?php echo esc_attr($searchbtn); ?>" />
         </p>
         <?php

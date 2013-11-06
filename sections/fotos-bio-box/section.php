@@ -79,19 +79,19 @@ class fotosBioBox extends PageLinesSection {
 		$options[] = array(
 			'title'                   	=> __( 'Bio Text', 'fotos' ),
 			'type'	                  	=> 'textarea',
-			'key' 						=> 'ba_fotos_bio_text',
+			'key' 						=> 'ba_fotos_bio_text'
 		);
 
 		$options[] = array(
 			'title'                   	=> __( 'Bio Image', 'fotos' ),
 			'type'	                  	=> 'image_upload',
-			'key' 						=> 'ba_fotos_bio_image',
+			'key' 						=> 'ba_fotos_bio_image'
 		);
 
 		$options[] = array(
 			'key'						=> 'ba_fotos_bio_link_array',
 			'type'						=> 'accordion',
-			'title'						=> 'Social Links Setup',
+			'title'						=> __('Social Links Setup', 'fotos'),
 			'opts' 						=> array(
 				array(
 					'key'				=> 'link',
@@ -107,9 +107,8 @@ class fotosBioBox extends PageLinesSection {
 					'key'				=> 'img',
 					'label'				=> __( 'Image (instead of icon)', 'fotos' ),
 					'type'				=> 'image_upload'
-				),
-			),
-
+				)
+			)
 		);
 
 		$options[] = array(
@@ -121,8 +120,8 @@ class fotosBioBox extends PageLinesSection {
 				'image-right' 			=> array('name' => __( 'Text Left - Image Right', 'fotos' ) ),
 				'image-left'			=> array('name' => __( 'Image Left - Text Right', 'fotos' ) ),
 				'image-top'				=> array('name' => __( 'Image Top - Text Bottom', 'fotos' ) ),
-				'image-bottom'			=> array('name' => __( 'Text Top - Image Bottom', 'fotos' ) ),
-			),
+				'image-bottom'			=> array('name' => __( 'Text Top - Image Bottom', 'fotos' ) )
+			)
 		);
 
 		$options[] = array(
@@ -147,7 +146,7 @@ class fotosBioBox extends PageLinesSection {
 					'default'		  	=> 4,
 					'label' 	      	=> __( 'Image Column Span', 'fotos' ),
 					'help'			  	=> __('How wide the date column should be based on a 12-column grid.', 'fotos')
-				),
+				)
 			)
 
 		);
@@ -182,7 +181,7 @@ class fotosBioBox extends PageLinesSection {
 				array(
 					'key'				=> 'ba_fotos_bio_box_bg_repeat',
 					'type' 				=> 'check',
-					'label' 			=> __( 'Repeat Background Image', 'fotos' ),
+					'label' 			=> __( 'Repeat Background Image', 'fotos' )
 				)
 			)
 		);

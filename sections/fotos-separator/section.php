@@ -39,10 +39,10 @@ class baFotosSeparator extends PageLinesSection {
 					'default'		  	=> 'solid',
 					'title' 	      	=> __( 'Type of Break', 'fotos' ),
 					'opts'				=> array(
-						'solid' 		=> array('name'	=> 'Solid'),
-						'double' 		=> array('name'	=> 'Double'),
-						'dashed' 		=> array('name'	=> 'Dashed'),
-						'dotted' 		=> array('name'	=> 'Dotted'),
+						'solid' 		=> array('name'	=> __('Solid','fotos')),
+						'double' 		=> array('name'	=> __('Double','fotos')),
+						'dashed' 		=> array('name'	=> __('Dashed','fotos')),
+						'dotted' 		=> array('name'	=> __('Dotted','fotos')),
 					),
 				),
 				array(
@@ -60,7 +60,6 @@ class baFotosSeparator extends PageLinesSection {
 					'help'				=> __('Acceptable values include 10% or 10px.', 'fotos')
 				)
 			)
-
 		);
 
 		return $options;

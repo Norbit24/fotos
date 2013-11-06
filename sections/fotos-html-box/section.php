@@ -45,12 +45,12 @@ class fotosHTMLBox extends PageLinesSection {
 		$options = array(
 			array(
 				'key'	=> 'ba_fotos_html_box_content',
-				'title'	=> __('Content', 'basiq'),
+				'title'	=> __('Content', 'fotos'),
 				'type'	=> 'textarea'
 			),
 			array(
 				'key'	=> 'ba_fotos_html_box_fat',
-				'title'	=> __('Enable Fat Text', 'basiq'),
+				'title'	=> __('Enable Fat Text', 'fotos'),
 				'type'	=> 'check'
 			)
 		);

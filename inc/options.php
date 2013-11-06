@@ -90,7 +90,7 @@ class fotosGlobalOptions {
 
 							?><li>
 								<img class="fotos-admin-skins-img" src="<?php echo $img;?>">
-								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>" target="_blank"><i class="icon-globe"></i> Demo</a></p>
+								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>" target="_blank"><i class="icon-globe"></i> <?php _e('Demo','fotos');?></a></p>
 								<p class="fotos-admin-skins-desc"><?php echo $desc;?></p>
 							</li><?php
 
@@ -99,12 +99,12 @@ class fotosGlobalOptions {
 				</ul>
 			</div>
 			<div class="span3">
-				<p class="zmt"><strong>How to install Fotos skins</strong></p>
+				<p class="zmt"><strong><?php _e('How to install Fotos skins','fotos');?></strong></p>
 				<ul class="fotos-install-step-list">
-					<li><span>1</span> click Settings-->Import/Export</li>
-					<li><span>2</span> click the green button that reads <em>Select config file</em></li>
-					<li><span>3</span> navigate to your theme folder, and into your skins directory</li>
-					<li><span>4</span> select a skin and import</li>
+					<li><span>1</span> <?php _e('click Settings-->Import/Export','fotos');?></li>
+					<li><span>2</span> <?php _e('click the green button that reads <em>Select config file</em>','fotos');?></li>
+					<li><span>3</span> <?php _e('navigate to your theme folder, and into your skins directory','fotos');?></li>
+					<li><span>4</span> <?php _e('select a skin and import','fotos');?></li>
 				</ul>
 			</div>
 		</div>
@@ -164,7 +164,7 @@ class fotosGlobalOptions {
 	        		'title' 					=> 'Available Skins',
 		        ),
 	        ),
-	       	'help'         						=> 'Choose a skin for your site.'
+	       	'help'         						=> __('Choose a skin for your site.','fotos')
 	    );
 
 		$options[] = array(
@@ -279,7 +279,7 @@ class fotosGlobalOptions {
 					'key'						=> 'ba_fotos_post_title_align',
 					'type'						=> 'select',
 					'default'					=> 'align-left',
-					'title'						=> 'Post Title Alignment',
+					'title'						=> __('Post Title Alignment', 'fotos'),
 					'opts'						=> array(
 						'align-left' 			=> array('name' => __( 'Align Left', 'fotos' ) ),
 						'align-right'			=> array('name' => __( 'Align Right', 'fotos' ) ),
@@ -300,7 +300,7 @@ class fotosGlobalOptions {
 					'key'						=> 'ba_fotos_post_date_align',
 					'type'						=> 'select',
 					'default'					=> '',
-					'title'						=> 'Post Date Alignment',
+					'title'						=> __('Post Date Alignment', 'fotos'),
 					'opts'						=> array(
 						'pull-left' 			=> array('name' => __( 'Align Left', 'fotos' ) ),
 						'pull-right'			=> array('name' => __( 'Align Right', 'fotos' ) ),
@@ -310,7 +310,7 @@ class fotosGlobalOptions {
 				array(
 					'key'						=> 'ba_fotos_post_date_margin',
 					'type'						=> 'text',
-					'title'						=> 'Post Date Margin Top',
+					'title'						=> __('Post Date Margin Top', 'fotos'),
 					'help'						=> __('Acceptable values include 20px or 20%.','fotos')
 				),
 				array(
@@ -467,18 +467,18 @@ class fotosGlobalOptions {
 						array(
 							'type' 				=> 'image_upload',
 							'key'				=> 'ba_fotos_twitter_img',
-							'title'				=> 'Custom Twitter Button'
+							'title'				=> __('Custom Twitter Button','fotos'),
 						),
 						array(
 							'type' 				=> 'image_upload',
 							'key'				=> 'ba_fotos_fb_img',
-							'title'				=> 'Custom Facebook Button'
+							'title'				=> __('Custom Facebook Button','fotos'),
 						),
 						array(
 							'type' 				=> 'image_upload',
 							'key'				=> 'ba_fotos_pinterest_img',
-							'title'				=> 'Custom Pinterest Button'
-						),
+							'title'				=> __('Custom Pinterest Button','fotos')
+						)
 					)
 
 				)

@@ -76,34 +76,32 @@ class baFotosContact extends PageLinesSection{
 		</div>
 		<?php
 
-
-
 	}
 
 	function section_opts(){
 
 		$opts = array(
 			array(
-				'key'		=> 'ba_fotos_contact_sb_area',
-				'type'		=> 'select',
-				'opts'		=> get_sidebar_select(),
-				'title'		=> 'Select Widget Area',
-				'label'		=>	'Select a widget area',
-				'help'		=> "Select the widget area you would like to use.",
+				'key'		=> 	'ba_fotos_contact_sb_area',
+				'type'		=> 	'select',
+				'opts'		=>	get_sidebar_select(),
+				'title'		=> 	__('Select Widget Area', 'fotos'),
+				'label'		=>	__('Select a widget area', 'fotos'),
+				'help'		=>  __('Select the widget area you would like to use.', 'fotos')
 			),
 			array(
-				'key'		=> 'ba_fotos_contact_help',
-				'type'		=> 'link',
-				'url'		=> admin_url( 'widgets.php' ),
-				'title'		=> 'Widget Areas Help',
-				'label'		=>	'<i class="icon-retweet"></i> Edit Widget Areas',
-				'help'		=> "This section uses widgetized areas that are created and edited in inside your admin.",
+				'key'		=> 	'ba_fotos_contact_help',
+				'type'		=> 	'link',
+				'url'		=> 	admin_url( 'widgets.php' ),
+				'title'		=> 	__('Widget Areas Help', 'fotos'),
+				'label'		=>	__('<i class="icon-retweet"></i> Edit Widget Areas', 'fotos'),
+				'help'		=> 	__('This section uses widgetized areas that are created and edited in inside your admin.', 'fotos'),
 			),
 			array(
-				'key'		=> 'ba_fotos_contact_form_layout',
-				'type'		=> 'check',
-				'title'		=> __('Form Alignment', 'fotos'),
-				'help'		=> __('Ticking this will make the form move to the left, with the widget area on the right.','fotos')
+				'key'		=> 	'ba_fotos_contact_form_layout',
+				'type'		=> 	'check',
+				'title'		=> 	__('Form Alignment', 'fotos'),
+				'help'		=> 	__('Ticking this will make the form move to the left, with the widget area on the right.','fotos')
 			)
 		);
 
@@ -112,9 +110,9 @@ class baFotosContact extends PageLinesSection{
 				'key'		=> 'ba_fotos_contact_sb_custom_sidebars',
 				'type'		=> 'link',
 				'url'		=> 'http://wordpress.org/extend/plugins/custom-sidebars/',
-				'title'		=> 'Get Custom Sidebars',
-				'label'		=>	'<i class="icon-external-link"></i> Check out plugin',
-				'help'		=> "We have detected that you don't have the Custom Sidebars plugin installed. We recommend you install this plugin to create custom widgetized areas on demand.",
+				'title'		=> __('Get Custom Sidebars', 'fotos'),
+				'label'		=> __('<i class="icon-external-link"></i> Check out plugin','fotos'),
+				'help'		=> __('We have detected that you don\'t have the Custom Sidebars plugin installed. We recommend you install this plugin to create custom widgetized areas on demand.', 'fotos')
 			);
 		}
 

@@ -76,7 +76,7 @@ class baFotosBoxes extends PageLinesSection{
 		$options[] = array(
 			'key'				=> 'fotos_box_col',
 			'type' 				=> 'select',
-			'title'				=> __('Box Columns', 'basiq'),
+			'title'				=> __('Box Columns', 'fotos'),
 			'opts'				=> array(
 				'2col'			=> array('name' => '2 Column'),
 				'3col'			=> array('name' => '3 Column'),
@@ -88,7 +88,7 @@ class baFotosBoxes extends PageLinesSection{
 		$options[] = array(
 			'key'				=> 'fotos_box_array',
 			'type'				=> 'accordion',
-			'title'				=> 'Boxes Setup',
+			'title'				=> __('Boxes Setup', 'fotos'),
 			'col'				=> 4,
 			'post_type'			=> __('Box','fotos'),
 			'opts' 				=> array(

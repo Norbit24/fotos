@@ -32,7 +32,7 @@ class fotosSupportTab {
 	function support_tab($toolbar){
 
 	    $toolbar['fotos-support'] = array(
-	        'name'        		=> 'Fotos Hub',
+	        'name'        		=> __('Fotos Hub', 'fotos'),
 	        'icon'        		=> 'icon-bullseye',
 	        'pos'        		=> 50,
 	        'panel'      		=> array(
@@ -60,42 +60,42 @@ class fotosSupportTab {
 		?>
 		<div class="fotos-docs-row row">
 			<div class="span3">
-				<p class="zmt" style="margin-bottom:7px;">Stuck and need some help? Check out the videos on your right, or hit the docs link below. If all else fails, hit us up on the forum!</p>
+				<p class="zmt" style="margin-bottom:7px;"><?php _e('Stuck and need some help? Check out the videos on your right, or hit the docs link below. If all else fails, hit us up on the forum!','fotos');?></p>
 
-				<a class="btn btn-info"><i class="icon-user"></i> &nbsp;Support Forum</a>
-				<a class="btn btn-info"><i class="icon-folder-close"></i> &nbsp;Docs</a>
+				<a class="btn btn-info"><i class="icon-user"></i> &nbsp;<?php _e('Support Forum','fotos');?></a>
+				<a class="btn btn-info"><i class="icon-folder-close"></i> &nbsp;<?php _e('Docs','fotos');?></a>
 
-				<p style="margin-bottom:7px;">We're also on those social places!</p>
-				<a class="btn btn-info"><i class="icon-twitter-sign"></i> &nbsp;Follow Us</a>
-				<a class="btn btn-info"><i class="icon-facebook-sign"></i> &nbsp;Be a Fan</a>
+				<p style="margin-bottom:7px;"><?php _e('We\'re also on those social places!','fotos');?></p>
+				<a class="btn btn-info"><i class="icon-twitter-sign"></i> &nbsp;<?php _e('Follow Us','fotos');?></a>
+				<a class="btn btn-info"><i class="icon-facebook-sign"></i> &nbsp;<?php _e('Be a Fan','fotos');?></a>
 
 			</div>
 			<div class="span9">
 				<div class="row">
 					<div class="span3">
-						<p class="zmt fotos-help"><strong>Getting started with fotos</strong></p>
+						<p class="zmt fotos-help"><strong><?php _e('Getting started with fotos','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
 					</div>
 					<div class="span3">
-						<p class="zmt fotos-help"><strong>Working with options</strong></p>
+						<p class="zmt fotos-help"><strong><?php _e('Working with options','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
 					</div>
 					<div class="span3">
-						<p class="zmt fotos-help"><strong>How to setup the contact form</strong></p>
+						<p class="zmt fotos-help"><strong><?php _e('How to setup the contact form','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
 					</div>
 					<div class="span3">
-						<p class="zmt fotos-help"><strong>How to create a gallery</strong></p>
+						<p class="zmt fotos-help"><strong><?php _e('How to create a gallery','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
 					</div>
 				</div>
 				<div class="row">
 					<div class="span3">
-						<p class="zmt fotos-help"><strong>How to install skins</strong></p>
+						<p class="zmt fotos-help"><strong><?php _e('How to install skins','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
 					</div>
 					<div class="span3">
-						<p class="zmt fotos-help"><strong>Installing Fotos plugins</strong></p>
+						<p class="zmt fotos-help"><strong><?php _e('Installing Fotos plugins','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
 					</div>
 					<div class="span3">
@@ -112,8 +112,8 @@ class fotosSupportTab {
 
 	function fotos_market_call(){
 		?>
-		<p class="span12">The <a href="http://nickhaskins.co/fotos" target="_blank">Fotos Market</a> is where you can find cool plugins and amazing skins to compliment your site with. We're going to display those products here soon, but in the mean time head on over and <a href="http://nickhaskins.co/fotos" target="_blank">check out</a> the market!</p>
-		<p>P.S. - Want to be a Fotos Author and earn a nice little recurring income? <a href="http://nickhaskins.co/fotos-authors/" target="_blank">Apply here</a>.</p>
+		<p class="span12"><?php _e('The <a href="http://nickhaskins.co/fotos" target="_blank">Fotos Market</a> is where you can find cool plugins and amazing skins to compliment your site with. We\'re going to display those products here soon, but in the mean time head on over and <a href="http://nickhaskins.co/products/category/fotos/" target="_blank">check out</a> the market!','fotos');?></p>
+		<p><?php _e('P.S. - Want to be a Fotos Author and earn a nice little recurring income? <a href="http://authors.fotostheme.com" target="_blank">Apply here</a>.','fotos');?></p>
 		<?php
 	}
 
