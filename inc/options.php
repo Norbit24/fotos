@@ -427,8 +427,7 @@ class fotosGlobalOptions {
 				    	'image' 				=> array('name' => __('Custom Image','fotos')),
 				    	'plain' 				=> array('name' => __('Plain Button','fotos')),
 				    	'text' 					=> array('name' => __('Plain Text','fotos'))
-				    ),
-					'help' 						=> __('' , 'fotos'),
+				    )
 				),
 				array(
 					'title'   					=> __('Social Links Alignment', 'fotos'),
@@ -438,8 +437,7 @@ class fotosGlobalOptions {
 				    	'tal' 					=> array('name' => __('Align Left','fotos')),
 				    	'center' 				=> array('name' => __('Centered','fotos')),
 				    	'tar' 					=> array('name' => __('Align Right','fotos')),
-				    ),
-					'help' 						=> __('' , 'fotos'),
+				    )
 				),
 				array(
 					'title'						=> __('Separator Images (optional)', 'fotos'),

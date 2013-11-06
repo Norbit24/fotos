@@ -59,6 +59,9 @@ class baFotosTheme {
 		// bypass posix check
 		add_filter( 'render_css_posix_', '__return_true' );
 
+		// i18n 
+		add_action( 'after_setup_theme', array($this,'fotos_textdomain' ));
+
 		// Add Microdata
         add_action('the_html_tag', array($this,'fotos_microdata'));
 
@@ -87,6 +90,10 @@ class baFotosTheme {
 		add_action('admin_init', array($this,'activate_license'));
 		add_action('admin_init', array($this,'deactivate_license'));
 
+	}
+
+	function fotos_textdomain() {
+		load_child_theme_textdomain( 'fotos-textdomain', $this->dir. '/lang' );
 	}
 
 	function fotos_microdata(){

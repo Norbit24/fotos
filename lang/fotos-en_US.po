@@ -1,0 +1,1182 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fotos\n"
+"POT-Creation-Date: 2013-11-06 12:43-0600\n"
+"PO-Revision-Date: 2013-11-06 12:43-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../sections\n"
+"X-Poedit-SearchPath-1: ../inc\n"
+
+#: ../sections/fotos-bio-box/section.php:80
+msgid "Bio Text"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:86
+msgid "Bio Image"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:94
+msgid "Social Links Setup"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:98
+msgid "Icon Link"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:103
+#: ../sections/fotos-icons/section.php:72
+#: ../sections/fotos-icons/section.php:82
+msgid "Icon"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:108
+#: ../sections/fotos-icons/section.php:87
+msgid "Image (instead of icon)"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:115
+msgid "Bio Layout"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:120
+msgid "Text Left - Image Right"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:121
+msgid "Image Left - Text Right"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:122
+msgid "Image Top - Text Bottom"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:123
+msgid "Text Top - Image Bottom"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:128
+msgid "Bio Column Widths"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:138
+msgid "Text Column Span"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:139
+msgid "How wide the title column shoudl be based on a 12-column grid."
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:147
+msgid "Image Column Span"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:148
+msgid "How wide the date column should be based on a 12-column grid."
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:157
+msgid "Bio Box Design"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:163
+msgid "Background Color"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:169
+msgid "Text Color"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:174
+msgid "Box Padding"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:179
+msgid "Background Image"
+msgstr ""
+
+#: ../sections/fotos-bio-box/section.php:184
+msgid "Repeat Background Image"
+msgstr ""
+
+#: ../sections/fotos-blog-loop/section.php:63
+msgid "Blog Loop Options"
+msgstr ""
+
+#: ../sections/fotos-blog-loop/section.php:65
+msgid "Options for the blog can be adjusted globally under the Theme tab."
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:126
+msgid "Optimal Image Size"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:132
+msgid "Slide Images"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:136
+#: ../sections/fotos-boxes/section.php:97
+msgid "Image"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:140
+msgid ""
+"Here you can add new images, and reorder existing images by dragging each "
+"individual item"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:143
+msgid "Slider Height"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:146
+msgid ""
+"This default height for the slider is 300px. You can change this by "
+"supplying your own height such as <em>500px</em> as an example"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:149
+msgid "Make Full Width"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:152
+msgid "If you check this box, the slider will stretch 100% across teh screen."
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:155
+msgid "Blog Slider Overlay HTML"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:158
+msgid ""
+"Anything you place in here will activate the overlay. You can put anything "
+"here, including HTML (don't be scared)!"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:161
+msgid "Blog Slider Overlay Colors"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:168
+msgid "Overlay Background Color"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:174
+msgid "Overlay Text Color"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:179
+msgid "Blog Slider Overlay Design"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:186
+msgid "Overlay Width"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:191
+msgid "Overlay Position"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:194
+msgid "Left"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:195
+msgid "Right"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:196
+#: ../sections/fotos-icons/section.php:65
+#: ../sections/fotos-navigation/section.php:146 ../inc/options.php:286
+#: ../inc/options.php:307 ../inc/options.php:438
+msgid "Centered"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:197
+msgid "1/4 Left"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:198
+msgid "1/4 Right"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:204
+msgid "Overlay Outer Padding"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:209
+msgid "Blog Slider Options"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:216
+msgid "Transition Speed"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:221
+msgid "Slider Transition Type"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:224
+msgid "Fade"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:225
+msgid "Fade Out"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:226
+msgid "Scroll Horizontally"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:234
+msgid "Blog Slider Crop Options"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:237
+msgid "Cover"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:238
+msgid "Contain"
+msgstr ""
+
+#: ../sections/fotos-blog-slider/section.php:240
+msgid ""
+"Cover will fit any size image and scale across the size of the slider. "
+"Contain will constrain your image to the size of the slider, but will "
+"respect your image aspect ratio."
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:79
+msgid "Box Columns"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:91
+msgid "Boxes Setup"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:93
+msgid "Box"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:102
+#: ../sections/fotos-icons/section.php:77
+msgid "Link"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:107
+msgid "Link Caption (optional if using link)"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:117
+msgid "Box Captions Design"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:123
+msgid "Box Caption Background"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:129
+msgid "Box Caption Text"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:132
+msgid "Box Caption Font"
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:136
+msgid "This controls the box caption font for this section."
+msgstr ""
+
+#: ../sections/fotos-boxes/section.php:139
+msgid "This"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:88
+msgid "Select Widget Area"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:89
+msgid "Select a widget area"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:90
+msgid "Select the widget area you would like to use."
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:96
+msgid "Widget Areas Help"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:97
+msgid "<i class=\"icon-retweet\"></i> Edit Widget Areas"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:98
+msgid ""
+"This section uses widgetized areas that are created and edited in inside "
+"your admin."
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:103
+msgid "Form Alignment"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:104
+msgid ""
+"Ticking this will make the form move to the left, with the widget area on "
+"the right."
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:113
+msgid "Get Custom Sidebars"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:114
+msgid "<i class=\"icon-external-link\"></i> Check out plugin"
+msgstr ""
+
+#: ../sections/fotos-contact/section.php:115
+msgid ""
+"We have detected that you don't have the Custom Sidebars plugin installed. "
+"We recommend you install this plugin to create custom widgetized areas on "
+"demand."
+msgstr ""
+
+#: ../sections/fotos-grid-blog-loop/section.php:90
+msgid "&larr; Older Posts"
+msgstr ""
+
+#: ../sections/fotos-grid-blog-loop/section.php:93
+msgid "Newer Posts &rarr;"
+msgstr ""
+
+#: ../sections/fotos-grid-blog-loop/section.php:105
+msgid "Content Border"
+msgstr ""
+
+#: ../sections/fotos-grid-blog-loop/section.php:107
+msgid "Add a border around the post items."
+msgstr ""
+
+#: ../sections/fotos-html-box/section.php:48
+msgid "Content"
+msgstr ""
+
+#: ../sections/fotos-html-box/section.php:53
+msgid "Enable Fat Text"
+msgstr ""
+
+#: ../sections/fotos-icons/section.php:61
+msgid "Icon Alignment"
+msgstr ""
+
+#: ../sections/fotos-icons/section.php:63
+#: ../sections/fotos-navigation/section.php:144 ../inc/options.php:284
+#: ../inc/options.php:305 ../inc/options.php:437
+msgid "Align Left"
+msgstr ""
+
+#: ../sections/fotos-icons/section.php:64
+#: ../sections/fotos-navigation/section.php:145 ../inc/options.php:285
+#: ../inc/options.php:306 ../inc/options.php:439
+msgid "Align Right"
+msgstr ""
+
+#: ../sections/fotos-icons/section.php:71
+msgid "Fotos Icons Setup"
+msgstr ""
+
+#: ../sections/fotos-icons/section.php:92
+msgid "Image ALT (if using image)"
+msgstr ""
+
+#: ../sections/fotos-logo-box/section.php:30
+msgid "Link to Home"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:117
+msgid "Instructions"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:119
+msgid ""
+"These are the global options for Basiq Nav. Due to the way PageLines "
+"sections are handled in DMS, these options have to be global instead of in "
+"the section. Options for the individual section can be found by editing the "
+"actual section itself on the page."
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:132
+msgid "Choose a Menu"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:135
+msgid "Select a menu to use."
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:139
+msgid "Nav Alignment"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:151
+msgid "Nav Modes"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:156
+msgid "Standard"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:157
+msgid "Fixed Top"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:158
+msgid "Vertical Mode"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:160
+msgid ""
+"Choose a fixed position for the nav. If \"Fixed Bottom\" is chosen, sub-"
+"menus will drop-up, instead of down. Vertical Mode will run the menu as a "
+"vertical menu."
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:164
+msgid "Enable Search"
+msgstr ""
+
+#: ../sections/fotos-navigation/section.php:167
+msgid "Enable a search form that fits inside the navigation."
+msgstr ""
+
+#: ../sections/fotos-page-gallery/section.php:109
+msgid "Create Gallery"
+msgstr ""
+
+#: ../sections/fotos-page-gallery/section.php:110
+msgid "<i class=\"icon-edit\"></i> Upload Images"
+msgstr ""
+
+#: ../sections/fotos-page-gallery/section.php:111
+msgid "Create a gallery by uploading some images."
+msgstr ""
+
+#: ../sections/fotos-page-gallery/section.php:116
+msgid "Simple Gallery Options"
+msgstr ""
+
+#: ../sections/fotos-page-gallery/section.php:123
+msgid "Show Thumbnails"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:32
+msgid "Separator Configuration"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:40
+msgid "Type of Break"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:42
+msgid "Solid"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:43
+msgid "Double"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:44
+msgid "Dashed"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:45
+msgid "Dotted"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:52
+msgid "Margin Top"
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:53
+#: ../sections/fotos-separator/section.php:60
+#, php-format
+msgid "Acceptable values include 10% or 10px."
+msgstr ""
+
+#: ../sections/fotos-separator/section.php:59
+msgid "Margin Bottom"
+msgstr ""
+
+#: ../inc/contact.php:41
+msgid "Email"
+msgstr ""
+
+#: ../inc/contact.php:42
+msgid "Name"
+msgstr ""
+
+#: ../inc/contact.php:43
+msgid "Message..."
+msgstr ""
+
+#: ../inc/contact.php:44
+msgid "Send"
+msgstr ""
+
+#: ../inc/contact.php:125
+msgid "Captcha cannot be empty!"
+msgstr ""
+
+#: ../inc/contact.php:127
+msgid "Captcha does not match."
+msgstr ""
+
+#: ../inc/contact.php:131
+msgid "Email address is not valid."
+msgstr ""
+
+#: ../inc/contact.php:133
+msgid "Name cannot be empty."
+msgstr ""
+
+#: ../inc/contact.php:135
+msgid "Content cannot be empty."
+msgstr ""
+
+#: ../inc/contact.php:165
+msgid "Unknown wp_mail() error."
+msgstr ""
+
+#: ../inc/options.php:93
+msgid "Demo"
+msgstr ""
+
+#: ../inc/options.php:102
+msgid "How to install Fotos skins"
+msgstr ""
+
+#: ../inc/options.php:104
+msgid "click Settings-->Import/Export"
+msgstr ""
+
+#: ../inc/options.php:105
+msgid "click the green button that reads <em>Select config file</em>"
+msgstr ""
+
+#: ../inc/options.php:106
+msgid "navigate to your theme folder, and into your skins directory"
+msgstr ""
+
+#: ../inc/options.php:107
+msgid "select a skin and import"
+msgstr ""
+
+#: ../inc/options.php:156
+msgid "Fotos - Skins"
+msgstr ""
+
+#: ../inc/options.php:167
+msgid "Choose a skin for your site."
+msgstr ""
+
+#: ../inc/options.php:171
+msgid "Fotos - Nav Options"
+msgstr ""
+
+#: ../inc/options.php:177
+msgid "Site Logo"
+msgstr ""
+
+#: ../inc/options.php:180
+msgid "This shows when you use the logo box, and in some nav sections."
+msgstr ""
+
+#: ../inc/options.php:183
+msgid "Navigation Design"
+msgstr ""
+
+#: ../inc/options.php:189
+msgid "Font Color"
+msgstr ""
+
+#: ../inc/options.php:192
+msgid "Set a font color."
+msgstr ""
+
+#: ../inc/options.php:196
+msgid "Base Color"
+msgstr ""
+
+#: ../inc/options.php:199 ../inc/options.php:231
+msgid "Set a base color."
+msgstr ""
+
+#: ../inc/options.php:203
+msgid "Minimal Nav Style"
+msgstr ""
+
+#: ../inc/options.php:205
+msgid ""
+"By default the navigation has a background color and active page colors. "
+"Toggling this will remove most of the colors (except the dropdowns)."
+msgstr ""
+
+#: ../inc/options.php:209
+msgid "Background Pattern (optional)"
+msgstr ""
+
+#: ../inc/options.php:211
+msgid "Upload a pattern or texture to use on the nav."
+msgstr ""
+
+#: ../inc/options.php:216
+msgid "Nav Font Options"
+msgstr ""
+
+#: ../inc/options.php:222
+msgid "Font Size"
+msgstr ""
+
+#: ../inc/options.php:224
+msgid "Set a font size."
+msgstr ""
+
+#: ../inc/options.php:228
+msgid "Font Family"
+msgstr ""
+
+#: ../inc/options.php:236
+msgid "Nav Placement Options"
+msgstr ""
+
+#: ../inc/options.php:242
+msgid "Navigation Margin"
+msgstr ""
+
+#: ../inc/options.php:244
+msgid ""
+"Optionally set a margin for the nav. Enter using css shorthand like <em>20px "
+"10px 5px 10px</em>."
+msgstr ""
+
+#: ../inc/options.php:252
+msgid "Fotos - Post Header"
+msgstr ""
+
+#: ../inc/options.php:258
+msgid "Post Header Layout"
+msgstr ""
+
+#: ../inc/options.php:263
+msgid "Title Left - Date Right"
+msgstr ""
+
+#: ../inc/options.php:264
+msgid "Date Left - Title Right"
+msgstr ""
+
+#: ../inc/options.php:265
+msgid "Title & Date Centered"
+msgstr ""
+
+#: ../inc/options.php:275
+msgid "Post Title Width"
+msgstr ""
+
+#: ../inc/options.php:276
+msgid "How wide should the title column be?"
+msgstr ""
+
+#: ../inc/options.php:282
+msgid "Post Title Alignment"
+msgstr ""
+
+#: ../inc/options.php:296
+msgid "Post Date Width"
+msgstr ""
+
+#: ../inc/options.php:297
+msgid "How wide should the date column be?"
+msgstr ""
+
+#: ../inc/options.php:303
+msgid "Post Date Alignment"
+msgstr ""
+
+#: ../inc/options.php:313
+msgid "Post Date Margin Top"
+msgstr ""
+
+#: ../inc/options.php:314
+msgid "Acceptable values include 20px or 20%."
+msgstr ""
+
+#: ../inc/options.php:319
+msgid "Post Date Background Image"
+msgstr ""
+
+#: ../inc/options.php:322
+msgid "Post Date Format"
+msgstr ""
+
+#: ../inc/options.php:327
+msgid "Full Date"
+msgstr ""
+
+#: ../inc/options.php:328
+msgid "Block Style Date"
+msgstr ""
+
+#: ../inc/options.php:329
+msgid "Stacked"
+msgstr ""
+
+#: ../inc/options.php:330
+msgid "Minimal Style Date"
+msgstr ""
+
+#: ../inc/options.php:334
+msgid "Post Categories Text"
+msgstr ""
+
+#: ../inc/options.php:337
+msgid ""
+"Here you can replace the text underneath the post title. By default it says "
+"<em>Filed under</em>, but you can change that here."
+msgstr ""
+
+#: ../inc/options.php:340
+msgid "Post Tags Text"
+msgstr ""
+
+#: ../inc/options.php:343
+msgid ""
+"Here you can replace the text underneath the post title. By default it says "
+"<em>Tagged with</em>, but you can change that here."
+msgstr ""
+
+#: ../inc/options.php:346
+msgid "Post Header Border"
+msgstr ""
+
+#: ../inc/options.php:349
+msgid "Add a border below the post title and date."
+msgstr ""
+
+#: ../inc/options.php:352
+msgid "Post Header All Caps"
+msgstr ""
+
+#: ../inc/options.php:355
+msgid "Put the post title in all caps."
+msgstr ""
+
+#: ../inc/options.php:361
+msgid "Fotos - Post Content"
+msgstr ""
+
+#: ../inc/options.php:367
+msgid "Content Shadow"
+msgstr ""
+
+#: ../inc/options.php:370
+msgid "Add a shadow to the boxed wrap area."
+msgstr ""
+
+#: ../inc/options.php:373
+msgid "Article Separator"
+msgstr ""
+
+#: ../inc/options.php:376
+msgid ""
+"Whatever you put here will be placed in between the articles on the home "
+"page of the posts. You can enter HTML here as well."
+msgstr ""
+
+#: ../inc/options.php:382
+msgid "Fotos - Post Comments"
+msgstr ""
+
+#: ../inc/options.php:388
+msgid "Comments Text"
+msgstr ""
+
+#: ../inc/options.php:391
+msgid ""
+"By default this reads \"Comment\" but you can change this here. Fotos will "
+"automatically apply the plural version for you."
+msgstr ""
+
+#: ../inc/options.php:394
+msgid "Show Comments Text"
+msgstr ""
+
+#: ../inc/options.php:397
+msgid "By default this reads \"Show Comments\" but you can change this here."
+msgstr ""
+
+#: ../inc/options.php:400
+msgid "No Comments Found Text"
+msgstr ""
+
+#: ../inc/options.php:403
+msgid ""
+"By default this reads \"No comments found.\" but you can change this here."
+msgstr ""
+
+#: ../inc/options.php:406
+msgid "Add Comment Bar Borders"
+msgstr ""
+
+#: ../inc/options.php:409
+msgid "Add a border to the top and bottom of the comment bar."
+msgstr ""
+
+#: ../inc/options.php:416
+msgid "Fotos - Post Social"
+msgstr ""
+
+#: ../inc/options.php:421
+msgid "Social Links Mode"
+msgstr ""
+
+#: ../inc/options.php:426
+msgid "Icons"
+msgstr ""
+
+#: ../inc/options.php:427
+msgid "Custom Image"
+msgstr ""
+
+#: ../inc/options.php:428
+msgid "Plain Button"
+msgstr ""
+
+#: ../inc/options.php:429
+msgid "Plain Text"
+msgstr ""
+
+#: ../inc/options.php:433
+msgid "Social Links Alignment"
+msgstr ""
+
+#: ../inc/options.php:443
+msgid "Separator Images (optional)"
+msgstr ""
+
+#: ../inc/options.php:446
+msgid "This will be placed between the social sharing links."
+msgstr ""
+
+#: ../inc/options.php:449
+msgid "Social Sharing Text"
+msgstr ""
+
+#: ../inc/options.php:452
+msgid ""
+"Use this option to add some text before the sharing icons. Maybe something "
+"like \"share this post\" would be fitting ya? You can also use an image "
+"instead. Check out the next option over!"
+msgstr ""
+
+#: ../inc/options.php:455
+msgid "Social Sharing Image (instead of text)"
+msgstr ""
+
+#: ../inc/options.php:458
+msgid ""
+"Upload an image to use <strong>in place</strong> of the text that reads "
+"\"Share Post.\""
+msgstr ""
+
+#: ../inc/options.php:461
+msgid "Custom Social Images"
+msgstr ""
+
+#: ../inc/options.php:468
+msgid "Custom Twitter Button"
+msgstr ""
+
+#: ../inc/options.php:473
+msgid "Custom Facebook Button"
+msgstr ""
+
+#: ../inc/options.php:478
+msgid "Custom Pinterest Button"
+msgstr ""
+
+#: ../inc/options.php:489
+msgid "Fotos - Contact Form"
+msgstr ""
+
+#: ../inc/options.php:496
+msgid "Default email send address"
+msgstr ""
+
+#: ../inc/options.php:497
+msgid "Email address to send for To. Leave blank to use admin email"
+msgstr ""
+
+#: ../inc/options.php:503
+msgid "Enable extra custom field"
+msgstr ""
+
+#: ../inc/options.php:509
+msgid "Extra field text"
+msgstr ""
+
+#: ../inc/options.php:515
+msgid "Enable simple antispam question"
+msgstr ""
+
+#: ../inc/options.php:521
+msgid "Antispam question"
+msgstr ""
+
+#: ../inc/options.php:527
+msgid "Antispam answer"
+msgstr ""
+
+#: ../inc/options.php:532
+msgid ""
+"Format for email subject. Possible values: %name% %blog%<br />Defaults: "
+"[%blog%] New message from %name%."
+msgstr ""
+
+#: ../inc/options.php:539
+msgid "Fotos - Design"
+msgstr ""
+
+#: ../inc/options.php:544
+msgid "Post Title"
+msgstr ""
+
+#: ../inc/options.php:548
+msgid ""
+"This controls the color for the post title. By default, it uses the same "
+"color you have set under Global Options-->Color & Style"
+msgstr ""
+
+#: ../inc/options.php:551
+msgid "Post Meta"
+msgstr ""
+
+#: ../inc/options.php:555
+msgid "This is the text that shows what categories the post is in."
+msgstr ""
+
+#: ../inc/options.php:558
+msgid "Post Date"
+msgstr ""
+
+#: ../inc/options.php:562
+msgid ""
+"Optionally change the color of the post date. By default it will match the "
+"color you have chosen under Global Options-->Color & Style."
+msgstr ""
+
+#: ../inc/options.php:565
+msgid "Post Header Background"
+msgstr ""
+
+#: ../inc/options.php:569
+msgid "Controls the background color of the post header."
+msgstr ""
+
+#: ../inc/options.php:572
+msgid "Post Header Background Image"
+msgstr ""
+
+#: ../inc/options.php:575
+msgid "Use a background image for the post header, instead of teh color above."
+msgstr ""
+
+#: ../inc/options.php:578
+msgid "Post Social Text"
+msgstr ""
+
+#: ../inc/options.php:582
+msgid ""
+"Applies color to the social text or icons. Does not apply if you are using "
+"images in place of icons or text for social sharing."
+msgstr ""
+
+#: ../inc/options.php:585 ../inc/options.php:636
+msgid "Post Comments Bar"
+msgstr ""
+
+#: ../inc/options.php:589
+msgid ""
+"Optionally set a background color for the post comments bar. By default it "
+"will take whatever Base color you have chosen under Global Options-->Color & "
+"Style."
+msgstr ""
+
+#: ../inc/options.php:592
+msgid "Post Comments Drawer"
+msgstr ""
+
+#: ../inc/options.php:596
+msgid ""
+"Optionally set a background color for the post comments drawer. By default "
+"it will take whatever Base color you have chosen under Global Options--"
+">Color & Style."
+msgstr ""
+
+#: ../inc/options.php:599
+msgid "Post Comments Text"
+msgstr ""
+
+#: ../inc/options.php:603
+msgid ""
+"Optionally change the color of the text for teh post comments. By default it "
+"will match the color you have chosen under Global Options-->Color & Style."
+msgstr ""
+
+#: ../inc/options.php:606
+msgid "Content Shadow Color"
+msgstr ""
+
+#: ../inc/options.php:610
+msgid ""
+"Optionally change the color of the box shadow around the main content "
+"column. This only takes effect if you have the option checked under Fotos--"
+">Post Content."
+msgstr ""
+
+#: ../inc/options.php:613
+msgid "Widget Title Color"
+msgstr ""
+
+#: ../inc/options.php:617
+msgid ""
+"Optionally change the color of the Widget Titles. Hint: change the font "
+"family under Fotos - Typography"
+msgstr ""
+
+#: ../inc/options.php:624
+msgid "Fotos - Typography"
+msgstr ""
+
+#: ../inc/options.php:629
+msgid "Widget Headings"
+msgstr ""
+
+#: ../inc/options.php:633
+msgid "This controls the font family for Widget headings."
+msgstr ""
+
+#: ../inc/options.php:640
+msgid ""
+"This controls the font family for comments bar (not the comments in the "
+"drawer)."
+msgstr ""
+
+#: ../inc/post.php:24
+msgid "Filed under"
+msgstr ""
+
+#: ../inc/post.php:25
+msgid "Tagged width"
+msgstr ""
+
+#: ../inc/post.php:119
+msgid "Show Comments"
+msgstr ""
+
+#: ../inc/post.php:120
+msgid "Comment"
+msgstr ""
+
+#: ../inc/post.php:358
+msgid "No comments found."
+msgstr ""
+
+#: ../inc/support-tab.php:35
+msgid "Fotos Hub"
+msgstr ""
+
+#: ../inc/support-tab.php:39
+msgid "Fotos Support"
+msgstr ""
+
+#: ../inc/support-tab.php:41
+msgid "Get Help"
+msgstr ""
+
+#: ../inc/support-tab.php:47
+msgid "Fotos Market"
+msgstr ""
+
+#: ../inc/support-tab.php:63
+msgid ""
+"Stuck and need some help? Check out the videos on your right, or hit the "
+"docs link below. If all else fails, hit us up on the forum!"
+msgstr ""
+
+#: ../inc/support-tab.php:65
+msgid "Support Forum"
+msgstr ""
+
+#: ../inc/support-tab.php:66
+msgid "Docs"
+msgstr ""
+
+#: ../inc/support-tab.php:68
+msgid "We're also on those social places!"
+msgstr ""
+
+#: ../inc/support-tab.php:69
+msgid "Follow Us"
+msgstr ""
+
+#: ../inc/support-tab.php:70
+msgid "Be a Fan"
+msgstr ""
+
+#: ../inc/support-tab.php:76
+msgid "Getting started with fotos"
+msgstr ""
+
+#: ../inc/support-tab.php:80
+msgid "Working with options"
+msgstr ""
+
+#: ../inc/support-tab.php:84
+msgid "How to setup the contact form"
+msgstr ""
+
+#: ../inc/support-tab.php:88
+msgid "How to create a gallery"
+msgstr ""
+
+#: ../inc/support-tab.php:94
+msgid "How to install skins"
+msgstr ""
+
+#: ../inc/support-tab.php:98
+msgid "Installing Fotos plugins"
+msgstr ""
+
+#: ../inc/support-tab.php:115
+msgid ""
+"The <a href=\"http://nickhaskins.co/fotos\" target=\"_blank\">Fotos Market</"
+"a> is where you can find cool plugins and amazing skins to compliment your "
+"site with. We're going to display those products here soon, but in the mean "
+"time head on over and <a href=\"http://nickhaskins.co/products/category/"
+"fotos/\" target=\"_blank\">check out</a> the market!"
+msgstr ""
+
+#: ../inc/support-tab.php:116
+msgid ""
+"P.S. - Want to be a Fotos Author and earn a nice little recurring income? <a "
+"href=\"http://authors.fotostheme.com\" target=\"_blank\">Apply here</a>."
+msgstr ""
