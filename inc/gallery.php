@@ -183,22 +183,17 @@ class baFotosGallery {
 
 		<?php }
 
-		extract(shortcode_atts(array(
-			'orderby' 	=> 'menu_order ASC, ID ASC',
-			'id' 		=> $post->ID,
-			'size' 		=> 'property-thumb',
-			'link' 		=> 'file',
-			'ids' 		=> array()
-		), $atts));
+		$shortcode_args = shortcode_parse_atts($this->get_match('/\[gallery\s(.*)\]/isU', $post->post_content));
+
+		$ids = $shortcode_args["ids"];
 
 		$args = array(
-			'numberposts' 		=> -1,
-         	'post_parent' 		=> $post->ID,
-         	'post_status' 		=> 'inherit',
-         	'post_type' 		=> 'attachment',
-         	'post_mime_type' 	=> 'image',
-         	'order' 			=> 'ASC',
-         	'orderby'		 	=> 'menu_order'
+			'include' 			=> $ids,
+	        'post_status' 		=> 'inherit',
+	        'post_type' 		=> 'attachment',
+        	'post_mime_type' 	=> 'image',
+        	'order' 			=> 'menu_order ID',
+        	'orderby' 			=> 'post__in', //required to order results based on order specified the "include" param
         );
 
 		$images = get_posts($args);
@@ -339,9 +334,10 @@ class baFotosGallery {
         ?></div></div><?php
 	}
 
-	function fetch_first_image() {
-
-
+	// regex helper
+	function get_match( $regex, $content ) {
+	    preg_match($regex, $content, $matches);
+	    return $matches[1];
 	}
 
 }
