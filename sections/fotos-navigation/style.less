@@ -4,6 +4,40 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
     }
 }
 
+// vertical mode tweaks
+body.fotos-nav-vert-mode {
+    .section-fotos-navigation {
+        .searchform {
+            position: static;
+            margin-top: 18px;
+            margin-left: 17px;
+        }
+
+        .fotos-nav.fotos-nav-left {
+
+            .searchform .searchfield{
+                float:left;
+            }
+        }
+
+        .fotos-nav.fotos-nav-right {
+
+            .fotos-nav-menu {
+                clear:right;
+            }
+            .searchform {
+                float:right;
+                margin-top:10px;
+                margin-right:10px;
+
+                .searchfield {
+                    float:right;
+                }
+            }
+        }
+    }
+}
+
 .fotos-nav-fixed {
 
     .section-fotos-navigation {
@@ -20,10 +54,11 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
         margin-top:40px;
 
         .section-fotos-navigation { 
-            top:0; 
+            top:0;
         }
     }
     &.fotos-nav-fixed-bottom .section-fotos-navigation { bottom:0; }
+
 }
 
 .section-fotos-navigation {
@@ -145,6 +180,8 @@ body.display-boxed .boxed-wrap .pl-area.fotos-nav-section-wrap {
 
         .searchform {
             left:8px;
+            float: left;
+            margin-top:9px;
 
             .searchfield {
                 float: left;

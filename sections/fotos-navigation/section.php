@@ -62,6 +62,7 @@ class fotosNav extends PageLinesSection {
 
 			$top = ('fotos-nav-fixed-top' == $fixpos) ? 'fotos-nav-fixed fotos-nav-fixed-top' : false;
 			$top .= ('fotos-nav-fixed-bott' == $fixpos) ? 'fotos-nav-fixed fotos-nav-fixed-bottom' : false;
+			$top .= ('fotos-nav-vert-mode' == $fixpos) ? 'fotos-nav-vert-mode' : false;
 
 			pagelines_add_bodyclass($top);
 		}
