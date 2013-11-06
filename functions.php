@@ -14,11 +14,9 @@ class baFotosTheme {
 		$this->dir = sprintf('/%s', PL_CHILD_DIR);
 
 		// Includes
-		include('libs/custom-meta-boxes/custom-meta-boxes.php' );
 		include('inc/contact.php');
 		include('inc/unset.php');
 		include('inc/support-tab.php');
-		include('inc/meta.php');
 		include('inc/options.php');
 		include('inc/post.php');
 		include('inc/partials.php');
@@ -35,7 +33,7 @@ class baFotosTheme {
 
 		// hide acf UI
         if (!defined('ACF_LITE')) {
-      		define( 'ACF_LITE' , true );
+      		//define( 'ACF_LITE' , true );
       	}
 
 		// load acf
@@ -47,7 +45,7 @@ class baFotosTheme {
 		if ( !function_exists( 'acfgp_register_fields' ) ){
 			include_once('libs/advanced-custom-fields/add-ons/acf-gallery/acf-gallery.php');
 		}
-		require_once('inc/acf-register.php');
+		//require_once('inc/acf-register.php');
 
 		$this->init();
 

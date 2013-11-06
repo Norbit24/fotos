@@ -25,11 +25,10 @@ class baFotosGallery {
 	  	global $post;
 	 	$output 	= apply_filters('post_gallery','', $atts);
 	 	$id 		= get_the_ID();
-	 	$thumbs 	= get_post_meta($id,'fotos_hide_thumbs',true);
-	 	$lb 		= get_post_meta($id,'fotos_enable_lb',true);
-	 	$captions 	= get_post_meta($id,'fotos_enable_captions',true);
-	 	$type 		= get_post_meta($id,'fotos_gallery_type',true);
-	 	$ratio 		= get_post_meta($id,'fotos_slideshow_ratio',true) ? get_post_meta($id,'fotos_slideshow_ratio',true) : false;
+	 	$thumbs 	= get_field('hide_thumbnails', $id);
+	 	$lb 		= get_field('enable_lightbox', $id);
+	 	$type 		= get_field('gallery_style', $id);
+	 	$ratio 		= get_field('slideshow_image_ratio',$id);
 
 	 	// Photoset Opts
 	 	$gutter = '0px';
@@ -147,7 +146,7 @@ class baFotosGallery {
 				  	// if lightbox do colorbox instantiation
 				  	<?php if ($lb) { ?>
 
-				  		jQuery('#post-<?php echo $id;?> #fotos-gallery-deck .fotos-lb-gallery').colorbox({
+				  		jQuery('#fotos-gallery-deck-<?php echo $id;?> .fotos-lb-gallery').colorbox({
 				  			rel: '#photo-group-<?php echo $id;?>'
 				  		});
 
@@ -175,7 +174,7 @@ class baFotosGallery {
 					  	jQuery('#post-<?php echo $id;?> .fotos-fotorama-overlay-inner').fadeOut(800);
 					  	jQuery('#post-<?php echo $id;?> .fotorama__fullscreen-icon').fadeIn(800);
 					});
-					<?php if(get_post_meta($id,'fotos_slideshow_cover',true)) { ?>
+					<?php if(get_field('fotos_slideshow_cover',$id)) { ?>
 						jQuery('#post-<?php echo $id;?> .fotos-fotorama-overlay-outer').css({'min-height':height});
 					<?php } ?>
 				});
@@ -222,7 +221,8 @@ class baFotosGallery {
 	function do_photoset($images){
 
 		$id 			= get_the_ID();
-		$photosetlayout = get_post_meta($id,'fotos_photoset_layout', true);
+
+		$photosetlayout = get_field('photoset_layout', $id);
 
 		?><div class="fotos-photoset-wrap"><div class="fotos-photoset" data-layout="<?php echo $photosetlayout;?>"><?php
 
@@ -245,8 +245,8 @@ class baFotosGallery {
 	function do_standard($images){
 
 		$id 		= get_the_ID();
-		$thumbs 	= get_post_meta($id,'fotos_hide_thumbs',true);
-		$lb 		= get_post_meta($id,'fotos_enable_lb',true);
+	 	$thumbs 	= get_field('hide_thumbnails', $id);
+	 	$lb 		= get_field('enable_lightbox', $id);
 
 		?>
 		<div id="fotos-gallery-deck-<?php echo $id;?>" class="gallslider">
@@ -284,18 +284,18 @@ class baFotosGallery {
 	// Draw Full Screen Slideshow
 	function do_slideshow($images){
 
-		$id = get_the_ID();
-		$ratio 		= get_post_meta(get_the_ID(),'fotos_slideshow_ratio',true) ? get_post_meta(get_the_ID(),'fotos_slideshow_ratio',true) : false;
+		$id 		= get_the_ID();
+		$ratio 		= get_field('slideshow_image_ratio',$id);
 		?>
 		<div class="fotos-fotorama-wrap">
 
 		<?php
 
-			$getsstitle = get_post_meta($id,'fotos_slideshow_title',true);
-			$getsssub 	= get_post_meta($id,'fotos_slideshow_subtitle',true);
-			$getcover 	= get_post_meta($id,'fotos_slideshow_cover',true);
-			$getbgcolor = get_post_meta($id,'fotos_slideshow_overlay_color',true) ? get_post_meta($id,'fotos_slideshow_overlay_color',true) : false;
-			$txtcolor 	= get_post_meta($id,'fotos_slideshow_overlay_text_color',true) ? get_post_meta($id,'fotos_slideshow_overlay_text_color',true) : false;
+			$getsstitle = get_field('slideshow_title',$id);
+			$getsssub 	= get_field('slideshow_subtitle',$id);
+			$getcover 	= get_field('slideshow_cover',$id);
+			$getbgcolor = get_field('slideshow_overlay_background_color',$id) ? get_field('slideshow_overlay_background_color',$id) : false;
+			$txtcolor 	= get_field('slideshow_overlay_text_color',$id) ? get_field('slideshow_overlay_text_color',$id) : false;
 
 			$sstitle 	= ($getsstitle) ? sprintf('<h3 class="fotos-fotorama-title">%s</h3>',$getsstitle) : sprintf('<h3 class="fotos-fotorama-title">%s</h3>',get_the_title());
 			$sssub 		= ($getsssub) ? sprintf('<p class="fotos-fotorama-subtitle">%s</p>',$getsssub) : sprintf('<p class="fotos-fotorama-subtitle">At the beautiful mansion on the beach!</p>');
