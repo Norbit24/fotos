@@ -597,6 +597,7 @@ html[xmlns] .slides {
     img {
         max-width:100%;
     }
+
 }
 .fotos-install-step-list {
     li {
@@ -641,4 +642,34 @@ html[xmlns] .slides {
     }
 }
 
+/////// RESPONSIVE
+/////// I'm only calling important all over the place because we're ovveridding inline styles. 
+@media(max-width:600px){
+    .responsive {
+        // general text
+        p,
+        .fotos-bio-txt-wrap {
+            font-size:16px;
+            line-height: 24px;
+        }
+        // blog loop header
+        .section-fotos-blog-loop {
+            .fotos-entry-date-wrap,
+            .fotos-entry-title-wrap {
+                width:100% !important;
+                text-align:center !important;
+            }
+        }
+        // blog loop social
+        .fotos-social-share-wrap,
+        .fotos-social-share-wrap.tal,
+        .fotos-social-share-wrap.tar {
+            text-align: center;
+        }
+        // bio box image
+        .fotos-bio-img-wrap {
+            text-align: center;
+        }
+    }
+}
 

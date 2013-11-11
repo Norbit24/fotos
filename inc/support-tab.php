@@ -72,31 +72,35 @@ class fotosSupportTab {
 			</div>
 			<div class="span9">
 				<div class="row">
-					<div class="span4">
-						<p class="zmt fotos-help"><strong><?php _e('Getting started with fotos','fotos');?></strong></p>
-						<iframe src="//player.vimeo.com/video/79112855?title=0&amp;byline=0&amp;portrait=0" width="300" height="169" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<div class="span4 fotos-help-vid">
+						<p class="zmt fotos-help"><strong><?php _e('Getting started with Fotos','fotos');?></strong></p>
+						<div class="fitvids"><iframe src="//player.vimeo.com/video/79112855?title=0&amp;byline=0&amp;portrait=0" width="412" height="232" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 					</div>
-					<div class="span4">
+					<div class="span4 fotos-help-vid">
 						<p class="zmt fotos-help"><strong><?php _e('Working with options','fotos');?></strong></p>
-						<iframe src="//player.vimeo.com/video/71111070?title=0&amp;byline=0&amp;portrait=0" width="300" height="169" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<div class="fitvids"><iframe src="//player.vimeo.com/video/71111070?title=0&amp;byline=0&amp;portrait=0" width="412" height="232" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 					</div>
-					<div class="span4">
-						<p class="zmt fotos-help"><strong><?php _e('How to setup the contact form','fotos');?></strong></p>
-						<iframe src="//player.vimeo.com/video/79117858?title=0&amp;byline=0&amp;portrait=0" width="300" height="169" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<div class="span4 fotos-help-vid">
+						<p class="zmt fotos-help"><strong><?php _e('Setting up the contact form','fotos');?></strong></p>
+						<div class="fitvids"><iframe src="//player.vimeo.com/video/79117858?title=0&amp;byline=0&amp;portrait=0" width="412" height="232" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="span4">
-						<p class="zmt fotos-help"><strong><?php _e('How to create a gallery','fotos');?></strong></p>
-						<iframe src="//player.vimeo.com/video/71111070?title=0&amp;byline=0&amp;portrait=0" width="300" height="169" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<div class="span4 fotos-help-vid">
+						<p class="zmt fotos-help"><strong><?php _e('Creating Galleries','fotos');?></strong></p>
+						<div class="fitvids"><iframe src="//player.vimeo.com/video/79121995?title=0&amp;byline=0&amp;portrait=0" width="412" height="232" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 					</div>
-					<div class="span4">
+					<div class="span4 fotos-help-vid">
+						<!--
 						<p class="zmt fotos-help"><strong><?php _e('How to install skins','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
+						-->
 					</div>
-					<div class="span4">
+					<div class="span4 fotos-help-vid">
+						<!--
 						<p class="zmt fotos-help"><strong><?php _e('Installing Fotos plugins','fotos');?></strong></p>
 						<img src="http://placehold.it/300x184">
+						-->
 					</div>
 				</div>
 			</div>
