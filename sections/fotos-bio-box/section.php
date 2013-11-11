@@ -92,6 +92,7 @@ class fotosBioBox extends PageLinesSection {
 			'key'						=> 'ba_fotos_bio_link_array',
 			'type'						=> 'accordion',
 			'title'						=> __('Social Links Setup', 'fotos'),
+			'post_type'					=> __('Link','fotos'),
 			'opts' 						=> array(
 				array(
 					'key'				=> 'link',

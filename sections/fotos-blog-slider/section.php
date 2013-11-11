@@ -10,7 +10,6 @@
 class baFotosBlogSlider extends PageLinesSection{
 
 	const version = '1.0';
-	var $default_limit = 3;
 
 	function before_section_template($clone_id = null) {
 
@@ -92,7 +91,7 @@ class baFotosBlogSlider extends PageLinesSection{
 
 		$output = '';
 
-		for($i=1;$i<=$this->default_limit;$i++):
+		for($i=1;$i<=3;$i++):
 
 			$images 	= array(PL_CHILD_URL.'/assets/img/img1.jpg',PL_CHILD_URL.'/assets/img/img2.jpg',PL_CHILD_URL.'/assets/img/img3.jpg');
 
@@ -112,7 +111,7 @@ class baFotosBlogSlider extends PageLinesSection{
 		$widthclean = str_replace('px', '', $width);
 		$heightclean = str_replace('px', '', $height);
 
-		$out = sprintf('Based on the width of your site, and the Slider Height below, your optimal image size is <strong>%s x %s</strong>.', $widthclean, $heightclean);
+		$out = sprintf(__('Based on the width of your site, and the Slider Height below, your optimal image size is <strong>%s x %s</strong>.','fotos'), $widthclean, $heightclean);
 
 		return $out;
 	}
@@ -130,6 +129,7 @@ class baFotosBlogSlider extends PageLinesSection{
 				'key'						=> 'ba_fotos_blog_slider_array',
 				'type'						=> 'accordion',
 				'title'						=> __('Slide Images', 'fotos'),
+				'post_type'					=> __('Image','fotos'),
 				'opts' 						=> array(
 					array(
 						'key'				=> 'img',
@@ -149,7 +149,7 @@ class baFotosBlogSlider extends PageLinesSection{
 				'title'             		=> __( 'Make Full Width', 'fotos' ),
 				'type'	            		=> 'check',
 				'key'						=> 'ba_fotos_blog_slider_full_width',
-				'help'						=> __('If you check this box, the slider will stretch 100% across teh screen.','fotos')
+				'help'						=> __('If you check this box, the slider will stretch 100% across the screen.','fotos')
 			),
 			array(
 				'title'						=> __('Blog Slider Overlay HTML', 'fotos'),

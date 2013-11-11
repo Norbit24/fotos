@@ -30,7 +30,6 @@ class fotosBlogLoop extends PageLinesSection {
 		<?php
 	}
 
-
  	function section_template() {
 
  		$loop 	= new fotosPostLoop;
@@ -55,14 +54,13 @@ class fotosBlogLoop extends PageLinesSection {
 
 	}
 
-
 	function section_opts( ){
 		$options = array(
 			array(
 				'key' 		=> 'ba_fotos_blogloop_note',
 				'title'		=> __('Blog Loop Options', 'fotos'),
 				'type'		=> 'template',
-				'template'	=> __('Options for the blog can be adjusted globally under the Theme tab.', 'fotos')
+				'template'	=> __('Options for the blog can be adjusted globally under the Fotos tab.', 'fotos')
 			)
 		);
 		return $options;

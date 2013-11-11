@@ -88,9 +88,12 @@ class fotosGlobalOptions {
 							$demo 	= $skin['demo'];
 							$dl 	= $skin['download'];
 
+							$dlbtn = $dl ? sprintf('<a class="fotos-admin-skins-linkout" style="background:green;" href="%s" title="Download Skin"><i class="icon-download"></i></a>',$dl) : false;
+							$demobtn = $demo ? sprintf('<a class="fotos-admin-skins-linkout" href="%s" target="_blank" title="Visit the Demo"><i class="icon-globe"></i> %s</a>',$demo,__('Demo','fotos')) : false;
+
 							?><li>
 								<img class="fotos-admin-skins-img" src="<?php echo $img;?>">
-								<p class="fotos-admin-skins-name"><?php echo $name;?><a class="fotos-admin-skins-linkout" href="<?php echo $demo;?>" target="_blank"><i class="icon-globe"></i> <?php _e('Demo','fotos');?></a></p>
+								<?php printf('<p class="fotos-admin-skins-name">%s%s%s</p>',$name,$dlbtn,$demobtn);?>
 								<p class="fotos-admin-skins-desc"><?php echo $desc;?></p>
 							</li><?php
 
@@ -101,10 +104,11 @@ class fotosGlobalOptions {
 			<div class="span3">
 				<p class="zmt"><strong><?php _e('How to install Fotos skins','fotos');?></strong></p>
 				<ul class="fotos-install-step-list">
-					<li><span>1</span> <?php _e('click Settings-->Import/Export','fotos');?></li>
-					<li><span>2</span> <?php _e('click the green button that reads <em>Select config file</em>','fotos');?></li>
-					<li><span>3</span> <?php _e('navigate to your theme folder, and into your skins directory','fotos');?></li>
-					<li><span>4</span> <?php _e('select a skin and import','fotos');?></li>
+					<li><span>1</span> <?php _e('download & unzip the skin','fotos');?></li>
+					<li><span>2</span> <?php _e('click Settings-->Import/Export','fotos');?></li>
+					<li><span>3</span> <?php _e('click the green button that reads <em>Select config file</em>','fotos');?></li>
+					<li><span>4</span> <?php _e('select the skin file & import','fotos');?></li>
+					<li><span>5</span> <?php _e('apply page templates to home and blog pages','fotos');?></li>
 				</ul>
 			</div>
 		</div>
@@ -122,23 +126,23 @@ class fotosGlobalOptions {
 			array(
 				'name'		=> 'Dapper',
 				'img'		=> PL_CHILD_URL.'/assets/admin/dapper-thumb.png',
-				'desc'		=> 'An awesome skin yo',
+				'desc'		=> 'Fresh, simple, & modern.',
 				'demo'		=> 'http://dapper.fotostheme.com',
-				'download'	=> '#importexport'
+				'download'	=> PL_CHILD_URL.'/skins/dapper/dapper.zip',
 			),
 			array(
-				'name'		=> 'A second',
-				'img'		=> '#',
-				'desc'		=> 'An awesome skin yo',
-				'demo'		=> '#',
-				'download'	=> 'http://here.com'
+				'name'		=> 'Renwald',
+				'img'		=> PL_CHILD_URL.'/assets/admin/temp-theme-thumb.jpg',
+				'desc'		=> __('Coming Soon', 'fotos'),
+				'demo'		=> '',
+				'download'	=> ''
 			),
 			array(
-				'name'		=> 'A third',
-				'img'		=> 'http://placehold.it/247x185',
-				'desc'		=> 'An awesome skin yo',
-				'demo'		=> 'http://google.com',
-				'download'	=> 'http://here.com'
+				'name'		=> 'Moses',
+				'img'		=> PL_CHILD_URL.'/assets/admin/temp-theme-thumb.jpg',
+				'desc'		=> __('Coming Soon', 'fotos'),
+				'demo'		=> '',
+				'download'	=> ''
 			)
 		);
 
