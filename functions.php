@@ -5,7 +5,7 @@ require_once( dirname(__FILE__) . '/setup.php' );
 
 class baFotosTheme {
 
-	const version = '0.9.5';
+	const version = '1.0';
 
 	function __construct() {
 

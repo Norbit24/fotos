@@ -78,7 +78,7 @@ class fotosSupportTab {
 					</div>
 					<div class="span4 fotos-help-vid">
 						<p class="zmt fotos-help"><strong><?php _e('Working with options','fotos');?></strong></p>
-						<div class="fitvids"><iframe src="//player.vimeo.com/video/71111070?title=0&amp;byline=0&amp;portrait=0" width="412" height="232" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+						<div class="fitvids"><iframe src="//player.vimeo.com/video/79130219?title=0&amp;byline=0&amp;portrait=0" width="412" height="232" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 					</div>
 					<div class="span4 fotos-help-vid">
 						<p class="zmt fotos-help"><strong><?php _e('Setting up the contact form','fotos');?></strong></p>
